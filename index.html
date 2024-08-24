@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>عطریسه - پلتفرم هوشمند خرید عطر</title>
+  <title>عطریس - پلتفرم هوشمند خرید عطر</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -13,9 +13,9 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <!-- <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet"> -->
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,6 +26,35 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    /* Base styles for the divider line */
+    .divider-line {
+        position: absolute;
+        background-color: #ce1212; /* Choose a color for the line */
+    }
+
+    /* Vertical line for desktop view */
+    @media (min-width: 992px) { /* Adjust the min-width based on your layout */
+        .divider-line {
+            width: 0.5px; /* Thickness of the line */
+            height: 80%; /* Height relative to the parent container */
+            top: 10%; /* Adjust to center the line vertically */
+            left: 50%; /* Center the line horizontally */
+            transform: translateX(-50%);
+        }
+    }
+
+    /* Horizontal line for mobile view */
+    @media (max-width: 991px) { /* Adjust the max-width based on your layout */
+        .divider-line {
+            height: 2px; /* Thickness of the line */
+            width: 80%; /* Width relative to the parent container */
+            top: 50%; /* Center the line vertically */
+            left: 10%; /* Position the line with some margin on the left */
+            transform: translateY(-50%);
+        }
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -36,7 +65,7 @@
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">عطریسه</h1>
+        <h1 class="sitename">عطریس</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -89,7 +118,7 @@
             </ul>
           </li>
           <li><a href="#menu">رویدادها و کلاس‌ها</a></li>
-          <li><a href="#events">مقالات</a></li>
+          <li><a href="#articles">مقالات</a></li>
           <li><a href="#chefs">مشاوره</a></li>
           
           <li><a href="#contact">تماس با ما</a></li>
@@ -109,32 +138,31 @@
 
       <div class="container">
         <div class="row gy-4 justify-content-center justify-content-lg-between" style="background-color: #f7f0ea;">
-          <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center">
-            <h1 data-aos="fade-up">خرید هوشمند عطر<br>بر اساس تیپ شخصیتی شما</h1>
-            <p data-aos="fade-up" data-aos-delay="100">ما شخصیت شما را با دقت ارزیابی و عطر مناسب شما را معرفی می‌کنیم.</p>
-            <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-              <a href="#book-a-table" class="btn-get-started">ورود</a>
+            <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center">
+                <h2 data-aos="fade-up" style="text-align: center;">خرید هوشمند عطر<br>بر اساس تیپ شخصیتی شما</h2>
+                <p data-aos="fade-up" data-aos-delay="100" style="text-align: center;">ما شخصیت شما را با دقت ارزیابی و عطر مناسب شما را معرفی می‌کنیم.</p>
+                <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#book-a-table" class="btn-get-started">ورود</a>
+                </div>
             </div>
-          </div>
-          <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
-            <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
-          </div>
+            <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
+                <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+            </div>
         </div>
-      </div>
+    </div>
+    
 
     </section><!-- /Hero Section -->
 
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery section light-background">
+    <section id="gallery" class="gallery section">
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up" style="background-color: aliceblue;">
-        <h2></h2>
+      <div class="container section-title" data-aos="fade-up">
         <p><span>برندهای</span> <span class="description-title">عطر</span></p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
             {
@@ -174,16 +202,14 @@
           </div>
           <div class="swiper-pagination"></div>
         </div>
-
       </div>
-
     </section><!-- /Gallery Section -->
 
     <!-- Safar Rayehe Section -->
     <section id="why-us" class="why-us section light-background">
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up" style="background-color: aliceblue;">
+      <div class="container section-title" data-aos="fade-up">
         <h2></h2>
         <p><span>سفر</span> <span class="description-title">رایحه‌ها</span></p>
       </div><!-- End Section Title -->
@@ -229,8 +255,8 @@
             </div>
           </div>
 
-          <div class="col-md-12 text-center">
-            <button type="submit">شروع شخصیت شناسی</button>
+          <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <a class="btn-getstarted mt-2" href="test.html">شروع شخصیت شناسی</a>
           </div>
 
         </div>
@@ -240,31 +266,23 @@
     </section><!-- /ُSafar Rayehe Section -->
 
     <!-- Why Us Section -->
-    <section id="why-us" class="why-us section light-background">
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <div class="why-box">
-              <h3>چرا باید مارا انتخاب کنید؟</h3>
-              <p>
-                چون ما خیلی خفنیم!:)
-              </p>
-            </div>
-          </div><!-- End Why Box -->
-          </div>
-
+    <section id="why-us" class="why-us section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <p><span>چرا باید</span> <span class="description-title">ما را انتخاب کنید</span></p>
+      </div><!-- End Section Title -->
+      <div class="why-box">
+        <div class="mx-5">
+          <h3>چرا باید مارا انتخاب کنید؟</h3>
+          <p>چون ما خیلی خفنیم!:)</p>
         </div>
-
+      </div>
       </div>
 
     </section><!-- /Why Us Section -->
 
     <!-- Team Section -->
-    <section id="chefs" class="chefs section">
-
+    <section id="chefs" class="chefs section light-background">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <p><span>تیم</span> <span class="description-title">ما<br></span></p>
@@ -367,118 +385,126 @@
     </section><!-- /Get Section -->
 
     <!-- Fit perfumes Section -->
-    <section id="book-a-table" class="book-a-table section">      
-
-      <div class="container">
-
-        <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-6 reservation-img" style="background-image: url(assets/img/reservation.jpg);"></div>
-
-          <div class="col-lg-6 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
-            <div class="container section-title" data-aos="fade-up"> 
-              <p><span>مناسب‌ترین </span> <span class="description-title">عطرها<br></span></p>
-              <h2>.......................................عطرهای خوبیه</h2>
+    <section id="book-a-table" class="book-a-table section light-background">      
+        <div class="container">
+            <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-6 reservation-img" style="background-image: url(assets/img/reservation.jpg);"></div>
+                <div class="col-lg-6 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Centering the content -->
+                    <div class="container text-center">
+                        <!-- Text content container -->
+                        <div class="section-title" data-aos="fade-up">
+                            <p><span>مناسب‌ترین </span> <span class="description-title">عطرها<br></span></p>
+                            <h2>.......................................عطرهای خوبیه</h2>
+                        </div>
+                        <!-- Button centered below the text -->
+                        <div class="mt-3">
+                            <a class="btn-getstarted mt-5" href="test.html">شروع شخصیت شناسی</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a class="btn-getstarted mt-5" href="index.html#book-a-table">شروع شخصیت شناسی</a>
-          </div>
-
         </div>
-
-      </div>
     </section><!-- /Fit perfumes Section -->
 
     <!-- Find perfume Section -->
     <section id="stats" class="stats section dark-background">
-
       <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
-
       <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-
         <div class="container">
-
-          <div class="row gy-4">
-  
+          <div class="row gy-4">  
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-              <div class="why-box" style="background-color: red;">
+              <div class="why-box">
                 <h3>عطر خود را با ما پیدا کنید</h3>
                 <p>
                   باشه بگو چیکار کنم؟
                 </p>
-                <a class="btn-getstarted mt-5" href="index.html#book-a-table">شروع شخصیت شناسی</a>
+                <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                <a class="btn-getstarted mt-5" href="test.html">شروع شخصیت شناسی</a>
+              </div>
               </div>
             </div><!-- End Why Box -->
-            </div>
-  
+            </div> 
           </div>
-
         </div>
-
       </div>
-
     </section><!-- /Find perfume Section -->
 
-
     <!-- Guide Section -->
-    <section id="about" class="about section" style="direction: ltr;">
-
-      <div class="container">
-
-        <div class="row gy-4">
-          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/about.jpg" class="img-fluid mb-4" alt="">
-              <div class="why-box" style="background-color: red;">
+    <section id="about" class="stats section dark-background mt-5" style="direction: ltr;">
+      <img src="assets/img/about.jpg" alt="" data-aos="fade-in">
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="container">
+          <div class="row gy-4">  
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100"  style="direction: rtl;">
+              <div class="why-box">
                 <h3>راهنمای خرید حضوری و آنلاین</h3>
                 <p>
                   ما به تو میگیم که چیکار کنی....................
                 </p>
-                <a class="btn-getstarted mt-5" href="index.html#book-a-table">راهنمای خرید</a>
+                <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                <a class="btn-getstarted mt-5" href="#">راهنمای خرید</a>
+                </div>
               </div>
+            </div><!-- End Why Box -->
+            </div> 
           </div>
         </div>
-      </div>
-
     </section><!-- /Guide Section -->
 
     <!-- Articles Section -->
-     <section id="testimonials" class="testimonials section light-background">
-
-     <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <div class="row">
-        <div class="col-s-6">
-          <h3>مقالات</h3>
-          <p>
-            ما به تو میگیم که چیکار کنی....................
-          </p>
-          <a class="btn-getstarted mt-5" href="index.html#book-a-table">خواندن</a>
-        </div>
-        <div class="col-s-6"></div>
-        <h3>مقالات</h3>
-          <p>
-            ما به تو میگیم که چیکار کنی....................
-          </p>
-          <a class="btn-getstarted mt-5" href="index.html#book-a-table">مشاهده</a>
+    <section id="articles" class="about section light-background">
+      <div class="container">
+          <div class="row gy-4 position-relative">
+              <div class="col-lg-6 text-center mt-5" data-aos="fade-up" data-aos-delay="100">
+                  <h3>مقالات</h3>
+                  <p>
+                      ما به تو میگیم که چیکار کنی....................
+                  </p>
+                  <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                      <a class="btn-getstarted mt-5" href="#">خواندن</a>
+                  </div>
+              </div>
+              <div class="col-lg-6 text-center mt-5" data-aos="fade-up" data-aos-delay="250">
+                  <h3>مقالات</h3>
+                  <p>
+                      ما به تو میگیم که چیکار کنی....................
+                  </p>
+                  <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                      <a class="btn-getstarted mt-5" href="#">مشاهده</a>
+                  </div>
+              </div>
+              <!-- Divider Line -->
+              <div class="divider-line"></div>
+          </div>
       </div>
-      </div>
-     </section><!-- /Articles Section -->
+    </section><!-- /Articles Section -->
 
     <!-- Pictures Section -->
-     <section class="pictures">
+     <section class="book-a-table section">
+
       <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <img src="assets/img/pic-section.jpg" class="img-fluid mb-4" alt="">
-          </div>
-          <div class="col-md-6">
-            <p>گالری تصاویر</p>
-            <a class="btn-getstarted mt-5" href="index.html#book-a-table">مشاهده</a>
-          </div>
+        <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-6 reservation-img" style="background-image: url(assets/img/pic-section.jpg);"></div>
+            <div class="col-lg-6 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
+                <!-- Centering the content -->
+                <div class="container text-center">
+                    <!-- Text content container -->
+                    <div class="section-title" data-aos="fade-up">
+                        <p><span>گالری </span> <span class="description-title">تصاویر<br></span></p>
+                    </div>
+                    <!-- Button centered below the text -->
+                    <div class="mt-3">
+                        <a class="btn-getstarted mt-5" href="#">مشاهده</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
      </section>
 
     <!-- Perfumes Section -->
-    <section id="menu" class="menu section">
+    <section id="menu" class="menu section light-background">
 
       <!-- Section Title -->
       <div class="container">
@@ -653,11 +679,11 @@
     </section><!-- /Menu Section -->
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section light-background">
+    <section id="testimonials" class="testimonials section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <p>نظرات مشتریان <span class="description-title">عطریسه</span></p>
+        <p>نظرات مشتریان <span class="description-title">عطریس</span></p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -785,63 +811,111 @@
     </section><!-- /Testimonials Section -->
 
     <!-- Create account Section -->
-    <section>
+    <section class="book-a-table section light-background">
       <div class="container">
-        <div class="row">
-          <img src="assets/img/pic-section.jpg" class="img-fluid mb-4" alt="">
-          <div class="col-md-6">
-            <p>شما با ساخت حساب کاربری می‌توانید از امکانات عطریسه استفاده کنید</p>
-            <a class="btn-getstarted mt-5" href="index.html#book-a-table">ساخت حساب کاربری</a>
-          </div>
+        <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-6 reservation-img" style="background-image: url(assets/img/pic-section.jpg);"></div>
+            <div class="col-lg-6 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
+                <!-- Centering the content -->
+                <div class="container text-center">
+                    <!-- Text content container -->
+                    <div class="section-title mx-5 my-5" data-aos="fade-up">
+                      <h5>شما با ساخت حساب کاربری می‌توانید از امکانات عطریس استفاده کنید</h5>
+                    </div>
+                    <!-- Button centered below the text -->
+                      <a class="btn-getstarted" href="signup.html">ساخت حساب کاربری</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </section><!-- /Create account Section -->
-  
+    </div>
+     </section><!-- /Create account Section -->
   
   </main>
 
-      <footer class="footer dark-background py-5 border-top">
-        <div class="row px-5">
-          <div class="col-6 col-md-2 mb-3">
-            <h5>عطریسه</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>درباره ما</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>تماس با ما</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>پرسش‌های مشتریان</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>سیاست و حفظ حریم شخصی</h6></a></li>
-            </ul>
-          </div>
-    
-          <div class="col-6 col-md-2 mb-3">
-            <h5>خرید</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>راهنمای خرید حضوری</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>راهنمای خرید آنلاین</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>ارسال و تحویل کالا</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>پیگیری سفارش</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>ثبت شکایات</h6></a></li>
-            </ul>
-          </div>
-    
-          <div class="col-6 col-md-2 mb-3">
-            <h5>اطلاعات تماس</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>تلفن</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>روزهای کاری</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>فروشگاه‌ها</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>ایمیل</h6></a></li>
-            </ul>
+  <footer class="footer dark-background py-5 border-top">
+    <div class="container">
+        <div class="row">
+            <!-- عطریس Section -->
+            <div class="col-12 col-md-2 mb-3">
+                <h5>عطریس</h5>
+                <hr>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>درباره ما</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>تماس با ما</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>پرسش‌های مشتریان</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>سیاست و حفظ حریم شخصی</h6></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- خرید Section -->
+            <div class="col-12 col-md-2 mb-3">
+                <h5>خرید</h5>
+                <hr>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>راهنمای خرید حضوری</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>راهنمای خرید آنلاین</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>ارسال و تحویل کالا</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>پیگیری سفارش</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>ثبت شکایات</h6></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- اطلاعات تماس Section -->
+            <div class="col-12 col-md-2 mb-3">
+                <h5>اطلاعات تماس</h5>
+                <hr>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>تلفن</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>روزهای کاری</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>فروشگاه‌ها</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>ایمیل</h6></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Map Section -->
+            <div class="col-12 col-md-6 mb-3 text-center">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1362.1937129492394!2d51.41056699540125!3d35.70504021102298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e0172c8e1175b%3A0x62eb4f249dbf6e71!2sFaculty%20of%20Civil%20and%20Environmental%20Engineering%2C%20the%20old%20building%20(building%20number%201)!5e0!3m2!1sen!2s!4v1703173027319!5m2!1sen!2s"
+                        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
         </div>
-    
+
+        <!-- Footer Bottom Section -->
         <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-          <p>کلیه حقوق مادی و معنوی این سایت متعلق به شرکت عطریسه می‌باشد.</p>
-          <ul class="list-unstyled d-flex">
-            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-          </ul>
+            <p class="mb-0">کلیه حقوق مادی و معنوی این سایت متعلق به شرکت عطریس می‌باشد.</p>
+            <ul class="list-unstyled d-flex mb-0">
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+            </ul>
         </div>
-      </footer>
+    </div>
+</footer>
+
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
