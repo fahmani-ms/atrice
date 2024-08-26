@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Starter Page - Yummy Bootstrap Template</title>
+  <title>نتایج آزمون تشخیص شخصیت</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -41,8 +41,8 @@
     }
 
     .progress-step {
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         background-color: lightgray;
         display: flex;
@@ -54,7 +54,8 @@
     }
 
     .progress-step.active {
-        background-color: #4CAF50; /* Highlight color */
+        background-color: var(--accent-color);
+        color: var(--contrast-color);
         transform: scale(1.2);
     }
 
@@ -147,56 +148,83 @@
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Yummy</h1>
-        <span>.</span>
+        <h1 class="sitename">عطریس</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero">Home<br></a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#chefs">Chefs</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="#hero" class="active">خانه<br></a></li>
+          <li class="dropdown"><a href="#"><span>عطرها</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li><a href="#">همه عطرها</a></li>
+              <li><a href="#">جدیدها</a></li>
+              <li><a href="#">پرفروش‌ها</a></li>
+              <li><a href="#">برتر</a></li>
+              <li class="dropdown"><a href="#"><span>مناسب برای</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
+                  <li><a href="#">آقایان</a></li>
+                  <li><a href="#">خانم‌ها</a></li>
+                  <li><a href="#">خانم‌ها و آقایان</a></li>
                 </ul>
               </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              <li class="dropdown"><a href="#"><span>مناسب فصل</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">بهار</a></li>
+                  <li><a href="#">تابستان</a></li>
+                  <li><a href="#">پاییز</a></li>
+                  <li><a href="#">زمستان</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>طبع</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">خنک</a></li>
+                  <li><a href="#">معتدل</a></li>
+                  <li><a href="#">گرم</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>گروه بویایی</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">آروماتیک</a></li>
+                  <li><a href="#">گلی</a></li>
+                  <li><a href="#">مرکبایی</a></li>
+                  <li><a href="#">موارد بیشتر +</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>اقلیم</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">گرم و خشک</a></li>
+                  <li><a href="#">سرد کوهستانی</a></li>
+                  <li><a href="#">معتدل و مرطوب</a></li>
+                  <li><a href="#">گرم و مرطوب</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#menu">رویدادها و کلاس‌ها</a></li>
+          <li><a href="#articles">مقالات</a></li>
+          <li><a href="#chefs">مشاوره</a></li>
+          
+          <li><a href="#contact">تماس با ما</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="index.html#book-a-table">Book a Table</a>
+      <a class="btn-getstarted" href="signup.html">ورود</a>
 
     </div>
   </header>
 
   <main class="main">
   <div class="progress-container">
-      <div class="progress-step" id="step1">Step 1</div>
-      <div class="progress-step" id="step2">Step 2</div>
-      <div class="progress-step" id="step3">Step 3</div>
+      <div class="progress-step" id="step1">1</div>
+      <div class="progress-step" id="step2">2</div>
+      <div class="progress-step" id="step3">3</div>
   </div>
 
   <div class="navigation-buttons">
-    <button id="prevBtn" onclick="prevStep()">Previous</button>
-    <button id="nextBtn" onclick="nextStep()">Next</button>
-    <button id="confirmBtn" onclick="confirmResults()">Confirm</button>
+    <button id="prevBtn" style="font-family: var(--default-font); color: var(--contrast-color); background: yellowgreen; border-radius: 20px;" onclick="prevStep()">قبل</button>
+    <button id="nextBtn" style="font-family: var(--default-font); color: var(--contrast-color); background: green; border-radius: 20px;" onclick="nextStep()">بعد</button>
+    <button id="confirmBtn" style="font-family: var(--default-font); color: var(--contrast-color); background: var(--accent-color); border-radius: 20px;" onclick="confirmResults()">تایید</button>
 </div>
 
   <div class="results-content">
@@ -279,69 +307,6 @@
   </div>
 
   </main>
-
-  <footer id="footer" class="footer dark-background">
-
-    <div class="container">
-      <div class="row gy-3">
-        <div class="col-lg-3 col-md-6 d-flex">
-          <i class="bi bi-geo-alt icon"></i>
-          <div class="address">
-            <h4>Address</h4>
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p></p>
-          </div>
-
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-flex">
-          <i class="bi bi-telephone icon"></i>
-          <div>
-            <h4>Contact</h4>
-            <p>
-              <strong>Phone:</strong> <span>+1 5589 55488 55</span><br>
-              <strong>Email:</strong> <span>info@example.com</span><br>
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-flex">
-          <i class="bi bi-clock icon"></i>
-          <div>
-            <h4>Opening Hours</h4>
-            <p>
-              <strong>Mon-Sat:</strong> <span>11AM - 23PM</span><br>
-              <strong>Sunday</strong>: <span>Closed</span>
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <h4>Follow Us</h4>
-          <div class="social-links d-flex">
-            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Yummy</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-
-  </footer>
 
   <!-- Preloader -->
   <div id="preloader"></div>

@@ -284,6 +284,7 @@ h6 {
 
 .btn-getstarted,
 .btn-getstarted:focus {
+  font-family: var(--default-font);
   color: var(--contrast-color);
   background: var(--accent-color);
   font-size: 14px;
