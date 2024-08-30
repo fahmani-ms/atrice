@@ -27,6 +27,26 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
   <style>
+    /* Ensure the hero section has no padding or margin */
+    #hero {
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Make the image cover the whole width of the hero section */
+    .hero-image {
+        width: 100%;  /* Full width of the page */
+        height: auto; /* Maintain the aspect ratio */
+        display: block; /* Removes any space below the image */
+        object-fit: cover; /* Ensures the image covers the area without distortion */
+    }
+
+    /* Optional: Adjust the container if needed */
+    #hero .container {
+        position: relative; /* To position elements on top of the image */
+        /* You can add padding or other styles here if needed */
+    }
+
     /* Base styles for the divider line */
     .divider-line {
         position: absolute;
@@ -58,6 +78,94 @@
     .hidden-item {
     display: none;
 }
+
+/* Styles for the search icon */
+.search-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Styles for the search semi-page */
+.search-semi-page {
+    position: fixed;
+    top: -100%; /* Start off-screen */
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+    padding: 40px; /* Adjust padding for space from edges */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: top 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for centering content */
+.search-container-wrapper {
+    max-width: 800px; /* Adjust the width of the container */
+    width: 100%;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Flex container for the two columns */
+.search-content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* Styling for the search input */
+.search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Suggestions styling */
+.search-suggestions {
+    width: 50%; /* Half of the container width */
+}
+
+.search-suggestions p {
+    margin: 5px 0;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Styling for the search image */
+.search-image {
+    width: 50%; /* Half of the container width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Close button styling */
+.close-search {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
 
   </style>
 </head>
@@ -127,19 +235,61 @@
           <li><a href="#chefs">مشاوره</a></li>
           
           <li><a href="#contact">تماس با ما</a></li>
+          <li>
+            <a href="javascript:void(0);" id="search-icon" class="search-icon">
+                <i class="bi bi-search"></i>
+            </a>
+        </li>
+          <li>
+            <a href="store.html">فروشگاه‌ها</a>
+          </li>
+          <li>
+            <img src="assets/images/png-transparent-shopping-cart-icon-shopping-bag-tote-bag-icon-design-online-shopping-black-and-white-area-rectangle.png" width="30">
+          </li>
+          <li>
+            <a class="btn-getstarted" href="index.html#book-a-table">ورود</a>
+          </li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
-      <a class="btn-getstarted" href="index.html#book-a-table">ورود</a>
-
     </div>
   </header>
+
+  <!-- Search Semi-Page -->
+  <div id="search-semi-page" class="search-semi-page"">
+    <div class="search-container-wrapper">
+        <button class="close-search">X</button>
+        <!-- Centered Search Input -->
+        <input type="text" class="search-input" placeholder="جستجوی عطر...">
+        <!-- Two-column content -->
+        <div class="search-content">
+            <div class="search-suggestions">
+                <!-- Sample suggestions -->
+                <p>پیشنهاد 1</p>
+                <p>پیشنهاد 2</p>
+                <p>پیشنهاد 3</p>
+            </div>
+            <div class="search-image">
+                <img src="assets/img/events-1.jpg" alt="Sample">
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
   <main class="main">
 
     <!-- Hero Section -->
+
     <section id="hero" class="hero section light-background">
+      <img src="assets/images/e2517ddf9da9da6c759704f24162a0fbbe5145e792fd61ee7278902dfb173338.jpg" class="hero-image" style="width: 100%;">
+      <div class="container">
+          <!-- Additional content can go here -->
+      </div>
+  </section>
+  
+    <!-- <section id="hero" class="hero section light-background">
 
       <div class="container">
         <div class="row gy-4 justify-content-center justify-content-lg-between" style="background-color: #f7f0ea;">
@@ -157,7 +307,8 @@
     </div>
     
 
-    </section><!-- /Hero Section -->
+    </section> -->
+    <!-- /Hero Section -->
 
     <!-- Gallery Section -->
     <section id="gallery" class="gallery section">
@@ -864,24 +1015,24 @@
     </section><!-- /Testimonials Section -->
 
     <!-- Create account Section -->
-    <section class="book-a-table section light-background">
-      <div class="container">
-        <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-6 reservation-img" style="background-image: url(assets/img/pic-section.jpg);"></div>
-            <div class="col-lg-6 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
-                <!-- Centering the content -->
-                <div class="container text-center">
-                    <!-- Text content container -->
-                    <div class="section-title mx-5 my-5" data-aos="fade-up">
-                      <h5>شما با ساخت حساب کاربری می‌توانید از امکانات عطریس استفاده کنید</h5>
-                    </div>
-                    <!-- Button centered below the text -->
-                      <a class="btn-getstarted" href="signup.html">ساخت حساب کاربری</a>
-                </div>
-            </div>
+    <section id="stats" class="stats section dark-background">
+      <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="container">
+          <div class="row gy-4">  
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="why-box">
+                <h5>شما با ساخت حساب کاربری می‌توانید از امکانات عطریس استفاده کنید</h5>
+                <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                <a class="btn-getstarted mt-5" href="signup.html">ساخت حساب کاربری</a>
+              </div>
+              </div>
+            </div><!-- End Why Box -->
+            </div> 
+          </div>
         </div>
-    </div>
-     </section><!-- /Create account Section -->
+      </div>
+    </section><!-- /Create account Section -->
   
   </main>
 
@@ -889,7 +1040,7 @@
     <div class="container">
         <div class="row">
             <!-- عطریس Section -->
-            <div class="col-12 col-md-2 mb-3">
+            <div class="col-12 col-md-4 mb-3">
                 <h5>عطریس</h5>
                 <hr>
                 <ul class="nav flex-column">
@@ -908,7 +1059,7 @@
                 </ul>
             </div>
             <!-- خرید Section -->
-            <div class="col-12 col-md-2 mb-3">
+            <div class="col-12 col-md-4 mb-3">
                 <h5>خرید</h5>
                 <hr>
                 <ul class="nav flex-column">
@@ -930,7 +1081,7 @@
                 </ul>
             </div>
             <!-- اطلاعات تماس Section -->
-            <div class="col-12 col-md-2 mb-3">
+            <div class="col-12 col-md-4 mb-3">
                 <h5>اطلاعات تماس</h5>
                 <hr>
                 <ul class="nav flex-column">
@@ -948,22 +1099,15 @@
                     </li>
                 </ul>
             </div>
-            <!-- Map Section -->
-            <div class="col-12 col-md-6 mb-3 text-center">
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1362.1937129492394!2d51.41056699540125!3d35.70504021102298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e0172c8e1175b%3A0x62eb4f249dbf6e71!2sFaculty%20of%20Civil%20and%20Environmental%20Engineering%2C%20the%20old%20building%20(building%20number%201)!5e0!3m2!1sen!2s!4v1703173027319!5m2!1sen!2s"
-                        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
         </div>
 
         <!-- Footer Bottom Section -->
         <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
             <p class="mb-0">کلیه حقوق مادی و معنوی این سایت متعلق به شرکت عطریس می‌باشد.</p>
             <ul class="list-unstyled d-flex mb-0">
-                <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-                <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-                <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="assets/images/icons8-instagram-48.png" height="24"></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="assets/images/icons8-x-50.png" height="24"></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="assets/images/icons8-linkedin-48.png" height="24"></a></li>
             </ul>
         </div>
     </div>
@@ -1016,6 +1160,16 @@
 
 </script>
 
+<script>
+  document.getElementById('search-icon').addEventListener('click', function() {
+    document.getElementById('search-semi-page').style.top = '0';
+});
+
+document.querySelector('.close-search').addEventListener('click', function() {
+    document.getElementById('search-semi-page').style.top = '-100%';
+});
+
+</script>
 
 </body>
 

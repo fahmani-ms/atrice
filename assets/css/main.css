@@ -250,7 +250,12 @@ h6 {
 }
 
 .header .logo {
+  margin: 0;
+  padding: 0;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Aligns logo to the start */
 }
 
 .header .logo img {
@@ -269,6 +274,51 @@ h6 {
 .header .logo span {
   color: var(--accent-color);
   font-size: 36px;
+}
+
+.header .logo.me-auto {
+  margin-right: 0 !important; /* Override any margin on the right */
+}
+
+.header .navmenu {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Adjust this to space or center content as needed */
+  order: 3; /* Maintains order in flex */
+}
+
+/* General container adjustment */
+.container {
+  padding: 0; /* Ensures no padding around the container */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between logo and nav */
+}
+
+/* Optional: Reduce space between nav items for a compact look */
+.navmenu ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 15px; /* Space between items, adjust as needed */
+}
+
+.navmenu>ul>li {
+  padding: 10px; /* Adjust to reduce space */
+}
+
+/* Mobile and Desktop Navigation adjustments */
+@media (min-width: 600px) {
+  .navmenu>ul>li {
+      padding: 10px 10px; /* Reduce padding */
+  }
+  .navmenu>ul>li:last-child {
+      padding-right: 10px; /* Optional for last item adjustment */
+  }
 }
 
 .header .btn-getstarted,
