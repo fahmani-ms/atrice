@@ -166,6 +166,22 @@
     right: 20px;
 }
 
+.section-title {
+    display: flex; /* Sets the display property to flex */
+    align-items: center; /* Vertically centers items if they are not already aligned */
+    justify-content: center; /* Horizontally centers the content */
+    flex-direction: column; /* Ensures that the text is treated as a column (optional) */
+}
+
+.font-size-bold {
+        font-weight: bold; /* Ensures the text is bold */
+        /* Optional: Add other font styling here if needed */
+    }
+
+
+    .justify-text {
+        text-align: justify; /* Justify text within the list items */
+    }
 
   </style>
 </head>
@@ -281,9 +297,9 @@
     <!-- Hero Section -->
 
     <section id="hero" class="hero section light-background">
-      <img src="assets/images/s7.png" class="hero-image" style="width: 100%;">
+      
       <div class="container">
-          <!-- Additional content can go here -->
+        <img src="assets/images/s7.png" class="hero-image" style="width: 100%;">
       </div>
   </section>
   
@@ -309,26 +325,28 @@
     <!-- /Hero Section -->
 
     <!-- Introduction Section -->
-      <section>
+      <section class="section">
         <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <p><span>معرفی</span> <span class="description-title">کوتاه</span></p>
-        <h6>در عطریس، هر عطر فقط یک انتخاب نیست، بلکه سفری به دنیای درونی شماست. با استفاده از فناوری هوش مصنوعی و طراحی منحصر به فرد، عطری به شما هدیه می‌دهیم که روح شما را بیان می‌کند. در اینجا، عطر تنها یک بو نیست، بلکه امضای منحصربه‌فرد شماست.
-        </h6>
       </div><!-- End Section Title -->
+      <div class="container">
+        <h6>در عطریس، هر عطر فقط یک انتخاب نیست، بلکه سفری به دنیای درونی شماست. با استفاده از فناوری هوش مصنوعی و طراحی منحصر به فرد، عطری به شما هدیه می‌دهیم که روح شما را بیان می‌کند. در اینجا، عطر تنها یک بو نیست، بلکه امضای منحصربه‌فرد شماست.</h6>
+      </div>
+
 
       </section>
     <!-- /Introduction Section -->
 
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery section">
+    <section id="gallery" class="gallery section light-background">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <p><span>برندهای</span> <span class="description-title">عطر</span></p>
       </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container" data-aos="fade-up">
         <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
             {
@@ -361,17 +379,17 @@
             }
           </script>
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/Calvin-Klein-Logo-1975-1992.png"><img src="assets/brands/Calvin-Klein-Logo-1975-1992.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/Cartier_logo.svg.png"><img src="assets/brands/Cartier_logo.svg.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/Chanel_logo_interlocking_cs.svg.png"><img src="assets/brands/Chanel_logo_interlocking_cs.svg.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/Dior_Logo.svg.png"><img src="assets/brands/Dior_Logo.svg.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/Gucci_Logo.svg.png"><img src="assets/brands/Gucci_Logo.svg.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/Jaguar-logo-ED7E01A4A1-seeklogo.com.png"><img src="assets/brands/Jaguar-logo-ED7E01A4A1-seeklogo.com.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/leila-hatami-logo.png"><img src="assets/brands/leila-hatami-logo.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/MEHRAN-MODIRI.png"><img src="assets/brands/MEHRAN-MODIRI.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/navid-mohammadzadeh.jpg"><img src="assets/brands/navid-mohammadzadeh.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/ten-forever-logo.jpg"><img src="assets/brands/ten-forever-logo.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/ژک-ساف.jpg"><img src="assets/brands/ژک-ساف.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/Calvin-Klein-Logo-1975-1992.png"><img src="assets/brands/Calvin-Klein-Logo-1975-1992.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/Cartier_logo.svg.png"><img src="assets/brands/Cartier_logo.svg.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/Chanel_logo_interlocking_cs.svg.png"><img src="assets/brands/Chanel_logo_interlocking_cs.svg.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/Dior_Logo.svg.png"><img src="assets/brands/Dior_Logo.svg.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/Gucci_Logo.svg.png"><img src="assets/brands/Gucci_Logo.svg.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/Jaguar-logo-ED7E01A4A1-seeklogo.com.png"><img src="assets/brands/Jaguar-logo-ED7E01A4A1-seeklogo.com.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/leila-hatami-logo.png"><img src="assets/brands/leila-hatami-logo.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/MEHRAN-MODIRI.png"><img src="assets/brands/MEHRAN-MODIRI.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/navid-mohammadzadeh.jpg"><img src="assets/brands/navid-mohammadzadeh.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/ten-forever-logo.jpg"><img src="assets/brands/ten-forever-logo.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/ژک-ساف.jpg"><img src="assets/brands/ژک-ساف.jpg" class="img-fluid" alt=""></a></div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -379,12 +397,10 @@
     </section><!-- /Gallery Section -->
 
     <!-- Safar Rayehe Section -->
-    <section id="why-us" class="why-us section light-background">
+    <section id="why-us" class="why-us section">
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2></h2>
-        <p><span>سفر</span> <span class="description-title">رایحه‌ها</span></p>
+      <div class="container section-title" data-aos="fade-up">        <p><span>سفر</span> <span class="description-title">رایحه‌ها</span></p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -448,7 +464,7 @@
     </section><!-- /ُSafar Rayehe Section -->
 
     <!-- Why Us Section -->
-    <section id="why-us" class="why-us section">
+    <section id="why-us" class="why-us section light-background">
       <!-- Section Title -->
       <div class="why-box">
         <div class="mx-5">
@@ -462,7 +478,7 @@
     </section><!-- /Why Us Section -->
 
     <!-- Team Section -->
-    <section id="chefs" class="chefs section light-background">
+    <section id="chefs" class="chefs section">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <p><span>تیم</span> <span class="description-title">ما<br></span></p>
@@ -555,11 +571,11 @@
     </section><!-- /Team Section -->
 
     <!-- Get Section -->
-    <section id="about" class="about section" style="direction: ltr;">
+    <section id="about" class="about section light-background" style="direction: ltr;">
 
           <!-- Section Title -->
           <div class="container section-title" data-aos="fade-up">
-            <p><span>چیزی که شما</span> <span class="description-title">به دست می‌آورید:</span></p>
+            <p><span>چیزی که شما</span> <span class="description-title">به دست می‌آورید</span></p>
           </div><!-- End Section Title -->
     
           <div class="container">
@@ -569,16 +585,18 @@
                 <img src="assets/images/maxim-lozyanko-qFsxwpoDIB4-unsplash.jpg" class="img-fluid mb-4" alt="">
               </div>
               <div class="col-lg-5" data-aos="fade-up" data-aos-delay="250">
-                <div class="content ps-0 ps-lg-5">
-                  <ul>
-                    <li><i class="bi bi-check-circle-fill"></i> <span>تجربه شخصی و منحصر به فرد: با هوش مصنوعی ما، عطری را کشف کنید که به طور کامل با شخصیت و سلیقه شما هماهنگ باشد.</span></li>
-                    <li><i class="bi bi-check-circle-fill"></i> <span>سفر بویایی خاص: هر بار که از آتریس استفاده می‌کنید، به دنیای عطری وارد می‌شوید که حال و احساسات شما را تغییر می‌دهد.</span></li>
-                    <li><i class="bi bi-check-circle-fill"></i> <span>دسترسی به محصولات ممتاز: از مجموعه‌ای از عطرهای باکیفیت و منحصر به فرد که با دقت برای شما انتخاب شده‌اند، انتخاب کنید.</span></li>
-                    <li><i class="bi bi-check-circle-fill"></i> <span>عضو جامعه عطرها: به گروهی از دوستداران عطر بپیوندید که به دنبال تجربیات جدید و به یاد ماندنی هستند.</span></li>
-                    <li><i class="bi bi-check-circle-fill"></i> <span>خدمات ویژه و مشاوره: از مشاوره‌های تخصصی و خدمات انحصاری ما بهره‌مند شوید تا انتخابی دقیق‌تر و آگاهانه‌تر داشته باشید. استفاده از فناوری </span></li>
-                  </ul>
-                </div>
+                <div class="content ps-0 ps-lg-5" style="direction: rtl;">
+                  <ul class="justify-text">
+                    <li><span class="font-size-bold">✓ تجربه شخصی و منحصر به فرد:</span> با هوش مصنوعی ما، عطری را کشف کنید که به طور کامل با شخصیت و سلیقه شما هماهنگ باشد.</li>
+                    <li><span class="font-size-bold">✓ سفر بویایی خاص:</span> هر بار که از آتریس استفاده می‌کنید، به دنیای عطری وارد می‌شوید که حال و احساسات شما را تغییر می‌دهد.</li>
+                    <li><span class="font-size-bold">✓ دسترسی به محصولات ممتاز:</span> از مجموعه‌ای از عطرهای باکیفیت و منحصر به فرد که با دقت برای شما انتخاب شده‌اند، انتخاب کنید.</li>
+                    <li><span class="font-size-bold">✓ عضو جامعه عطرها:</span> به گروهی از دوستداران عطر بپیوندید که به دنبال تجربیات جدید و به یاد ماندنی هستند.</li>
+                    <li><span class="font-size-bold">✓ خدمات ویژه و مشاوره:</span> از مشاوره‌های تخصصی و خدمات انحصاری ما بهره‌مند شوید تا انتخابی دقیق‌تر و آگاهانه‌تر داشته باشید. استفاده از فناوری</li>
+                </ul>
               </div>
+              
+            </div>
+            
             </div>
     
           </div>
@@ -586,7 +604,7 @@
     </section><!-- /Get Section -->
 
     <!-- Fit perfumes Section -->
-    <section id="book-a-table" class="book-a-table section light-background">      
+    <section id="book-a-table" class="book-a-table section">      
         <div class="container">
             <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-6 reservation-img" style="background-image: url(assets/images/bg-0-desktop_aef261.jpg);"></div>
@@ -594,15 +612,14 @@
                     <!-- Centering the content -->
                     <div class="container text-center">
                         <!-- Text content container -->
-                        <div class="section-title" data-aos="fade-up">
-                            <p><span>مناسب‌ترین </span> <span class="description-title mb-5">عطرها<br></span></p>
-                            <h6>عطر چیزی فراتر از یک رایحه است؛ بازتابی از شخصیت، احساسات و سبک زندگی شماست. در عطریس، ما به شما کمک می‌کنیم تا از میان مجموعه‌ای از عطرهای خاص و متنوع، آنچه بیشترین هماهنگی با شما دارد را بیابید. با ما همراه شوید تا عطر ایده‌آل خود را کشف کنید و تجربه‌ای منحصربه‌فرد داشته باشید.
+                        <div class="section-title mx-5" data-aos="fade-up" style="text-align: justify;">
+                            <p><span>مناسب‌ترین </span><span class="description-title mb-5">عطرها<br></span></p>
+                            <h6 class="mt-4">عطر چیزی فراتر از یک رایحه است؛ بازتابی از شخصیت، احساسات و سبک زندگی شماست. در عطریس، ما به شما کمک می‌کنیم تا از میان مجموعه‌ای از عطرهای خاص و متنوع، آنچه بیشترین هماهنگی با شما دارد را بیابید. با ما همراه شوید تا عطر ایده‌آل خود را کشف کنید و تجربه‌ای منحصربه‌فرد داشته باشید.
                             </h6>
-                        </div>
-                        <!-- Button centered below the text -->
-                        <div class="mt-3">
-                            <a class="btn-getstarted mt-5" href="test.html">شروع شخصیت شناسی</a>
-                        </div>
+                            <div class="d-flex justify-content-center" data-aos="fade-up">
+                              <a class="btn-getstarted mt-5" href="test.html">شروع شخصیت شناسی</a>
+                          </div>
+                        </div>                        
                     </div>
                 </div>
             </div>
@@ -612,37 +629,36 @@
     <!-- Find perfume Section -->
     <section id="stats" class="stats section dark-background">
       <img src="assets/images/trung-do-bao-AynL5XXQsGc-unsplash.jpg" alt="" data-aos="fade-in">
-      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-        <div class="container">
-          <div class="row gy-4">  
-            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
-              <div class="why-box">
-                <h3>عطر خود را با ما پیدا کنید</h3>
-                <p>ساخت پروفایل بویایی خود را با پرسشنامه ما آغاز کنید. به ما در شناخت درست خود کمک کنید و ما عطرهایی را که با سلیقه شما سازگارند، پیدا خواهیم کرد
-                </p>
-                <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
-                <a class="btn-getstarted mt-5" href="test.html">شروع شخصیت شناسی</a>
+      <div class="container position-relative" data-aos="fade-up">
+          <div class="row gy-4">
+              <div class="col-lg-5" data-aos="fade-up">
+                  <div class="why-box" style="text-align: justify;">
+                      <h3>عطر خود را با ما پیدا کنید</h3>
+                      <p>ساخت پروفایل بویایی خود را با پرسشنامه ما آغاز کنید. به ما در شناخت درست خود کمک کنید و ما عطرهایی را که با سلیقه شما سازگارند، پیدا خواهیم کرد
+                      </p>
+                      <!-- Moved the button inside why-box to ensure proper placement -->
+                      <div class="d-flex justify-content-center" data-aos="fade-up">
+                          <a class="btn-getstarted mt-5" href="test.html">شروع شخصیت شناسی</a>
+                      </div>
+                  </div>
               </div>
-              </div>
-            </div><!-- End Why Box -->
-            </div> 
           </div>
-        </div>
       </div>
-    </section><!-- /Find perfume Section -->
+  </section>
+  <!-- /Find perfume Section -->
 
     <!-- Guide Section -->
     <section id="about" class="stats section dark-background mt-5" style="direction: ltr;">
       <img src="assets/images/s8.jpg" alt="" data-aos="fade-in">
-      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+      <div class="container position-relative" data-aos="fade-up">
         <div class="container">
           <div class="row gy-4">  
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100"  style="direction: rtl;">
-              <div class="why-box">
-                <h3>راهنمای خرید حضوری و آنلاین</h3>
+            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100"  style="direction: rtl;">
+              <div class="why-box" style="text-align: justify;">
+                <h3 class="mb-4">راهنمای خرید حضوری و آنلاین</h3>
                 <p>برای تجربه خرید بی‌نظیر عطرها به دو صورت حضوری و آنلاین، راهنمای کامل ما را ببینید و از امکانات و خدمات ویژه بهره‌مند شوید. برای اطلاعات بیشتر کلیک کنید.
                 </p>
-                <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="d-flex justify-content-center" data-aos="fade-up">
                 <a class="btn-getstarted mt-5" href="#">راهنمای خرید</a>
                 </div>
               </div>
@@ -679,27 +695,27 @@
     </section><!-- /Articles Section -->
 
     <!-- Pictures Section -->
-     <section class="book-a-table section">
 
+    <section id="book-a-table" class="book-a-table section">      
       <div class="container">
-        <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-6 reservation-img" style="background-image: url(assets/images/step-2_549f9e.jpg);"></div>
-            <div class="col-lg-6 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
-                <!-- Centering the content -->
-                <div class="container text-center">
-                    <!-- Text content container -->
-                    <div class="section-title" data-aos="fade-up">
-                        <p><span>گالری </span> <span class="description-title">تصاویر<br></span></p>
-                    </div>
-                    <!-- Button centered below the text -->
-                    <div class="mt-3">
-                        <a class="btn-getstarted mt-5" href="#">مشاهده</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-     </section>
+          <div class="row g-0" data-aos="fade-up">
+              <div class="col-lg-6 reservation-img" style="background-image: url(assets/images/step-2_549f9e.jpg);"></div>
+              <div class="col-lg-6 d-flex align-items-center reservation-form-bg" data-aos="fade-up">
+                  <!-- Remove the nested container -->
+                  <div class="text-center w-100">
+                      <!-- Text content container -->
+                      <div class="section-title mx-5" data-aos="fade-up" style="text-align: justify;">
+                          <p><span>گالری </span><span class="description-title mb-5">تصاویر<br></span></p>
+                          <div class="d-flex justify-content-center" data-aos="fade-up">
+                              <a class="btn-getstarted mt-5" href="#">مشاهده</a>
+                          </div>
+                      </div>                        
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
 
     <!-- Perfumes Section -->
     <section id="menu" class="menu section light-background">
@@ -710,7 +726,7 @@
       </div><!-- End Section Title -->
 
       <div class="container">
-        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+        <div class="tab-content" data-aos="fade-up">
 
           <div class="tab-pane fade active show" id="menu-starters">
             <div class="row gy-5">
@@ -820,7 +836,7 @@
         <p>نظرات بیش از 50 نفر از عاشقان <span class="description-title">عطریس</span></p>
       </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container" data-aos="fade-up">
 
         <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
@@ -946,20 +962,18 @@
 
     <!-- Create account Section -->
     <section id="stats" class="stats section dark-background">
-      <img src="assets/images/s9.jpg" alt="" data-aos="fade-in">
-      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-        <div class="container">
+      <img src="assets/images/s9.jpg" alt="">
+      <div class="container position-relative">
           <div class="row gy-4">  
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-8">
               <div class="why-box">
                 <h5>بیش از 100 عطر در انتظار شماست! همین الان با ما همراه شو</h5>
-                <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
-                <a class="btn-getstarted mt-5" href="signup.html">ساخت حساب کاربری</a>
               </div>
+              <div class="d-flex justify-content-center">
+                <a class="btn-getstarted mt-5" href="signup.html">ساخت حساب کاربری</a>
               </div>
             </div><!-- End Why Box -->
             </div> 
-          </div>
         </div>
       </div>
     </section><!-- /Create account Section -->
