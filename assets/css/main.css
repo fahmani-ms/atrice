@@ -289,13 +289,7 @@ h6 {
   order: 3; /* Maintains order in flex */
 }
 
-/* General container adjustment */
-.container {
-  padding: 0; /* Ensures no padding around the container */
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Space between logo and nav */
-}
+
 
 /* Optional: Reduce space between nav items for a compact look */
 .navmenu ul {

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Test</title>
+  <title>عطریس - تست شخصیت‌شناسی</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -13,9 +13,9 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <!-- <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet"> -->
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,8 +26,6 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
       body {
           font-family: Arial, sans-serif;
@@ -158,114 +156,353 @@
           text-align: center;
           margin-top: 20px;
       }
+
+      /* Ensure the hero section has no padding or margin */
+    #hero {
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Make the image cover the whole width of the hero section */
+    .hero-image {
+        width: 100%;  /* Full width of the page */
+        height: auto; /* Maintain the aspect ratio */
+        display: block; /* Removes any space below the image */
+        object-fit: cover; /* Ensures the image covers the area without distortion */
+    }
+
+    /* Optional: Adjust the container if needed */
+    #hero .container {
+        position: relative; /* To position elements on top of the image */
+        /* You can add padding or other styles here if needed */
+    }
+
+    /* Base styles for the divider line */
+    .divider-line {
+        position: absolute;
+        background-color: #ce1212; /* Choose a color for the line */
+    }
+
+    /* Vertical line for desktop view */
+    @media (min-width: 992px) { /* Adjust the min-width based on your layout */
+        .divider-line {
+            width: 0.5px; /* Thickness of the line */
+            height: 80%; /* Height relative to the parent container */
+            top: 10%; /* Adjust to center the line vertically */
+            left: 50%; /* Center the line horizontally */
+            transform: translateX(-50%);
+        }
+    }
+
+    /* Horizontal line for mobile view */
+    @media (max-width: 991px) { /* Adjust the max-width based on your layout */
+        .divider-line {
+            height: 2px; /* Thickness of the line */
+            width: 80%; /* Width relative to the parent container */
+            top: 50%; /* Center the line vertically */
+            left: 10%; /* Position the line with some margin on the left */
+            transform: translateY(-50%);
+        }
+    }
+
+    .hidden-item {
+    display: none;
+}
+
+/* Styles for the search icon */
+.search-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Styles for the search semi-page */
+.search-semi-page {
+    position: fixed;
+    top: -100%; /* Start off-screen */
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+    padding: 40px; /* Adjust padding for space from edges */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: top 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for centering content */
+.search-container-wrapper {
+    max-width: 800px; /* Adjust the width of the container */
+    width: 100%;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Flex container for the two columns */
+.search-content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* Styling for the search input */
+.search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Suggestions styling */
+.search-suggestions {
+    width: 50%; /* Half of the container width */
+}
+
+.search-suggestions p {
+    margin: 5px 0;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Styling for the search image */
+.search-image {
+    width: 50%; /* Half of the container width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Close button styling */
+.close-search {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
   </style>
 </head>
 
 <body class="starter-page-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">عطریس</h1>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">خانه<br></a></li>
-          <li class="dropdown"><a href="#"><span>عطرها</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+    <header id="header" class="header d-flex align-items-center sticky-top mb-5">
+        <div class="container position-relative d-flex align-items-center justify-content-between">
+    
+          <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <img src="assets/img/logo.png" alt=""> -->
+            <h1 class="sitename">عطریس</h1>
+          </a>
+    
+          <nav id="navmenu" class="navmenu">
             <ul>
-              <li><a href="#">همه عطرها</a></li>
-              <li><a href="#">جدیدها</a></li>
-              <li><a href="#">پرفروش‌ها</a></li>
-              <li><a href="#">برتر</a></li>
-              <li class="dropdown"><a href="#"><span>مناسب برای</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li><a href="#hero" class="active">خانه<br></a></li>
+              <li class="dropdown"><a href="#"><span>عطرها</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="#">آقایان</a></li>
-                  <li><a href="#">خانم‌ها</a></li>
-                  <li><a href="#">خانم‌ها و آقایان</a></li>
+                  <li><a href="#">همه عطرها</a></li>
+                  <li><a href="#">جدیدها</a></li>
+                  <li><a href="#">پرفروش‌ها</a></li>
+                  <li><a href="#">برتر</a></li>
+                  <li class="dropdown"><a href="#"><span>مناسب برای</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                      <li><a href="#">آقایان</a></li>
+                      <li><a href="#">خانم‌ها</a></li>
+                      <li><a href="#">خانم‌ها و آقایان</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a href="#"><span>مناسب فصل</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                      <li><a href="#">بهار</a></li>
+                      <li><a href="#">تابستان</a></li>
+                      <li><a href="#">پاییز</a></li>
+                      <li><a href="#">زمستان</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a href="#"><span>طبع</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                      <li><a href="#">خنک</a></li>
+                      <li><a href="#">معتدل</a></li>
+                      <li><a href="#">گرم</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a href="#"><span>گروه بویایی</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                      <li><a href="#">آروماتیک</a></li>
+                      <li><a href="#">گلی</a></li>
+                      <li><a href="#">مرکبایی</a></li>
+                      <li><a href="#">موارد بیشتر +</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a href="#"><span>اقلیم</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                      <li><a href="#">گرم و خشک</a></li>
+                      <li><a href="#">سرد کوهستانی</a></li>
+                      <li><a href="#">معتدل و مرطوب</a></li>
+                      <li><a href="#">گرم و مرطوب</a></li>
+                    </ul>
+                  </li>
                 </ul>
               </li>
-              <li class="dropdown"><a href="#"><span>مناسب فصل</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">بهار</a></li>
-                  <li><a href="#">تابستان</a></li>
-                  <li><a href="#">پاییز</a></li>
-                  <li><a href="#">زمستان</a></li>
-                </ul>
+              <li><a href="#menu">رویدادها و کلاس‌ها</a></li>
+              <li><a href="#articles">مقالات</a></li>
+              <li><a href="#chefs">مشاوره</a></li>
+              
+              <li><a href="#contact">تماس با ما</a></li>
+              <li>
+                <a href="javascript:void(0);" id="search-icon" class="search-icon">
+                    <i class="bi bi-search"></i>
+                </a>
+            </li>
+              <li>
+                <a href="store.html">فروشگاه‌ها</a>
               </li>
-              <li class="dropdown"><a href="#"><span>طبع</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">خنک</a></li>
-                  <li><a href="#">معتدل</a></li>
-                  <li><a href="#">گرم</a></li>
-                </ul>
+              <li><a href="#">
+                <img src="assets/icon/new-large-ibou-5-icons-ibou-pocket-white-bag.png" width="30">
+              </a>
               </li>
-              <li class="dropdown"><a href="#"><span>گروه بویایی</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">آروماتیک</a></li>
-                  <li><a href="#">گلی</a></li>
-                  <li><a href="#">مرکبایی</a></li>
-                  <li><a href="#">موارد بیشتر +</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>اقلیم</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">گرم و خشک</a></li>
-                  <li><a href="#">سرد کوهستانی</a></li>
-                  <li><a href="#">معتدل و مرطوب</a></li>
-                  <li><a href="#">گرم و مرطوب</a></li>
-                </ul>
+              <li>
+                <a class="btn-getstarted" href="index.html#book-a-table">ورود</a>
               </li>
             </ul>
-          </li>
-          <li><a href="#menu">رویدادها و کلاس‌ها</a></li>
-          <li><a href="#articles">مقالات</a></li>
-          <li><a href="#chefs">مشاوره</a></li>
-          
-          <li><a href="#contact">تماس با ما</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <a class="btn-getstarted" href="index.html#book-a-table">ورود</a>
-
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          </nav>
+        </div>
+        <!-- Search Semi-Page -->
+      <div id="search-semi-page" class="search-semi-page"">
+        <div class="search-container-wrapper">
+            <button class="close-search">X</button>
+            <!-- Centered Search Input -->
+            <input type="text" class="search-input" placeholder="جستجوی عطر...">
+            <!-- Two-column content -->
+            <div class="search-content">
+                <div class="search-suggestions">
+                    <!-- Sample suggestions -->
+                    <p>پیشنهاد 1</p>
+                    <p>پیشنهاد 2</p>
+                    <p>پیشنهاد 3</p>
+                </div>
+                <div class="search-image">
+                    <img src="assets/img/events-1.jpg" alt="Sample">
+                </div>
+            </div>
+        </div>
     </div>
-  </header>
+      </header>
 
   <main class="main">
 
     <div class="survey-container">
       <!-- Survey questions and options -->
       <div class="question active" data-question="1">
-          <h4>سوال اول: به بهار علاقه دارید یا تابستان؟</h4>
+          <h4>دنبال چه عطری می‌گردی؟</h4>
           <div class="options">
               <div class="option-container" onclick="selectOption(this)">
-                  <img src="assets\img\events-1.jpg" alt="Option 1">
+                  <img src="assets/test/pexels-duane-viljoen-3411736-10604607.jpg" width="40%" height="200px" alt="Option 1">
+                  <h5 class="mt-3">مردانه</h5>
                   <div class="radio-indicator"></div>
               </div>
               <div class="option-container" onclick="selectOption(this)">
-                  <img src="assets\img\events-2.jpg" alt="Option 2">
+                  <img src="assets/test/laura-chouette-2H_8WbVPRxM-unsplash.jpg" width="40%" height="200px" alt="Option 2">
+                  <h5 class="mt-3">زنانه</h5>
                   <div class="radio-indicator"></div>
               </div>
           </div>
       </div>
   
       <div class="question" data-question="2">
-          <h4>سوال دوم: گاو را بیشتر دوست دارید یا الاغ را؟</h4>
+          <h4>وقتی به یک محیط گرم یا سرد فکر میکنی، کدام یک را بیشتر دوست دارید؟</h4>
           <div class="options">
-              <div class="option-container" onclick="selectOption(this)">
-                  <img src="assets\img\events-1.jpg" alt="Option 4">
-                  <div class="radio-indicator"></div>
-              </div>
-              <div class="option-container" onclick="selectOption(this)">
-                  <img src="assets\img\events-2.jpg" alt="Option 5">
-                  <div class="radio-indicator"></div>
-              </div>
+            <div class="option-container" onclick="selectOption(this)">
+                <img src="assets/test/pexels-duane-viljoen-3411736-10604607.jpg" width="40%" height="200px" alt="Option 1">
+                <h5 class="mt-3">مردانه</h5>
+                <div class="radio-indicator"></div>
+            </div>
+            <div class="option-container" onclick="selectOption(this)">
+                <img src="assets/test/laura-chouette-2H_8WbVPRxM-unsplash.jpg" width="40%" height="200px" alt="Option 2">
+                <h5 class="mt-3">زنانه</h5>
+                <div class="radio-indicator"></div>
+            </div>
+        </div>
+      </div>
+
+    <div class="question" data-question="3">
+        <h4>وقتی به یک محیط گرم یا سرد فکر میکنی، کدام یک را بیشتر دوست دارید؟</h4>
+        <div class="options">
+          <div class="option-container" onclick="selectOption(this)">
+              <img src="assets/test/pexels-duane-viljoen-3411736-10604607.jpg" width="40%" height="200px" alt="Option 1">
+              <h5 class="mt-3">مردانه</h5>
+              <div class="radio-indicator"></div>
+          </div>
+          <div class="option-container" onclick="selectOption(this)">
+              <img src="assets/test/laura-chouette-2H_8WbVPRxM-unsplash.jpg" width="40%" height="200px" alt="Option 2">
+              <h5 class="mt-3">زنانه</h5>
+              <div class="radio-indicator"></div>
           </div>
       </div>
+    </div>
+
+    <div class="question" data-question="4">
+        <h4>وقتی به یک محیط گرم یا سرد فکر میکنی، کدام یک را بیشتر دوست دارید؟</h4>
+        <div class="options">
+          <div class="option-container" onclick="selectOption(this)">
+              <img src="assets/test/pexels-duane-viljoen-3411736-10604607.jpg" width="40%" height="200px" alt="Option 1">
+              <h5 class="mt-3">مردانه</h5>
+              <div class="radio-indicator"></div>
+          </div>
+          <div class="option-container" onclick="selectOption(this)">
+              <img src="assets/test/laura-chouette-2H_8WbVPRxM-unsplash.jpg" width="40%" height="200px" alt="Option 2">
+              <h5 class="mt-3">زنانه</h5>
+              <div class="radio-indicator"></div>
+          </div>
+      </div>
+    </div>
+
+    <div class="question" data-question="5">
+        <h4>وقتی به یک محیط گرم یا سرد فکر میکنی، کدام یک را بیشتر دوست دارید؟</h4>
+        <div class="options">
+          <div class="option-container" onclick="selectOption(this)">
+              <img src="assets/test/pexels-duane-viljoen-3411736-10604607.jpg" width="40%" height="200px" alt="Option 1">
+              <h5 class="mt-3">مردانه</h5>
+              <div class="radio-indicator"></div>
+          </div>
+          <div class="option-container" onclick="selectOption(this)">
+              <img src="assets/test/laura-chouette-2H_8WbVPRxM-unsplash.jpg" width="40%" height="200px" alt="Option 2">
+              <h5 class="mt-3">زنانه</h5>
+              <div class="radio-indicator"></div>
+          </div>
+      </div>
+    </div>
+
+    <div class="question" data-question="6">
+        <h4>وقتی به یک محیط گرم یا سرد فکر میکنی، کدام یک را بیشتر دوست دارید؟</h4>
+        <div class="options">
+          <div class="option-container" onclick="selectOption(this)">
+              <img src="assets/test/pexels-duane-viljoen-3411736-10604607.jpg" width="40%" height="200px" alt="Option 1">
+              <h5 class="mt-3">مردانه</h5>
+              <div class="radio-indicator"></div>
+          </div>
+          <div class="option-container" onclick="selectOption(this)">
+              <img src="assets/test/laura-chouette-2H_8WbVPRxM-unsplash.jpg" width="40%" height="200px" alt="Option 2">
+              <h5 class="mt-3">زنانه</h5>
+              <div class="radio-indicator"></div>
+          </div>
+      </div>
+    </div>
   
       <!-- Navigation buttons -->
       <div class="nav-buttons">
