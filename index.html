@@ -79,93 +79,6 @@
     display: none;
 }
 
-/* Styles for the search icon */
-.search-icon {
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-/* Styles for the search semi-page */
-.search-semi-page {
-    position: fixed;
-    top: -100%; /* Start off-screen */
-    left: 0;
-    right: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
-    z-index: 1000;
-    padding: 40px; /* Adjust padding for space from edges */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: top 0.3s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Container for centering content */
-.search-container-wrapper {
-    max-width: 800px; /* Adjust the width of the container */
-    width: 100%;
-    background: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* Flex container for the two columns */
-.search-content {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-/* Styling for the search input */
-.search-input {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
-/* Suggestions styling */
-.search-suggestions {
-    width: 50%; /* Half of the container width */
-}
-
-.search-suggestions p {
-    margin: 5px 0;
-    cursor: pointer;
-    color: #333;
-}
-
-/* Styling for the search image */
-.search-image {
-    width: 50%; /* Half of the container width */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.search-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-/* Close button styling */
-.close-search {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-}
-
 .section-title {
     display: flex; /* Sets the display property to flex */
     align-items: center; /* Vertically centers items if they are not already aligned */
@@ -194,7 +107,7 @@
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">عطریس</h1>
+        <h1 class="sitename" style="color: white;">عطریس</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -264,32 +177,32 @@
           </a>
           </li>
           <li>
-            <a class="btn-getstarted" href="index.html#book-a-table">ورود</a>
+            <a class="btn-getstarted" href="login.html">ورود</a>
           </li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
     </div>
     <!-- Search Semi-Page -->
-  <div id="search-semi-page" class="search-semi-page"">
-    <div class="search-container-wrapper">
-        <button class="close-search">X</button>
-        <!-- Centered Search Input -->
-        <input type="text" class="search-input" placeholder="جستجوی عطر...">
-        <!-- Two-column content -->
-        <div class="search-content">
-            <div class="search-suggestions">
-                <!-- Sample suggestions -->
-                <p>پیشنهاد 1</p>
-                <p>پیشنهاد 2</p>
-                <p>پیشنهاد 3</p>
-            </div>
-            <div class="search-image">
-                <img src="assets/img/events-1.jpg" alt="Sample">
-            </div>
-        </div>
-    </div>
-</div>
+    <div id="search-semi-page" class="search-semi-page">
+      <div class="search-container-wrapper">
+          <button class="close-search">X</button>
+          <!-- Centered Search Input -->
+          <input type="text" class="search-input" placeholder="جستجوی عطر...">
+          <!-- Two-column content -->
+          <div class="search-content">
+              <div class="search-suggestions">
+                  <!-- Sample suggestions -->
+                  <p>پیشنهاد 1</p>
+                  <p>پیشنهاد 2</p>
+                  <p>پیشنهاد 3</p>
+              </div>
+              <div class="search-image">
+                  <img src="assets/img/events-1.jpg" alt="Sample">
+              </div>
+          </div>
+      </div>
+  </div>
   </header>
 
   <main class="main">
@@ -863,7 +776,7 @@
                     <div class="testimonial-content">
                       <p>
                         <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
+                        <span>من حضوری از دستگاه استفاده کردم و به نظر من اسپری کردن عطر در اون لحظه خیلی ایده خوبی بود و لذت بردم. حتما عطریس رو به دوستانم معرفی میکنم.</span>
                         <i class="bi bi-quote quote-icon-right"></i>
                       </p>
                       <h3>Saul Goodman</h3>
@@ -887,7 +800,7 @@
                     <div class="testimonial-content">
                       <p>
                         <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
+                        <span>همیشه تغییر و انتخاب عطر دست برام سخت بود. ممنون از عطریس که بابت این قضیه به من کمک کرد</span>
                         <i class="bi bi-quote quote-icon-right"></i>
                       </p>
                       <h3>Sara Wilsson</h3>
@@ -911,7 +824,7 @@
                     <div class="testimonial-content">
                       <p>
                         <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
+                        <span>من به تازگی به عطریس ملحق شده‌ام و بسیار هیجان زده هستم که عطری که مناسب من هست و سفارش داده‌ام به دستم برسد و از آن استفاده کنم.</span>
                         <i class="bi bi-quote quote-icon-right"></i>
                       </p>
                       <h3>Jena Karlis</h3>
@@ -935,7 +848,7 @@
                     <div class="testimonial-content">
                       <p>
                         <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
+                        <span>از کیفیت عطرها و انواع زیاد اون بسیار راضی بودم.</span>
                         <i class="bi bi-quote quote-icon-right"></i>
                       </p>
                       <h3>John Larson</h3>

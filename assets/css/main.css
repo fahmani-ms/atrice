@@ -48,15 +48,19 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #7f7f90;  /* The default color of the main navmenu links */
-  --nav-hover-color: #ce1212; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-color: white;  /* The default color of the main navmenu links */
+  --nav-hover-color: yellow; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #7f7f90; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ce1212; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-background-color: black; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #ffffff; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: yellow; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+
+.header {
+
+}
 
 .light-background {
   --background-color: #f2f2f2;
@@ -243,7 +247,7 @@ h6 {
 --------------------------------------------------------------*/
 .header {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: black;
   padding: 20px 0;
   transition: all 0.5s;
   z-index: 997;
@@ -623,6 +627,153 @@ h6 {
   .mobile-nav-active .navmenu>ul {
     display: block;
   }
+}
+
+
+
+/*--------------------------------------------------------------
+# Search box
+--------------------------------------------------------------*/
+
+/* Styles for the search icon */
+.search-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Styles for the search semi-page */
+.search-semi-page {
+  position: fixed;
+  top: -100%; /* Start off-screen */
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+  padding: 40px; /* Adjust padding for space from edges */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: top 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for centering content */
+.search-container-wrapper {
+  max-width: 800px; /* Adjust the width of the container */
+  width: 100%;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Flex container for the two columns */
+.search-content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* Styling for the search input */
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Suggestions styling */
+.search-suggestions {
+  width: 50%; /* Half of the container width */
+}
+
+.search-suggestions p {
+  margin: 5px 0;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Styling for the search image */
+.search-image {
+  width: 50%; /* Half of the container width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Close button styling */
+.close-search {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+/* Profile icon styles */
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: border 0.3s ease;
+}
+
+.profile-icon:hover {
+  border: 2px solid #007bff; /* Change border color on hover */
+}
+
+/* Dropdown menu styles */
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px 0;
+  z-index: 1000;
+  list-style: none;
+  margin-top: 10px;
+  width: 150px; /* Adjust the width of the dropdown menu */
+}
+
+.profile-dropdown .dropdown-menu li {
+  padding: 8px 15px;
+  text-align: right; /* Adjusted for RTL layout */
+}
+
+.profile-dropdown .dropdown-menu li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.profile-dropdown .dropdown-menu li a:hover {
+  background-color: #000000;
+}
+
+/* Show dropdown on icon click */
+.profile-dropdown.open .dropdown-menu {
+  display: block;
 }
 
 /*--------------------------------------------------------------

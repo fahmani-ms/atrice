@@ -32,18 +32,65 @@
   <!-- Swiper JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <style>
-    /* Style for the container and page title */
-    .container {
-        width: 80%;
-        margin: 0 auto;
-        padding: 20px;
-        text-align: center;
+    /* Ensuring the image fits the swiper frame */
+    .center-map {
+        width: 100%;
+        overflow: hidden;
     }
 
-    .page-title {
-        font-size: 24px;
-        margin-bottom: 20px;
+    .center-image {
+        width: 100%;
+        height: 150px;
+        display: block;
     }
+
+    /* Store name and address styling */
+    .store-info {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .center-name, .center-address {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0 5px;
+        font-size: 18px;
+    }
+
+    .icon {
+        width: 30px;
+        height: 30px;
+        margin-left: 5px; /* Adjusted margin for closer alignment */
+        display: inline-block;
+        vertical-align: middle; /* Ensure icons are vertically aligned */
+    }
+
+    /* Map Icons styling */
+    .map-icons {
+        display: flex;
+        justify-content: center; /* Centering the icons */
+        gap: 40px; /* Space between the map icons */
+        margin-top: 20px;
+    }
+
+    .map-icon {
+        width: 35px; /* Adjust the size of map icons as needed */
+        height: 35px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .center-name, .center-address {
+            font-size: 16px;
+        }
+        
+        .icon, .map-icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
 
     /* Style for the Swiper slides */
     .swiper-container {
@@ -77,9 +124,51 @@
         margin-bottom: 10px;
     }
 
-    .center-map {
-        margin-top: 10px;
-        height: 150px;
+    /* Base styles for the divider line */
+    .divider-line {
+        position: absolute;
+        background-color: #ce1212; /* Choose a color for the line */
+    }
+
+    /* Vertical line for desktop view */
+    @media (min-width: 992px) { /* Adjust the min-width based on your layout */
+        .divider-line {
+            width: 0.5px; /* Thickness of the line */
+            height: 80%; /* Height relative to the parent container */
+            top: 10%; /* Adjust to center the line vertically */
+            left: 50%; /* Center the line horizontally */
+            transform: translateX(-50%);
+        }
+    }
+
+    /* Horizontal line for mobile view */
+    @media (max-width: 991px) { /* Adjust the max-width based on your layout */
+        .divider-line {
+            height: 2px; /* Thickness of the line */
+            width: 80%; /* Width relative to the parent container */
+            top: 50%; /* Center the line vertically */
+            left: 10%; /* Position the line with some margin on the left */
+            transform: translateY(-50%);
+        }
+    }
+
+
+
+.section-title {
+    display: flex; /* Sets the display property to flex */
+    align-items: center; /* Vertically centers items if they are not already aligned */
+    justify-content: center; /* Horizontally centers the content */
+    flex-direction: column; /* Ensures that the text is treated as a column (optional) */
+}
+
+.font-size-bold {
+        font-weight: bold; /* Ensures the text is bold */
+        /* Optional: Add other font styling here if needed */
+    }
+
+
+    .justify-text {
+        text-align: justify; /* Justify text within the list items */
     }
 
   </style>
@@ -88,80 +177,142 @@
 
 <body class="starter-page-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Yummy</h1>
-        <span>.</span>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero">Home<br></a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#chefs">Chefs</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="container position-relative d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="assets/img/logo.png" alt=""> -->
+                <h1 class="sitename" style="color: white;">عطریس</h1>
+            </a>
+    
+            <nav id="navmenu" class="navmenu">
                 <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
+                    <li><a href="index.html" class="active">خانه<br></a></li>
+                    <li class="dropdown"><a href="#"><span>عطرها</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                      <ul>
+                        <li><a href="#">همه عطرها</a></li>
+                        <li><a href="#">جدیدها</a></li>
+                        <li><a href="#">پرفروش‌ها</a></li>
+                        <li><a href="#">برتر</a></li>
+                        <li class="dropdown"><a href="#"><span>مناسب برای</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">آقایان</a></li>
+                            <li><a href="#">خانم‌ها</a></li>
+                            <li><a href="#">خانم‌ها و آقایان</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>مناسب فصل</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">بهار</a></li>
+                            <li><a href="#">تابستان</a></li>
+                            <li><a href="#">پاییز</a></li>
+                            <li><a href="#">زمستان</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>طبع</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">خنک</a></li>
+                            <li><a href="#">معتدل</a></li>
+                            <li><a href="#">گرم</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>گروه بویایی</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">آروماتیک</a></li>
+                            <li><a href="#">گلی</a></li>
+                            <li><a href="#">مرکبایی</a></li>
+                            <li><a href="#">موارد بیشتر +</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>اقلیم</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">گرم و خشک</a></li>
+                            <li><a href="#">سرد کوهستانی</a></li>
+                            <li><a href="#">معتدل و مرطوب</a></li>
+                            <li><a href="#">گرم و مرطوب</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="#menu">رویدادها و کلاس‌ها</a></li>
+                    <li><a href="#articles">مقالات</a></li>
+                    <li><a href="#chefs">مشاوره</a></li>
+                    <li><a href="#contact">تماس با ما</a></li>
+                    <li>
+                        <a href="javascript:void(0);" id="search-icon" class="search-icon">
+                            <i class="bi bi-search"></i>
+                        </a>
+                    </li>
+                    <li><a href="store.html">فروشگاه‌ها</a></li>
+                    <li>
+                        <a href="#">
+                            <img src="assets/icon/new-large-ibou-5-icons-ibou-pocket-white-bag.png" width="30">
+                        </a>
+                    </li>
+                    <!-- Profile icon with dropdown -->
+                    <li class="profile-dropdown">
+                        <a href="javascript:void(0);" id="profile-icon">
+                            <img src="assets/icon/user.png" class="profile-icon">
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a style="color: yellow;">نرگس فهمانی</a></li>
+                            <hr style="color: white">
+                            <li><a href="#">مدیریت عطرها</a></li>
+                            <li><a href="#">سفارشات</a></li>
+                            <li><a href="#">شخصیت‌شناسی</a></li>
+                            <li><a href="#">تاریخچه مشاوره</a></li>
+                            <hr style="color: white">
+                            <li><a href="#">خروج از حساب کاربری</a></li>
+                        </ul>
+                    </li>
                 </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    
+        <!-- Search Semi-Page -->
+        <div id="search-semi-page" class="search-semi-page">
+            <div class="search-container-wrapper">
+                <button class="close-search">X</button>
+                <!-- Centered Search Input -->
+                <input type="text" class="search-input" placeholder="جستجوی عطر...">
+                <!-- Two-column content -->
+                <div class="search-content">
+                    <div class="search-suggestions">
+                        <!-- Sample suggestions -->
+                        <p>پیشنهاد 1</p>
+                        <p>پیشنهاد 2</p>
+                        <p>پیشنهاد 3</p>
+                    </div>
+                    <div class="search-image">
+                        <img src="assets/img/events-1.jpg" alt="Sample">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-      <a class="btn-getstarted" href="index.html#book-a-table">Book a Table</a>
-
-    </div>
-  </header>
-
-  <main class="main">
+  <main class="main mx-5">
 
     <section id="about" class="about section" style="direction: ltr;">
       <div class="container">
         <div class="row gy-4">
-          <div class="col-lg-4">
-            <img src="assets/img/about.jpg" class="img-fluid mb-4" alt="">
+          <div class="col-lg-6">
+            <img src="assets/images/jay-huang-TUUY5yORBc0-unsplash.jpg" class="img-fluid mb-4" alt="">
           </div>
-          <div class="col-lg-8">
-            <div>
-              <h5>تحلیل ما از شما</h5>
-            <div class="content ps-0 ps-lg-5">
-              <ul>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
+          <div class="col-lg-6 content ps-0 ps-lg-5">
+            <div class="justify-text" style="direction: rtl;">
+              <h4>شعب حضوری فروشگاه</h4>
+              <p>دستگاه‌های تعاملی ما در مکان‌های مختلفی قرار دارند تا شما بتوانید به راحتی عطرهای مورد علاقه خود را تست و خریداری کنید. این دستگاه‌ها مکان‌های پر تردد مستقر شده‌اند تا تجربه‌ای متفاوت و شخصی‌شده را برای شما به ارمغان بیاورند.</p>
+              <div style="direction: rtl;">
+                <h4>خدمات دستگاه‌های تعاملی</h4>
+                <p>در هر شعبه، دستگاه‌های تعاملی ما به شما این امکان را می‌دهند که به راحتی عطرهای مورد علاقه خود را تست و خریداری کنید. امکانات موجود شامل:</p>
+                <ul class="justify-text">
+                  <li><span class="font-size-bold">✓ تست رایگان عطر: </span><br>با استفاده از دستگاه‌های ما می‌توانید عطرهای مختلف را تست کنید و رایحه‌ای را که بیشترین همخوانی را با شما دارد، پیدا کنید.</li>
+                  <li><span class="font-size-bold">✓ خرید نمونه عطر: </span><br>اگر می‌خواهید عطر را قبل از خرید کامل تست کنید، می‌توانید نمونه آن را از دستگاه تهیه کنید.</li>
+                  <li><span class="font-size-bold">✓ خرید عطر کامل: </span><br>بعد از انتخاب عطر مورد نظر، می‌توانید آن را به صورت کامل خریداری کنید و تجربه‌ای لذت‌بخش از خرید عطر داشته باشید.</li>
               </ul>
             </div>
-            </div>
-            <div>
-              <h5>تحلیل ما از شما</h5>
-            <div class="content ps-0 ps-lg-5">
-              <ul>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-              </ul>
-            </div>
-
             </div>
           </div>
         </div>
@@ -176,40 +327,70 @@
           <div class="swiper-wrapper">
               <!-- Swiper Slide 1 -->
               <div class="swiper-slide">
-                  <div class="center-box">
-                      <h3 class="center-name">شعبه 1</h3>
-                      <p class="center-address">123 Main Street, City</p>
-                      <p class="center-hours">Mon-Fri: 9AM - 5PM</p>
-                      <div class="center-map">
-                          <!-- Google Maps Embed -->
-                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="150" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-                      </div>
-                  </div>
+                <div class="center-box">
+                    <!-- Image Container -->
+                    <div class="center-map">
+                        <img src="assets/images/center1.jpg" class="center-image">
+                    </div>
+                    <!-- Store Name and Icon -->
+                    <div class="store-info">
+                        <h3 class="center-name">هدیش مال</h3>
+                        <!-- Store Address and Icon -->
+                        <p class="center-address">
+                            <img src="assets/icon/mall.png" class="icon"> تهران، پاسداران، میدان هروی، گلستان پنجم، شماره 14
+                        </p>
+                        <!-- Map Icons Container -->
+                        <div class="map-icons">
+                            <a href="#"><img src="assets/icon/images.png" class="map-icon"></a>
+                            <a href="#"><img src="assets/icon/unnamed.png" class="map-icon"></a>
+                        </div>
+                    </div>
+                </div>
               </div>
               <!-- Swiper Slide 2 -->
               <div class="swiper-slide">
-                  <div class="center-box">
-                      <h3 class="center-name">شعبه 2</h3>
-                      <p class="center-address">456 Elm Street, City</p>
-                      <p class="center-hours">Mon-Fri: 10AM - 6PM</p>
-                      <div class="center-map">
-                          <!-- Google Maps Embed -->
-                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="150" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-                      </div>
-                  </div>
+                <div class="center-box">
+                    <!-- Image Container -->
+                    <div class="center-map">
+                        <img src="assets/images/center2.jpg" class="center-image">
+                    </div>
+                    <!-- Store Name and Icon -->
+                    <div class="store-info">
+                        <h3 class="center-name">پالادیوم</h3>
+                        <!-- Store Address and Icon -->
+                        <p class="center-address">
+                            <img src="assets/icon/mall.png" class="icon">تهران، زعفرانیه ، خیابان مقدس اردبیلی، نرسیده به میدان الف
+                        </p>
+                        <!-- Map Icons Container -->
+                        <div class="map-icons">
+                            <a href="#"><img src="assets/icon/images.png" class="map-icon"></a>
+                            <a href="#"><img src="assets/icon/unnamed.png" class="map-icon"></a>
+                        </div>
+                    </div>
+                </div>
               </div>
               <!-- Swiper Slide 3 -->
               <div class="swiper-slide">
                 <div class="center-box">
-                    <h3 class="center-name">شعبه 3</h3>
-                    <p class="center-address">123 Main Street, City</p>
-                    <p class="center-hours">Mon-Fri: 9AM - 5PM</p>
+                    <!-- Image Container -->
                     <div class="center-map">
-                        <!-- Google Maps Embed -->
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="150" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                        <img src="assets/images/center3.png" class="center-image">
+                    </div>
+                    <!-- Store Name and Icon -->
+                    <div class="store-info">
+                        <h3 class="center-name">تیراژه</h3>
+                        <!-- Store Address and Icon -->
+                        <p class="center-address">
+                            <img src="assets/icon/mall.png" class="icon">تهران، بزرگراه اشرفی اصفهانی، پایین‌تر از میدان پونک، حدفاصل بزرگراه حکیم و همت 
+                        </p>
+                        <!-- Map Icons Container -->
+                        <div class="map-icons">
+                            <a href="#"><img src="assets/icon/images.png" class="map-icon"></a>
+                            <a href="#"><img src="assets/icon/unnamed.png" class="map-icon"></a>
+                        </div>
                     </div>
                 </div>
-            </div>
+              </div>
           </div>
   
           <!-- Move Swiper Pagination (Indicator) here, outside of swiper-wrapper -->
@@ -220,6 +401,83 @@
   
 
   </main>
+
+  <footer class="footer dark-background py-5 border-top">
+    <div class="container">
+        <div class="row">
+            <!-- عطریس Section -->
+            <div class="col-12 col-md-4 mb-3">
+                <h5>عطریس</h5>
+                <hr>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>درباره ما</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>تماس با ما</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>پرسش‌های مشتریان</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>سیاست و حفظ حریم شخصی</h6></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- خرید Section -->
+            <div class="col-12 col-md-4 mb-3">
+                <h5>خرید</h5>
+                <hr>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>راهنمای خرید حضوری</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>راهنمای خرید آنلاین</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>ارسال و تحویل کالا</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>پیگیری سفارش</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>ثبت شکایات</h6></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- اطلاعات تماس Section -->
+            <div class="col-12 col-md-4 mb-3">
+                <h5>اطلاعات تماس</h5>
+                <hr>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>تلفن</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>روزهای کاری</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>فروشگاه‌ها</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>ایمیل</h6></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Section -->
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+            <p class="mb-0">کلیه حقوق مادی و معنوی این سایت متعلق به شرکت عطریس می‌باشد.</p>
+            <ul class="list-unstyled d-flex mb-0">
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="assets/images/icons8-instagram-48.png" height="24"></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="assets/images/icons8-x-50.png" height="24"></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="assets/images/icons8-linkedin-48.png" height="24"></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -256,6 +514,32 @@
             },
         },
     });
+
+  </script>
+  <script>
+    document.getElementById('search-icon').addEventListener('click', function() {
+      document.getElementById('search-semi-page').style.top = '0';
+  });
+  
+  document.querySelector('.close-search').addEventListener('click', function() {
+      document.getElementById('search-semi-page').style.top = '-100%';
+  });
+  
+  </script>
+
+<script>
+    document.getElementById('profile-icon').addEventListener('click', function() {
+    const dropdown = this.parentElement;
+    dropdown.classList.toggle('open');
+});
+
+// Close the dropdown if the user clicks outside of it
+window.addEventListener('click', function(event) {
+    const dropdown = document.querySelector('.profile-dropdown');
+    if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('open');
+    }
+});
 
   </script>
 

@@ -29,7 +29,6 @@
   <style>
     /* style.css */
     body {
-        font-family: Arial, sans-serif;
         text-align: center;
     }
 
@@ -136,83 +135,176 @@
         transform: scale(1.05); /* Slight zoom effect on hover */
     }
 
+     /* Ensure the hero section has no padding or margin */
+     #hero {
+        padding: 0;
+        margin: 0;
+    }
 
+    /* Make the image cover the whole width of the hero section */
+    .hero-image {
+        width: 100%;  /* Full width of the page */
+        height: auto; /* Maintain the aspect ratio */
+        display: block; /* Removes any space below the image */
+        object-fit: cover; /* Ensures the image covers the area without distortion */
+    }
+
+    /* Optional: Adjust the container if needed */
+    #hero .container {
+        position: relative; /* To position elements on top of the image */
+        /* You can add padding or other styles here if needed */
+    }
+
+    /* Base styles for the divider line */
+    .divider-line {
+        position: absolute;
+        background-color: #ce1212; /* Choose a color for the line */
+    }
+
+    /* Vertical line for desktop view */
+    @media (min-width: 992px) { /* Adjust the min-width based on your layout */
+        .divider-line {
+            width: 0.5px; /* Thickness of the line */
+            height: 80%; /* Height relative to the parent container */
+            top: 10%; /* Adjust to center the line vertically */
+            left: 50%; /* Center the line horizontally */
+            transform: translateX(-50%);
+        }
+    }
+
+    /* Horizontal line for mobile view */
+    @media (max-width: 991px) { /* Adjust the max-width based on your layout */
+        .divider-line {
+            height: 2px; /* Thickness of the line */
+            width: 80%; /* Width relative to the parent container */
+            top: 50%; /* Center the line vertically */
+            left: 10%; /* Position the line with some margin on the left */
+            transform: translateY(-50%);
+        }
+    }
+
+    .hidden-item {
+    display: none;
+}
   </style>
 </head>
 
 <body class="starter-page-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">عطریس</h1>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">خانه<br></a></li>
-          <li class="dropdown"><a href="#"><span>عطرها</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">همه عطرها</a></li>
-              <li><a href="#">جدیدها</a></li>
-              <li><a href="#">پرفروش‌ها</a></li>
-              <li><a href="#">برتر</a></li>
-              <li class="dropdown"><a href="#"><span>مناسب برای</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+    <header id="header" class="header d-flex align-items-center sticky-top mb-5">
+        <div class="container position-relative d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="assets/img/logo.png" alt=""> -->
+                <h1 class="sitename" style="color: white;">عطریس</h1>
+            </a>
+    
+            <nav id="navmenu" class="navmenu">
                 <ul>
-                  <li><a href="#">آقایان</a></li>
-                  <li><a href="#">خانم‌ها</a></li>
-                  <li><a href="#">خانم‌ها و آقایان</a></li>
+                    <li><a href="#hero" class="active">خانه<br></a></li>
+                    <li class="dropdown"><a href="#"><span>عطرها</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                      <ul>
+                        <li><a href="#">همه عطرها</a></li>
+                        <li><a href="#">جدیدها</a></li>
+                        <li><a href="#">پرفروش‌ها</a></li>
+                        <li><a href="#">برتر</a></li>
+                        <li class="dropdown"><a href="#"><span>مناسب برای</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">آقایان</a></li>
+                            <li><a href="#">خانم‌ها</a></li>
+                            <li><a href="#">خانم‌ها و آقایان</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>مناسب فصل</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">بهار</a></li>
+                            <li><a href="#">تابستان</a></li>
+                            <li><a href="#">پاییز</a></li>
+                            <li><a href="#">زمستان</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>طبع</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">خنک</a></li>
+                            <li><a href="#">معتدل</a></li>
+                            <li><a href="#">گرم</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>گروه بویایی</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">آروماتیک</a></li>
+                            <li><a href="#">گلی</a></li>
+                            <li><a href="#">مرکبایی</a></li>
+                            <li><a href="#">موارد بیشتر +</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>اقلیم</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">گرم و خشک</a></li>
+                            <li><a href="#">سرد کوهستانی</a></li>
+                            <li><a href="#">معتدل و مرطوب</a></li>
+                            <li><a href="#">گرم و مرطوب</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="#menu">رویدادها و کلاس‌ها</a></li>
+                    <li><a href="#articles">مقالات</a></li>
+                    <li><a href="#chefs">مشاوره</a></li>
+                    <li><a href="#contact">تماس با ما</a></li>
+                    <li>
+                        <a href="javascript:void(0);" id="search-icon" class="search-icon">
+                            <i class="bi bi-search"></i>
+                        </a>
+                    </li>
+                    <li><a href="store.html">فروشگاه‌ها</a></li>
+                    <li>
+                        <a href="#">
+                            <img src="assets/icon/new-large-ibou-5-icons-ibou-pocket-white-bag.png" width="30">
+                        </a>
+                    </li>
+                    <!-- Profile icon with dropdown -->
+                    <li class="profile-dropdown">
+                        <a href="javascript:void(0);" id="profile-icon">
+                            <img src="assets/icon/user.png" class="profile-icon">
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a style="color: yellow;">نرگس فهمانی</a></li>
+                            <hr style="color: white">
+                            <li><a href="#">مدیریت عطرها</a></li>
+                            <li><a href="#">سفارشات</a></li>
+                            <li><a href="#">شخصیت‌شناسی</a></li>
+                            <li><a href="#">تاریخچه مشاوره</a></li>
+                            <hr style="color: white">
+                            <li><a href="#">خروج از حساب کاربری</a></li>
+                        </ul>
+                    </li>
                 </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>مناسب فصل</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">بهار</a></li>
-                  <li><a href="#">تابستان</a></li>
-                  <li><a href="#">پاییز</a></li>
-                  <li><a href="#">زمستان</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>طبع</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">خنک</a></li>
-                  <li><a href="#">معتدل</a></li>
-                  <li><a href="#">گرم</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>گروه بویایی</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">آروماتیک</a></li>
-                  <li><a href="#">گلی</a></li>
-                  <li><a href="#">مرکبایی</a></li>
-                  <li><a href="#">موارد بیشتر +</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>اقلیم</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">گرم و خشک</a></li>
-                  <li><a href="#">سرد کوهستانی</a></li>
-                  <li><a href="#">معتدل و مرطوب</a></li>
-                  <li><a href="#">گرم و مرطوب</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="#menu">رویدادها و کلاس‌ها</a></li>
-          <li><a href="#articles">مقالات</a></li>
-          <li><a href="#chefs">مشاوره</a></li>
-          
-          <li><a href="#contact">تماس با ما</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <a class="btn-getstarted" href="signup.html">ورود</a>
-
-    </div>
-  </header>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    
+        <!-- Search Semi-Page -->
+        <div id="search-semi-page" class="search-semi-page">
+            <div class="search-container-wrapper">
+                <button class="close-search">X</button>
+                <!-- Centered Search Input -->
+                <input type="text" class="search-input" placeholder="جستجوی عطر...">
+                <!-- Two-column content -->
+                <div class="search-content">
+                    <div class="search-suggestions">
+                        <!-- Sample suggestions -->
+                        <p>پیشنهاد 1</p>
+                        <p>پیشنهاد 2</p>
+                        <p>پیشنهاد 3</p>
+                    </div>
+                    <div class="search-image">
+                        <img src="assets/img/events-1.jpg" alt="Sample">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
   <main class="main">
   <div class="progress-container">
@@ -228,34 +320,33 @@
 </div>
 
   <div class="results-content">
-      <div class="result-step" id="result1">
-        <section id="about" class="about section" style="direction: ltr;">
+      <div class="container result-step" id="result1">
         <div class="container">
-          <div class="row gy-4">
-            <div class="col-lg-7">
-              <img src="assets/img/about.jpg" class="img-fluid mb-4" alt="">
+          <section id="stats" class="stats section dark-background">
+            <img src="assets/images/fulvio-ciccolo-E6Ed669pvQQ-unsplash.jpg" alt="">
+            <div class="container position-relative">
+                <div class="row gy-4">
+                    <div class="col-lg-5">
+                        <div class="why-box" style="text-align: justify;">
+                            <h3>تحلیل ما از شما</h3>
+                            <p>هروقت عطررو پیدا کردی برای این تیپ شخصیت توضیح بنویس</p>
+                            <!-- Moved the button inside why-box to ensure proper placement -->
+                            <div class="d-flex justify-content-center">
+                                <a class="btn-getstarted mt-5" href="test.html">خواندن</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-5">
-              <h5>تحلیل ما از شما</h5>
-              <div class="content ps-0 ps-lg-5">
-                <ul>
-                  <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                  <li><i class="bi bi-check-circle-fill"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                  <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-                </ul>
-              </div>
-              <a class="btn-getstarted" href="panel.html">خواندن</a>
-            </div>
-          </div>
-
+        </section>
         </div>
-      </section>
+        
       </div>
-      <div class="result-step" id="result2">
-        <img src="assets/img/events-1.jpg">
+      <div class="container result-step" id="result2" style="background-color: aquamarine;">
+        <h4>عطرهای مناسب شما</h4>
         <p>سلام این یک تسته</p>
       </div>
-      <div class="result-step" id="result3">
+      <div class=" container result-step" id="result3">
         <h2 class="step-title">رایحه‌هایی که با شما مطابقت دارد:</h2>
     
         <div class="category-section">
@@ -307,7 +398,82 @@
   </div>
 
   </main>
+  <footer class="footer dark-background py-5 border-top">
+    <div class="container">
+        <div class="row">
+            <!-- عطریس Section -->
+            <div class="col-12 col-md-4 mb-3">
+                <h5>عطریس</h5>
+                <hr>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>درباره ما</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>تماس با ما</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>پرسش‌های مشتریان</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>سیاست و حفظ حریم شخصی</h6></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- خرید Section -->
+            <div class="col-12 col-md-4 mb-3">
+                <h5>خرید</h5>
+                <hr>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>راهنمای خرید حضوری</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>راهنمای خرید آنلاین</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>ارسال و تحویل کالا</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>پیگیری سفارش</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>ثبت شکایات</h6></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- اطلاعات تماس Section -->
+            <div class="col-12 col-md-4 mb-3">
+                <h5>اطلاعات تماس</h5>
+                <hr>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>تلفن</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>روزهای کاری</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>فروشگاه‌ها</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>ایمیل</h6></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
+        <!-- Footer Bottom Section -->
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+            <p class="mb-0">کلیه حقوق مادی و معنوی این سایت متعلق به شرکت عطریس می‌باشد.</p>
+            <ul class="list-unstyled d-flex mb-0">
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="assets/images/icons8-instagram-48.png" height="24"></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="assets/images/icons8-x-50.png" height="24"></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="assets/images/icons8-linkedin-48.png" height="24"></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
   <!-- Preloader -->
   <div id="preloader"></div>
 
@@ -382,6 +548,33 @@
     // Initialize to show the first step
     showStep(currentStep);
 
+  </script>
+
+    <script>
+    document.getElementById('profile-icon').addEventListener('click', function() {
+    const dropdown = this.parentElement;
+    dropdown.classList.toggle('open');
+});
+
+// Close the dropdown if the user clicks outside of it
+window.addEventListener('click', function(event) {
+    const dropdown = document.querySelector('.profile-dropdown');
+    if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('open');
+    }
+});
+
+  </script>
+
+<script>
+    document.getElementById('search-icon').addEventListener('click', function() {
+      document.getElementById('search-semi-page').style.top = '0';
+  });
+  
+  document.querySelector('.close-search').addEventListener('click', function() {
+      document.getElementById('search-semi-page').style.top = '-100%';
+  });
+  
   </script>
 
 </body>
