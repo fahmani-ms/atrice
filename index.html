@@ -9,7 +9,7 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/images/logo.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
@@ -50,13 +50,14 @@
     /* Base styles for the divider line */
     .divider-line {
         position: absolute;
-        background-color: #ce1212; /* Choose a color for the line */
+        background-color: #B17742; /* Choose a color for the line */
+        width: 0.3px;
     }
 
     /* Vertical line for desktop view */
     @media (min-width: 992px) { /* Adjust the min-width based on your layout */
         .divider-line {
-            width: 0.5px; /* Thickness of the line */
+            width: 2px; /* Thickness of the line */
             height: 80%; /* Height relative to the parent container */
             top: 10%; /* Adjust to center the line vertically */
             left: 50%; /* Center the line horizontally */
@@ -79,23 +80,27 @@
     display: none;
 }
 
-.section-title {
-    display: flex; /* Sets the display property to flex */
-    align-items: center; /* Vertically centers items if they are not already aligned */
-    justify-content: center; /* Horizontally centers the content */
-    flex-direction: column; /* Ensures that the text is treated as a column (optional) */
-}
+  .section-title {
+      display: flex; /* Sets the display property to flex */
+      align-items: center; /* Vertically centers items if they are not already aligned */
+      justify-content: center; /* Horizontally centers the content */
+      flex-direction: column; /* Ensures that the text is treated as a column (optional) */
+  }
 
-.font-size-bold {
-        font-weight: bold; /* Ensures the text is bold */
-        /* Optional: Add other font styling here if needed */
-    }
+  .font-size-bold {
+          font-weight: bold; /* Ensures the text is bold */
+          /* Optional: Add other font styling here if needed */
+      }
 
 
     .justify-text {
         text-align: justify; /* Justify text within the list items */
     }
 
+
+.row>* {
+  margin-top: 3px;
+}
   </style>
 </head>
 
@@ -106,7 +111,7 @@
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <!-- <img src="assets/images/logo.png" alt=""> -->
         <h1 class="sitename" style="color: white;">عطریس</h1>
       </a>
 
@@ -188,19 +193,25 @@
       <div class="search-container-wrapper">
           <button class="close-search">X</button>
           <!-- Centered Search Input -->
-          <input type="text" class="search-input" placeholder="جستجوی عطر...">
+          <input type="text" class="search-input" placeholder="جستجوی عطر و برند...">
           <!-- Two-column content -->
           <div class="search-content">
-              <div class="search-suggestions">
-                  <!-- Sample suggestions -->
-                  <p>پیشنهاد 1</p>
-                  <p>پیشنهاد 2</p>
-                  <p>پیشنهاد 3</p>
-              </div>
-              <div class="search-image">
-                  <img src="assets/img/events-1.jpg" alt="Sample">
-              </div>
-          </div>
+            <div class="search-suggestions mt-4 mx-4">
+                <div class="content-arrow">
+                    <h6>همین حالا شخصی‌سازی کن</h6>
+                    <p>شروع شخصیت‌شناسی</p>
+                </div>
+                <!-- Sample suggestions -->
+                <div class="content-arrow mt-5">
+                    <h6>به ایده‌هایی نیاز داری؟</h6>
+                    <p>در مجموعه‌های دسته‌بندی شده ما جستجو کن</p>
+                </div>
+            </div>
+            <div class="search-image mx-4">
+                <img src="assets/images/edoardo-cuoghi-ufuchdZawng-unsplash.jpg" alt="Sample">
+            </div>
+        </div>
+        
       </div>
   </div>
   </header>
@@ -212,7 +223,7 @@
     <section id="hero" class="hero section light-background">
       
       <div class="container">
-        <img src="assets/images/s7.png" class="hero-image" style="width: 100%;">
+        <img src="assets/images/bg-desktop-female_4a9676 copy.jpg" class="hero-image" style="width: 100%;">
       </div>
   </section>
   
@@ -248,9 +259,8 @@
       </div>
 
 
-      </section>
-    <!-- /Introduction Section -->
-
+      </section><!-- /Introduction Section -->
+    
     <!-- Gallery Section -->
     <section id="gallery" class="gallery section light-background">
 
@@ -313,7 +323,7 @@
     <section id="why-us" class="why-us section">
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">        <p><span>سفر</span> <span class="description-title">رایحه‌ها</span></p>
+      <div class="container section-title" data-aos="fade-up"><p><span>سفر</span> <span class="description-title">رایحه‌ها</span></p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -404,7 +414,7 @@
           <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/chefs/chefs-1.jpg" class="img-fluid" alt="">
+                <img src="assets/team/depositphotos_333887094-stock-photo-smiling-black-girl-standing-with.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -413,7 +423,7 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>محمدصادق فهمانی ارشد</h4>
+                <h4>الناز شاکردوست</h4>
                 <span>مدیر سایت</span>
                 <p>خیلی خفنه!</p>
               </div>
@@ -423,7 +433,7 @@
           <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/chefs/chefs-1.jpg" class="img-fluid" alt="">
+                <img src="assets/team/stock-photo-middle-age-handsome-man-wearing-casual-shirt-standing-isolated-white.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -442,7 +452,7 @@
           <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/chefs/chefs-2.jpg" class="img-fluid" alt="">
+                <img src="assets/team/pexels-photo-774909 - Copy.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -461,7 +471,7 @@
           <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/chefs/chefs-3.jpg" class="img-fluid" alt="">
+                <img src="assets/team/team1.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -585,7 +595,7 @@
     <section id="articles" class="about section light-background">
       <div class="container">
           <div class="row gy-4 position-relative">
-              <div class="col-lg-6 text-center mt-5" data-aos="fade-up" data-aos-delay="100">
+              <div class="col-lg-6 text-center mt-5 mb-5" data-aos="fade-up" data-aos-delay="100">
                   <h3>مقالات</h3>
                   <p>مطالب جذاب و آموزشی درباره دنیای عطرها را بخوانید و دانش خود را در زمینه نت‌ها، ترکیبات و انتخاب عطر گسترش دهید
                   </p>
@@ -593,7 +603,7 @@
                       <a class="btn-getstarted mt-5" href="#">خواندن</a>
                   </div>
               </div>
-              <div class="col-lg-6 text-center mt-5" data-aos="fade-up" data-aos-delay="250">
+              <div class="col-lg-6 text-center mt-5 mb-5" data-aos="fade-up" data-aos-delay="250">
                   <h3>ویدئوها</h3>
                   <p>ویدیوهای آموزشی و الهام‌بخش درباره عطرها و روش‌های استفاده از آن‌ها و همچنین نمایش کار باا دستگاه عطریس را تماشا کنید و تجربه خود را ارتقا دهید.
                   </p>
@@ -629,7 +639,6 @@
       </div>
   </section>
   
-
     <!-- Perfumes Section -->
     <section id="menu" class="menu section light-background">
 
@@ -645,89 +654,324 @@
             <div class="row gy-5">
                 <!-- Menu Items -->
                 <div class="col-lg-4 menu-item">
-                    <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img src="assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
-                    <h4>Magnam Tiste</h4>
-                    <p class="ingredients">Lorem, deren, trataro, filede, nerada</p>
-                    <p class="price">$5.95</p>
+                  <a href="assets/perfumes/1689485010.jpg" class="glightbox"><img src="assets/perfumes/1689485010.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>علی دایی تن فوراور فنومنال</h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>چرمی, چوبی
+                  </p>
+                  <p class="ingredients"><span>رایحه: </span>تلخ, گرم</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک</p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Gardenia.jpg" class="flower-icon">
+                          <p>گاردنیا</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Heliotrope.jpg" class="flower-icon">
+                          <p>آفتاب پرست</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Pepper.jpg" class="flower-icon">
+                          <p>فلفل</p>
+                      </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
+                </div>              
+                <!-- Menu Item -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/perfumes/chanel-Bleu-de-Chanel-EDP-e1616777375992.jpg" class="glightbox"><img src="assets/perfumes/chanel-Bleu-de-Chanel-EDP-e1616777375992.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>عطر شنل بلو د شنل ادو پرفیوم مردانه
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>چوبی آروماتیک</p>
+                  <p class="ingredients"><span>رایحه: </span>تلخ, چهارفصل</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک, جلسات اداری, روزانه و کژوال, قرارهای دوستانه, قرارهای عاشقانه
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Cedar.jpg" class="flower-icon">
+                          <p>چوب سدر</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Nutmeg.jpg" class="flower-icon">
+                          <p>جوز</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Ginger.jpg" class="flower-icon">
+                          <p>زنجبیل</p>
+                      </div>
+                      <div class="flower-icon-item">
+                        <img src="assets/notes/Mint.jpg" class="flower-icon">
+                        <p>نعناع</p>
+                    </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
                 </div>
                 <!-- Menu Item -->
                 <div class="col-lg-4 menu-item">
-                    <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img src="assets/img/menu/menu-item-2.png" class="menu-img img-fluid" alt=""></a>
-                    <h4>Aut Luia</h4>
-                    <p class="ingredients">Lorem, deren, trataro, filede, nerada</p>
-                    <p class="price">$14.95</p>
+                  <a href="assets/perfumes/cartier-declaration-d-un-soir.jpg" class="glightbox"><img src="assets/perfumes/cartier-declaration-d-un-soir.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>عطر کارتیر دکلریشن دون سویر
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>چوبی گلی مٌشکی</p>
+                  <p class="ingredients"><span>رایحه: </span>تلخ, چهارفصل, شیرین</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک, مهمانی رسمی
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Nutmeg.jpg" class="flower-icon">
+                          <p>جوز</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Rose.jpg" class="flower-icon">
+                          <p>گل رز</p>
+                      </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
                 </div>
                 <!-- Menu Item -->
                 <div class="col-lg-4 menu-item">
-                    <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img src="assets/img/menu/menu-item-3.png" class="menu-img img-fluid" alt=""></a>
-                    <h4>Est Eligendi</h4>
-                    <p class="ingredients">Lorem, deren, trataro, filede, nerada</p>
-                    <p class="price">$8.95</p>
+                  <a href="assets/perfumes/dior-miss-dior-blooming-bouquet-edt-.jpg" class="glightbox"><img src="assets/perfumes/dior-miss-dior-blooming-bouquet-edt-.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>عطر میس دیور بلومینگ بوکت
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>روایح گلی</p>
+                  <p class="ingredients"><span>رایحه: </span>خنک, شیرین</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای عاشقانه
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Apricot.jpg" class="flower-icon">
+                          <p>زرد آلو</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Peach.jpg" class="flower-icon">
+                          <p>هلو</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Peony.jpg" class="flower-icon">
+                          <p>گل صدتومانی</p>
+                      </div>
+                      <div class="flower-icon-item">
+                        <img src="assets/notes/Rose.jpg" class="flower-icon">
+                        <p>گل رز</p>
+                    </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
                 </div>
                 <!-- Menu Item -->
                 <div class="col-lg-4 menu-item">
-                    <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img src="assets/img/menu/menu-item-4.png" class="menu-img img-fluid" alt=""></a>
-                    <h4>Eos Luibusdam</h4>
-                    <p class="ingredients">Lorem, deren, trataro, filede, nerada</p>
-                    <p class="price">$12.95</p>
+                  <a href="assets/perfumes/jaguar-for-men.jpg" class="glightbox"><img src="assets/perfumes/jaguar-for-men.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>عطر جگوار فور من
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>روایح آروماتیک</p>
+                  <p class="ingredients"><span>رایحه: </span>چهارفصل, شیرین</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای دوستانه
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Caraway.jpg" class="flower-icon">
+                          <p>زیره</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Carnation.jpg" class="flower-icon">
+                          <p>میخک صدپر</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/calvia.jpg" class="flower-icon">
+                          <p>سالویا اسکلاریا</p>
+                      </div>
+                      <div class="flower-icon-item">
+                        <img src="assets/notes/Cyclamen.jpg" class="flower-icon">
+                        <p>گل پنجه مریم</p>
+                    </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
                 </div>
                 <!-- Menu Item -->
                 <div class="col-lg-4 menu-item">
-                    <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img src="assets/img/menu/menu-item-5.png" class="menu-img img-fluid" alt=""></a>
-                    <h4>Eos Luibusdam</h4>
-                    <p class="ingredients">Lorem, deren, trataro, filede, nerada</p>
-                    <p class="price">$12.95</p>
-                </div>
-                <!-- Menu Item -->
-                <div class="col-lg-4 menu-item">
-                    <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-                    <h4>Laboriosam Direva</h4>
-                    <p class="ingredients">Lorem, deren, trataro, filede, nerada</p>
-                    <p class="price">$9.95</p>
+                  <a href="assets/perfumes/jM7jye4gHgw3P30m.jpg" class="glightbox"><img src="assets/perfumes/jM7jye4gHgw3P30m.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>لیلا حاتمی پور فم زنانه
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>شرقی گلی</p>
+                  <p class="ingredients"><span>رایحه: </span>چهارفصل, شیرین</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای دوستانه
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Chocolate.jpg" class="flower-icon">
+                          <p>شکلات</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Jasmine.jpg" class="flower-icon">
+                          <p>گل یاس</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Violet.jpg" class="flower-icon">
+                          <p>گل بنفشه</p>
+                      </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
                 </div>
                 <!-- Menu Item -->
                 
                 <!-- Hidden Menu Items (Initially Hidden) -->
                 <div class="col-lg-4 menu-item hidden-item">
-                  <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-                  <h4>Laboriosam Direva</h4>
-                  <p class="ingredients">Lorem, deren, trataro, filede, nerada</p>
-                  <p class="price">$9.95</p>
+                  <a href="assets/perfumes/1521107567.jpg" class="glightbox"><img src="assets/perfumes/1521107567.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>شنل کوکو مادمازل ادو پرفیوم
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>شرقی گلی</p>
+                  <p class="ingredients"><span>رایحه: </span>چهارفصل, شیرین</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک, جلسات اداری, روزانه و کژوال, قرارهای دوستانه, قرارهای عاشقانه, مهمانی رسمی
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Jasmine.jpg" class="flower-icon">
+                          <p>گل یاس</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Rose.jpg" class="flower-icon">
+                          <p>گل رز</p>
+                      </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
                 </div>
                 
                 <div class="col-lg-4 menu-item hidden-item">
-                  <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-                  <h4>Laboriosam Direva</h4>
-                  <p class="ingredients">Lorem, deren, trataro, filede, nerada</p>
-                  <p class="price">$9.95</p>
+                  <a href="assets/perfumes/om-eau-de-parfum-for-her-100ml-391f58375b274745b6f087386a8e4197-master-ea41da5d35f944f3bae082d8ca16c720-master-photoroom-png-photoroom.png" class="glightbox"><img src="assets/perfumes/om-eau-de-parfum-for-her-100ml-391f58375b274745b6f087386a8e4197-master-ea41da5d35f944f3bae082d8ca16c720-master-photoroom-png-photoroom.png" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>عطر گوچی بلوم
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>روایح گلی</p>
+                  <p class="ingredients"><span>رایحه: </span>خنک, شیرین</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای عاشقانه
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Tuberose.jpg" class="flower-icon">
+                          <p>گل مریم</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Jasmine.jpg" class="flower-icon">
+                          <p>گل یاس</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/f830d6f653a4df5987e723b12b45da704f0942d9469.jpg" class="flower-icon">
+                          <p>گل پیج امین الدوله</p>
+                      </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
                 </div>
 
                 <div class="col-lg-4 menu-item hidden-item">
-                  <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-                  <h4>Laboriosam Direva</h4>
-                  <p class="ingredients">Lorem, deren, trataro, filede, nerada</p>
-                  <p class="price">$9.95</p>
+                  <a href="assets/perfumes/2994_img-4352-dolce-gabbana-l-imperatrice_social.jpg" class="glightbox"><img src="assets/perfumes/2994_img-4352-dolce-gabbana-l-imperatrice_social.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>عطر دولچه گابانا لیمپرتریس
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>گلی آبزی</p>
+                  <p class="ingredients"><span>رایحه: </span>خنک, شیرین</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای دوستانه, قرارهای عاشقانه
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Cyclamen.jpg" class="flower-icon">
+                          <p>گل پنجه مریم</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Jasmine.jpg" class="flower-icon">
+                          <p>گل یاس</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/watermelon.jpg" class="flower-icon">
+                          <p>هندوانه</p>
+                      </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
                 </div>
 
                 <div class="col-lg-4 menu-item hidden-item">
-                  <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-                  <h4>Laboriosam Direva</h4>
-                  <p class="ingredients">Lorem, deren, trataro, filede, nerada</p>
-                  <p class="price">$9.95</p>
+                  <a href="assets/perfumes/57990c1cafc942e506a4ec284b0fb2217da07bb2_1616055606.jpg" class="glightbox"><img src="assets/perfumes/57990c1cafc942e506a4ec284b0fb2217da07bb2_1616055606.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>عطر زنانه ژکساف نایت ویش
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>رایحه گلی
+                  </p>
+                  <p class="ingredients"><span>رایحه: </span>شیرین, گرم </p>
+                  <p class="ingredients mt-4 mb-4">روزانه و کژوال
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Rose.jpg" class="flower-icon">
+                          <p>رز</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Peony.jpg" class="flower-icon">
+                          <p>گل صدتومانی</p>
+                      </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
                 </div>
 
                 <div class="col-lg-4 menu-item hidden-item">
-                  <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-                  <h4>Laboriosam Direva</h4>
-                  <p class="ingredients">Lorem, deren, trataro, filede, nerada</p>
-                  <p class="price">$9.95</p>
+                  <a href="assets/perfumes/modiri-women.jpg" class="glightbox"><img src="assets/perfumes/modiri-women.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>مهران مدیری ر مینور زنانه
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>گلی</p>
+                  <p class="ingredients"><span>رایحه: </span>خنک, شیرین</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک</p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Peach-Blossom.jpg" class="flower-icon">
+                          <p>شکوفه هلو</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Peony.jpg" class="flower-icon">
+                          <p>گل صدتومانی</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Tea (1).jpg" class="flower-icon">
+                          <p>برگ چای</p>
+                      </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
                 </div>
 
                 <div class="col-lg-4 menu-item hidden-item">
-                  <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-                  <h4>Laboriosam Direva</h4>
-                  <p class="ingredients">Lorem, deren, trataro, filede, nerada</p>
-                  <p class="price">$9.95</p>
+                  <a href="assets/perfumes/Euphoria-For-Women.jpg" class="glightbox"><img src="assets/perfumes/Euphoria-For-Women.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>عطر کلوین کلاین ایفوریا زنانه
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>شرقی گلی</p>
+                  <p class="ingredients"><span>رایحه: </span>شیرین, گرم</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای عاشقانه
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Lotus.jpg" class="flower-icon">
+                          <p>لاله مردابی</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Orchid.jpg" class="flower-icon">
+                          <p>گل ارکیده</p>
+                      </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
                 </div>
                 
             </div>
@@ -739,7 +983,7 @@
         </div><!-- End Starter Menu Content -->
         </div>
       </div>
-    </section><!-- /Menu Section -->
+    </section><!-- /Perfumes Section -->
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section">

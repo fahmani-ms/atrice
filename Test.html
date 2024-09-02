@@ -9,13 +9,8 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/images/logo.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <!-- <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet"> -->
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,18 +22,32 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
   <style>
+
+    .center-container {
+            display: flex;
+            justify-content: center; /* Centers the element horizontally */
+            align-items: center;    /* Centers the element vertically */ 
+            margin-bottom: 20px;
+        }
+        .center-container img{
+            width: 100px;
+        }
       body {
           background-color: #f8f9fa;
       }
 
       .survey-container {
-          max-width: 80%;
-          margin: 0 auto;
-          background: #ffffff;
-          padding: 20px;
-          border-radius: 10px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
+        max-width: 80%;
+        margin: 0 auto;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the entire content horizontally */
+        text-align: center; /* Centers text within the container */
+    }
 
       .question {
           display: none; /* Hide all questions initially */
@@ -49,27 +58,32 @@
       }
 
       .options {
-          display: flex;
-          justify-content: space-around;
-      }
+        display: flex;
+        justify-content: center; /* Centers the options horizontally */
+        flex-wrap: wrap; /* Allows options to wrap into multiple lines if needed */
+        gap: 20px; /* Space between the options */
+        margin-top: 20px;
+    }
 
-      .option-container {
-          display: flex;
-          flex-direction: column; /* Arrange image and indicator vertically */
-          align-items: center;
-          width: 350px;  /* Default width for larger screens */
-          margin: 10px;
-          cursor: pointer;
-          border: 2px solid transparent;
-          border-radius: 5px;
-          text-align: center;
-      }
+    .option-container {
+        display: flex;
+        flex-direction: column; /* Arrange image and indicator vertically */
+        align-items: center;
+        width: 250px;  /* Set a consistent width for each option container */
+        margin: 10px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        text-align: center;
+    }
 
-      .option-container img {
-          width: 300px;  /* Larger image size for desktop */
-
-          border-radius: 5px;
-      }
+    .option-container img {
+        width: 100%;       /* Image width fills the container */
+        height: 150px;     /* Set a consistent height for images */
+        object-fit: cover; /* Maintain aspect ratio, cover the entire area */
+        border-radius: 5px;
+        margin-bottom: 10px; /* Space between image and text */
+    }
 
       /* Media query for mobile devices */
       @media (max-width: 768px) {
@@ -85,28 +99,25 @@
 
           .option-container img {
               width: 100%;  /* Full width for mobile view */
-              height: auto; /* Maintain aspect ratio */
+              height: 150px; /* Maintain aspect ratio */
               max-width: 300px; /* Optional: Limit max size */
           }
       }
 
-
-
       .option-container.selected {
-          border-color: #007bff; /* Highlight selected image */
+          border-color: #C7A17F; /* Highlight selected image */
       }
 
       .radio-indicator {
-          width: 20px;
-          height: 20px;
-          margin-top: 5px; /* Space between image and indicator */
-          background-color: white;
-          border: 2px solid #007bff;
-          border-radius: 50%;
-      }
-
+        width: 20px;
+        height: 20px;
+        margin-top: 5px; /* Space between image and indicator */
+        background-color: white;
+        border: 2px solid #C7A17F;
+        border-radius: 50%;
+    }
       .option-container.selected .radio-indicator {
-          background-color: #007bff;
+          background-color: #C7A17F;
       }
 
       .nav-buttons {
@@ -135,31 +146,42 @@
           height: 30px;
           border-radius: 5px;
           margin-top: 20px;
+          margin-bottom: 20px; /* Add margin-bottom to create space */
       }
 
       .progress-fill {
           width: 0%;
           height: 100%;
-          background-color: #007bff;
+          background-color: #C7A17F;
           border-radius: 5px;
       }
 
-      .gallery-image {
-          width: 100%;
-          border-radius: 10px;
-      }
+      .progress-container h6:last-of-type {
+        margin-top: 20px; /* Space before the second heading */
+    }
+
+    .gallery-container {
+    display: flex;
+    justify-content: center; /* Center the image within the container */
+    align-items: center;     /* Center vertically if there's any space */
+    }
+
+    .gallery-image {
+        width: 100%;          /* Adjusts to fill the container width */
+        max-width: 400px;     /* Optional: set a maximum width */
+        height: auto;         /* Let the height adjust to maintain aspect ratio */
+        aspect-ratio: 1/1;    /* Maintain a 1:1 aspect ratio for a perfect circle */
+        border-radius: 50%;   /* Make the image circular */
+        object-fit: cover;    /* Ensures the image covers the circle properly */
+        display: block;       /* Treat image as block-level for better control */
+    }
+
 
       .results-container {
           display: none; /* Hide the results section initially */
           text-align: center;
           margin-top: 20px;
       }
-
-    /* Base styles for the divider line */
-    .divider-line {
-        position: absolute;
-        background-color: #ce1212; /* Choose a color for the line */
-    }
 
     /* Vertical line for desktop view */
     @media (min-width: 992px) { /* Adjust the min-width based on your layout */
@@ -289,26 +311,37 @@
             <div class="search-container-wrapper">
                 <button class="close-search">X</button>
                 <!-- Centered Search Input -->
-                <input type="text" class="search-input" placeholder="جستجوی عطر...">
+                <input type="text" class="search-input" placeholder="جستجوی عطر و برند...">
                 <!-- Two-column content -->
                 <div class="search-content">
-                    <div class="search-suggestions">
-                        <!-- Sample suggestions -->
-                        <p>پیشنهاد 1</p>
-                        <p>پیشنهاد 2</p>
-                        <p>پیشنهاد 3</p>
-                    </div>
-                    <div class="search-image">
-                        <img src="assets/img/events-1.jpg" alt="Sample">
-                    </div>
-                </div>
+                  <div class="search-suggestions mt-4 mx-4">
+                      <div class="content-arrow">
+                          <h6>همین حالا شخصی‌سازی کن</h6>
+                          <p>شروع شخصیت‌شناسی</p>
+                      </div>
+                      <!-- Sample suggestions -->
+                      <div class="content-arrow mt-5">
+                          <h6>به ایده‌هایی نیاز داری؟</h6>
+                          <p>در مجموعه‌های دسته‌بندی شده ما جستجو کن</p>
+                      </div>
+                  </div>
+                  <div class="search-image mx-4">
+                      <img src="assets/images/edoardo-cuoghi-ufuchdZawng-unsplash.jpg" alt="Sample">
+                  </div>
+              </div>
+              
             </div>
         </div>
     </header>
     
   <main class="main pt-5">
+    <div class="center-container">
+        <img  src="assets/images/logo.png" width="100px">
+    </div>
+    
 
     <div class="survey-container">
+        
       <!-- Survey questions and options -->
       <div class="question active" data-question="1">
           <h4>دنبال چه عطری می‌گردی؟</h4>
@@ -458,9 +491,9 @@
   
       <!-- Navigation buttons -->
       <div class="nav-buttons">
-          <button class="btn btn-secondary" onclick="prevQuestion()">Previous</button>
-          <button class="btn btn-primary" onclick="nextQuestion()">Next</button>
-          <button class="btn btn-success finish-button" onclick="finishSurvey()">Finish</button>
+          <button class="btn btn-secondary" style="background-color: #B17742; color: #fff; border: none;" onclick="prevQuestion()">قبلی</button>
+          <button class="btn btn-primary" style="background-color: black; color: #fff; border: none;" onclick="nextQuestion()">بعدی</button>
+          <button class="btn btn-success finish-button" style="background-color: green; color: #fff; border: none;" onclick="finishSurvey()">پایان</button>
       </div>
   </div>
   
@@ -472,18 +505,19 @@
           <div class="progress-bar">
               <div class="progress-fill"></div>
           </div>
-          <p> ما در حال بررسی پاسخ‌های شما و استخراج پیشنهادات شخصی شما از کاتالوگ عطرهای خود هستیم.</p>
+          <h6> ما در حال بررسی پاسخ‌های شما و استخراج پیشنهادات شخصی شما از کاتالوگ عطرهای خود هستیم.</h6>
       </div>
       <div class="col-lg-6 gallery-container">
-          <img class="gallery-image" src="assets/images/mockup-free-S2oIq7uGhXI-unsplash.jpg" alt="Gallery Image">
-      </div>
+        <img class="gallery-image" src="assets/process/1521107567.jpg" alt="Gallery Image">
+    </div>
+    
     </div>
   </div>
 
   <script>
     let currentQuestion = 1;
     const totalQuestions = document.querySelectorAll('.question').length;
-    const galleryImages = ['assets/images/mockup-free-S2oIq7uGhXI-unsplash.jpg', 'assets/images/mockup-free-S2oIq7uGhXI-unsplash.jpg', 'assets/images/mockup-free-S2oIq7uGhXI-unsplash.jpg', 'assets/images/mockup-free-S2oIq7uGhXI-unsplash.jpg', 'assets/images/mockup-free-S2oIq7uGhXI-unsplash.jpg'];
+    const galleryImages = ['assets/process/1689485010.jpg', 'assets/process/a7695e15cf25d29d1604c1617013c8b397a25646_1597043031.jpg', 'assets/process/chanel-Bleu-de-Chanel-EDP-e1616777375992.jpg', 'assets/process/om-eau-de-parfum-for-her-100ml-391f58375b274745b6f087386a8e4197-master-ea41da5d35f944f3bae082d8ca16c720-master-photoroom-png-photoroom.png'];
     let currentGalleryIndex = 0;
 
     function showQuestion(questionNumber) {

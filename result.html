@@ -9,7 +9,7 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/images/logo.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
@@ -289,19 +289,25 @@
             <div class="search-container-wrapper">
                 <button class="close-search">X</button>
                 <!-- Centered Search Input -->
-                <input type="text" class="search-input" placeholder="جستجوی عطر...">
+                <input type="text" class="search-input" placeholder="جستجوی عطر و برند...">
                 <!-- Two-column content -->
                 <div class="search-content">
-                    <div class="search-suggestions">
-                        <!-- Sample suggestions -->
-                        <p>پیشنهاد 1</p>
-                        <p>پیشنهاد 2</p>
-                        <p>پیشنهاد 3</p>
-                    </div>
-                    <div class="search-image">
-                        <img src="assets/img/events-1.jpg" alt="Sample">
-                    </div>
-                </div>
+                  <div class="search-suggestions mt-4 mx-4">
+                      <div class="content-arrow">
+                          <h6>همین حالا شخصی‌سازی کن</h6>
+                          <p>شروع شخصیت‌شناسی</p>
+                      </div>
+                      <!-- Sample suggestions -->
+                      <div class="content-arrow mt-5">
+                          <h6>به ایده‌هایی نیاز داری؟</h6>
+                          <p>در مجموعه‌های دسته‌بندی شده ما جستجو کن</p>
+                      </div>
+                  </div>
+                  <div class="search-image mx-4">
+                      <img src="assets/images/edoardo-cuoghi-ufuchdZawng-unsplash.jpg" alt="Sample">
+                  </div>
+              </div>
+              
             </div>
         </div>
     </header>
@@ -313,10 +319,11 @@
       <div class="progress-step" id="step3">3</div>
   </div>
 
-  <div class="navigation-buttons">
-    <button id="prevBtn" style="font-family: var(--default-font); color: var(--contrast-color); background: yellowgreen; border-radius: 20px;" onclick="prevStep()">قبل</button>
-    <button id="nextBtn" style="font-family: var(--default-font); color: var(--contrast-color); background: green; border-radius: 20px;" onclick="nextStep()">بعد</button>
-    <button id="confirmBtn" style="font-family: var(--default-font); color: var(--contrast-color); background: var(--accent-color); border-radius: 20px;" onclick="confirmResults()">تایید</button>
+
+  <div class="navigation-buttons mt-5">
+    <button id="prevBtn" class="btn btn-secondary" style="background-color: #B17742; color: #fff; border: none;" onclick="prevStep()">قبل</button>
+    <button id="nextBtn" class="btn btn-primary" style="background-color: black; color: #fff; border: none;" onclick="nextStep()">بعد</button>
+    <button id="confirmBtn" class="btn btn-success finish-button" style="background-color: green; color: #fff; border: none;" onclick="confirmResults()">تایید</button>
 </div>
 
   <div class="results-content">
@@ -327,12 +334,13 @@
             <div class="container position-relative">
                 <div class="row gy-4">
                     <div class="col-lg-5">
-                        <div class="why-box" style="text-align: justify;">
-                            <h3>تحلیل ما از شما</h3>
-                            <p>هروقت عطررو پیدا کردی برای این تیپ شخصیت توضیح بنویس</p>
+                        <div class="why-box mx-5" style="text-align: justify;">
+                            <h3 style="color: #F5DEB3;">تحلیل ما از شما</h3>
+                            <p>شما یک شخصیت‌ مهربان و دل‌سوز هستید. همچنین  شخصیت رمانتیک و احساسی در شما دیده می‌شود.
+                                شما یک انسان خونگرم ودارای روابط اجتماعی خوبی هستید و با معاشرت با افراد حس خوبی می‌گیرید.</p>
                             <!-- Moved the button inside why-box to ensure proper placement -->
                             <div class="d-flex justify-content-center">
-                                <a class="btn-getstarted mt-5" href="test.html">خواندن</a>
+                                <a class="btn-getstarted mt-5" href="#">خواندن</a>
                             </div>
                         </div>
                     </div>
@@ -342,57 +350,304 @@
         </div>
         
       </div>
-      <div class="container result-step" id="result2" style="background-color: aquamarine;">
-        <h4>عطرهای مناسب شما</h4>
-        <p>سلام این یک تسته</p>
+      <div class="container result-step" id="result2" style="background-color: black;">
+        <h4 class="mb-5 pt-5" style="color: #F5DEB3;">عطرهای مناسب شما</h4>
+        <p class="pb-5" style="color: whitesmoke;">عطرهای شرقی با ترکیبات گرم، شیرین و وانیلی با شخصیت شما سازگاری دارد.<br> 
+            رایحه‌های گلی مناسب شما است که اغلب با شخصیت‌های مهربان، رمانتیک و احساسی هماهنگی دارند.<br>
+            در فصل‌های سرد از این عطرها استفاده کنید.</p>
       </div>
-      <div class=" container result-step" id="result3">
+      <div class=" container result-step mt-5" id="result3">
         <h2 class="step-title">رایحه‌هایی که با شما مطابقت دارد:</h2>
     
         <div class="category-section">
-            <h3 class="category-title">رایحه‌های برتر</h3>
-            <hr class="category-line">
-            <!-- Grid of Images -->
-            <div class="perfume-grid">
-                <div class="perfume-item"><img src="assets/img/events-1.jpg" alt="Perfume 1" class="img-fluid"></div>
-                <div class="perfume-item"><img src="assets/img/events-2.jpg" alt="Perfume 2" class="img-fluid"></div>
-                <div class="perfume-item"><img src="assets/img/events-3.jpg" alt="Perfume 3" class="img-fluid"></div>
-                <div class="perfume-item"><img src="assets/img/events-4.jpg" alt="Perfume 4" class="img-fluid"></div>
-                <div class="perfume-item"><img src="assets/img/events-1.jpg" alt="Perfume 5" class="img-fluid"></div>
-                <div class="perfume-item"><img src="assets/img/events-2.jpg" alt="Perfume 6" class="img-fluid"></div>
+            <div class="container">
+                <h3 class="category-title mt-5">رایحه‌های برتر</h3>
+                <hr class="category-line">
+                <!-- Grid of Images -->
+                <section id="menu" class="menu section">          
+                    <div class="container">
+                      <div class="tab-content">
+              
+                        <div class="tab-pane fade active show" id="menu-starters">
+                          <div class="row gy-5">
+                              <!-- Menu Items -->
+                              <div class="col-lg-4 menu-item">
+                                <a href="assets/perfumes/dior-miss-dior-blooming-bouquet-edt-.jpg" class="glightbox"><img src="assets/perfumes/dior-miss-dior-blooming-bouquet-edt-.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                                <h4>عطر میس دیور بلومینگ بوکت
+                                </h4>
+                                <p class="ingredients"><span>گروه بویایی: </span>روایح گلی
+                                </p>
+                                <p class="ingredients"><span>رایحه: </span>خنک, شیرین</p>
+                                <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای عاشقانه
+                                </p>
+                                <div class="flower-icons mb-2">
+                                    <div class="flower-icon-item">
+                                        <img src="assets/notes/moshk.jpg" class="flower-icon">
+                                        <p>زرد آلو</p>
+                                    </div>
+                                    <div class="flower-icon-item">
+                                        <img src="assets/notes/sandalwood.jpg" class="flower-icon">
+                                        <p>هلو</p>
+                                    </div>
+                                    <div class="flower-icon-item">
+                                        <img src="assets/notes/rose (1).jpg" class="flower-icon">
+                                        <p>گل صدتومانی</p>
+                                    </div>
+                                    <div class="flower-icon-item">
+                                        <img src="assets/notes/rose (1).jpg" class="flower-icon">
+                                        <p>گل رز</p>
+                                    </div>
+                                </div>
+                                <div class="mt-5 mb-3">
+                                  <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                                </div>
+                              </div>              
+                              <!-- Menu Item -->
+                              <div class="col-lg-4 menu-item">
+                                <a href="assets/perfumes/1521107567.jpg" class="glightbox"><img src="assets/perfumes/1521107567.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                                <h4>شنل کوکو مادمازل ادو پرفیوم
+                                </h4>
+                                <p class="ingredients"><span>گروه بویایی: </span>شرقی گلی</p>
+                                <p class="ingredients"><span>رایحه: </span>چهارفصل, شیرین</p>
+                                <p class="ingredients mt-4 mb-4">آکادمیک, جلسات اداری, روزانه و کژوال, قرارهای دوستانه, قرارهای عاشقانه, مهمانی رسمی
+                                </p>
+                                <div class="flower-icons mb-2">
+                                    <div class="flower-icon-item">
+                                        <img src="assets/notes/Jasmine.jpg" class="flower-icon">
+                                        <p>گل یاس</p>
+                                    </div>
+                                    <div class="flower-icon-item">
+                                        <img src="assets/notes/Rose.jpg" class="flower-icon">
+                                        <p>گل رز</p>
+                                    </div>
+                                </div>
+                                <div class="mt-5 mb-3">
+                                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                                </div>
+                              </div>  
+                              <!-- Menu Item -->
+                              <div class="col-lg-4 menu-item">
+                                <a href="assets/perfumes/om-eau-de-parfum-for-her-100ml-391f58375b274745b6f087386a8e4197-master-ea41da5d35f944f3bae082d8ca16c720-master-photoroom-png-photoroom.png" class="glightbox"><img src="assets/perfumes/om-eau-de-parfum-for-her-100ml-391f58375b274745b6f087386a8e4197-master-ea41da5d35f944f3bae082d8ca16c720-master-photoroom-png-photoroom.png" class="menu-img img-fluid mb-3" alt=""></a>
+                                <h4>عطر گوچی بلوم
+                                </h4>
+                                <p class="ingredients"><span>گروه بویایی: </span>روایح گلی</p>
+                                <p class="ingredients"><span>رایحه: </span>خنک, شیرین</p>
+                                <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای عاشقانه
+                                </p>
+                                <div class="flower-icons mb-2">
+                                    <div class="flower-icon-item">
+                                        <img src="assets/notes/Tuberose.jpg" class="flower-icon">
+                                        <p>گل مریم</p>
+                                    </div>
+                                    <div class="flower-icon-item">
+                                        <img src="assets/notes/Jasmine.jpg" class="flower-icon">
+                                        <p>گل یاس</p>
+                                    </div>
+                                    <div class="flower-icon-item">
+                                        <img src="assets/notes/f830d6f653a4df5987e723b12b45da704f0942d9469.jpg" class="flower-icon">
+                                        <p>گل پیج امین الدوله</p>
+                                    </div>
+                                </div>
+                                <div class="mt-5 mb-3">
+                                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                                </div>
+                              </div>  
+                              
+                          </div>
+                      </div><!-- End Starter Menu Content -->
+                      </div>
+                    </div>
+                  </section>
             </div>
         </div>
-
         <div class="category-section">
           <h3 class="category-title">پرفروش‌ها</h3>
           <hr class="category-line">
           <!-- Grid of Images -->
-          <div class="perfume-grid">
-              <div class="perfume-item"><img src="assets/img/events-1.jpg" alt="Perfume 1" class="img-fluid"></div>
-              <div class="perfume-item"><img src="assets/img/events-2.jpg" alt="Perfume 2" class="img-fluid"></div>
-              <div class="perfume-item"><img src="assets/img/events-3.jpg" alt="Perfume 3" class="img-fluid"></div>
-              <div class="perfume-item"><img src="assets/img/events-4.jpg" alt="Perfume 4" class="img-fluid"></div>
-              <div class="perfume-item"><img src="assets/img/events-1.jpg" alt="Perfume 5" class="img-fluid"></div>
-              <div class="perfume-item"><img src="assets/img/events-2.jpg" alt="Perfume 6" class="img-fluid"></div>
-          </div>
+          <section id="menu" class="menu section">          
+            <div class="container">
+              <div class="tab-content">
+      
+                <div class="tab-pane fade active show" id="menu-starters">
+                  <div class="row gy-5">
+                      <!-- Menu Items -->
+                      <div class="col-lg-4 menu-item">
+                        <a href="assets/perfumes/2994_img-4352-dolce-gabbana-l-imperatrice_social.jpg" class="glightbox"><img src="assets/perfumes/2994_img-4352-dolce-gabbana-l-imperatrice_social.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                        <h4>عطر دولچه گابانا لیمپرتریس
+                        </h4>
+                        <p class="ingredients"><span>گروه بویایی: </span>گلی آبزی
+                        </p>
+                        <p class="ingredients"><span>رایحه: </span>خنک, شیرین</p>
+                        <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای دوستانه, قرارهای عاشقانه
+                        </p>
+                        <div class="flower-icons mb-2">
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Tea (1).jpg" class="flower-icon">
+                                <p>گل پنجه مریم</p>
+                            </div>
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/shatot.jpg" class="flower-icon">
+                                <p>گل یاس</p>
+                            </div>
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/moshk.jpg" class="flower-icon">
+                                <p>هندوانه</p>
+                            </div>
+                        </div>
+                        <div class="mt-5 mb-3">
+                          <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                        </div>
+                      </div>              
+                      <!-- Menu Item -->
+                      <div class="col-lg-4 menu-item">
+                        <a href="assets/perfumes/57990c1cafc942e506a4ec284b0fb2217da07bb2_1616055606.jpg" class="glightbox"><img src="assets/perfumes/57990c1cafc942e506a4ec284b0fb2217da07bb2_1616055606.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                        <h4>عطر زنانه ژکساف نایت ویش
+                        </h4>
+                        <p class="ingredients"><span>گروه بویایی: </span>رایحه گلی
+                        </p>
+                        <p class="ingredients"><span>رایحه: </span>شیرین, گرم </p>
+                        <p class="ingredients mt-4 mb-4">روزانه و کژوال
+                        </p>
+                        <div class="flower-icons mb-2">
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Rose.jpg" class="flower-icon">
+                                <p>رز</p>
+                            </div>
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Peony.jpg" class="flower-icon">
+                                <p>گل صدتومانی</p>
+                            </div>
+                        </div>
+                        <div class="mt-5 mb-3">
+                            <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                        </div>
+                      </div>  
+                      <!-- Menu Item -->
+                      <div class="col-lg-4 menu-item">
+                        <a href="assets/perfumes/modiri-women.jpg" class="glightbox"><img src="assets/perfumes/modiri-women.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                        <h4>مهران مدیری ر مینور زنانه
+                        </h4>
+                        <p class="ingredients"><span>گروه بویایی: </span>گلی</p>
+                        <p class="ingredients"><span>رایحه: </span>خنک, شیرین</p>
+                        <p class="ingredients mt-4 mb-4">آکادمیک</p>
+                        <div class="flower-icons mb-2">
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Peach-Blossom.jpg" class="flower-icon">
+                                <p>شکوفه هلو</p>
+                            </div>
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Peony.jpg" class="flower-icon">
+                                <p>گل صدتومانی</p>
+                            </div>
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Tea (1).jpg" class="flower-icon">
+                                <p>برگ چای</p>
+                            </div>
+                        </div>
+                        <div class="mt-5 mb-3">
+                            <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                        </div>
+                      </div>  
+                      
+                  </div>
+              </div><!-- End Starter Menu Content -->
+              </div>
+            </div>
+          </section>
       </div>
 
       <div class="category-section">
         <h3 class="category-title">جدیدترین‌ها</h3>
         <hr class="category-line">
         <!-- Grid of Images -->
-        <div class="perfume-grid">
-            <div class="perfume-item"><img src="assets/img/events-1.jpg" alt="Perfume 1" class="img-fluid"></div>
-            <div class="perfume-item"><img src="assets/img/events-2.jpg" alt="Perfume 2" class="img-fluid"></div>
-            <div class="perfume-item"><img src="assets/img/events-3.jpg" alt="Perfume 3" class="img-fluid"></div>
-            <div class="perfume-item"><img src="assets/img/events-4.jpg" alt="Perfume 4" class="img-fluid"></div>
-            <div class="perfume-item"><img src="assets/img/events-1.jpg" alt="Perfume 5" class="img-fluid"></div>
-            <div class="perfume-item"><img src="assets/img/events-2.jpg" alt="Perfume 6" class="img-fluid"></div>
-        </div>
+        <section id="menu" class="menu section">          
+            <div class="container">
+              <div class="tab-content">
+      
+                <div class="tab-pane fade active show" id="menu-starters">
+                  <div class="row gy-5">
+                      <!-- Menu Items -->
+                      <div class="col-lg-4 menu-item">
+                        <a href="assets/perfumes/Euphoria-For-Women.jpg" class="glightbox"><img src="assets/perfumes/Euphoria-For-Women.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                        <h4>عطر کلوین کلاین ایفوریا زنانه
+                        </h4>
+                        <p class="ingredients"><span>گروه بویایی: </span>شرقی گلی
+                        </p>
+                        <p class="ingredients"><span>رایحه: </span>شیرین, گرم</p>
+                        <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای عاشقانه
+                        </p>
+                        <div class="flower-icons mb-2">
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Lotus.jpg" class="flower-icon">
+                                <p>لاله مردابی</p>
+                            </div>
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Orchid.jpg" class="flower-icon">
+                                <p>گل ارکیده</p>
+                            </div>
+                        </div>
+                        <div class="mt-5 mb-3">
+                          <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                        </div>
+                      </div>              
+                      <!-- Menu Item -->
+                      <div class="col-lg-4 menu-item">
+                        <a href="assets/perfumes/a7695e15cf25d29d1604c1617013c8b397a25646_1597043031.jpg" class="glightbox"><img src="assets/perfumes/a7695e15cf25d29d1604c1617013c8b397a25646_1597043031.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                        <h4>نوید محمدزاده مردانه
+                        </h4>
+                        <p class="ingredients"><span>گروه بویایی: </span>آروماتیک ادویه ای
+                        </p>
+                        <p class="ingredients"><span>رایحه: </span>تلخ, چهارفصل</p>
+                        <p class="ingredients mt-4 mb-4">روزانه و کژوال
+                        </p>
+                        <div class="flower-icons mb-2">
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Nutmeg.jpg" class="flower-icon">
+                                <p>جوز</p>
+                            </div>
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Pink-Pepper.jpg" class="flower-icon">
+                                <p>فلفل صورتی</p>
+                            </div>
+                        </div>
+                        <div class="mt-5 mb-3">
+                          <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                        </div>
+                      </div>  
+                      <!-- Menu Item -->
+                      <div class="col-lg-4 menu-item">
+                        <a href="assets/perfumes/2f1bc4fdae4a3bfa3e39406c184026749384662f_1614585971.jpg" class="glightbox"><img src="assets/perfumes/2f1bc4fdae4a3bfa3e39406c184026749384662f_1614585971.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                        <h4>مهران مدیری پلان زنانه
+                        </h4>
+                        <p class="ingredients"><span>گروه بویایی: </span>رایحه های میوه ای
+                        </p>
+                        <p class="ingredients"><span>رایحه: </span>چهارفصل, شیرین</p>
+                        <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای عاشقانه
+                        </p>
+                        <div class="flower-icons mb-2">
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Coriander.jpg" class="flower-icon">
+                                <p>گشنیز</p>
+                            </div>
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Jasmine.jpg" class="flower-icon">
+                                <p>گل یاس</p>
+                            </div>
+                        </div>
+                        <div class="mt-5 mb-3">
+                          <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                        </div>
+                      </div>  
+                      
+                  </div>
+              </div><!-- End Starter Menu Content -->
+              </div>
+            </div>
+          </section>
     </div>
     
         <!-- Confirm Button for Step 3 -->
-        <button id="confirmBtn" onclick="confirmResults()">Confirm Results</button>
+        <button id="confirmBtn" onclick="confirmResults()">تایید</button>
     </div>
     
   </div>
@@ -542,7 +797,7 @@
     }
 
     function confirmResults() {
-        window.location.href = 'panel/main.html';
+        window.location.href = 'index.html';
     }
 
     // Initialize to show the first step
