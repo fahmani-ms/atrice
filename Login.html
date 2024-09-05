@@ -26,6 +26,40 @@
         width: 100px;
     }
 
+    .form-button {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center the buttons and text */
+        gap: 10px; /* Space between buttons and the "or" text */
+    }
+
+    .form-submit {
+        background-color: #C7A17F; /* Example color, adjust as needed */
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .secondary-button {
+        background-color: #ffffff; /* Example color, adjust as needed */
+        border: 1px solid #C7A17F; /* Matching border color with the primary button */
+        padding: 15px 10px;
+        color: #C7A17F; /* Matching text color */
+        font-size: 16px;
+        border-radius: 5px;
+        font-family: var(--default-font);
+        cursor: pointer;
+    }
+
+    .or-text {
+        margin: 0 10px; /* Space around the "or" text */
+        font-size: 16px;
+        color: #333333; /* Adjust the color as needed */
+    }
+
+
     </style>
 </head>
 <body>
@@ -35,7 +69,7 @@
         <!-- Sing in  Form -->
         <div class="center-container">
             <a href="index.html" class="justify-content-center">
-                <img src="assets/icon/shop.png">
+                <img src="assets/images/logo - black.png">
             </a>
         </div>
 
@@ -52,7 +86,7 @@
                         <form method="POST" class="register-form" id="login-form">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="your_name" id="your_name" placeholder="نام و نام خانوادگی"/>
+                                <input type="text" name="your_name" id="your_name" placeholder="شماره تلفن همراه"/>
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
@@ -64,7 +98,9 @@
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="ورود"/>
-                            </div>
+                                <span class="or-text">یا</span>
+                                <button type="button" class="secondary-button">ورود با کد یکبار مصرف</button>
+                            </div>                            
                         </form>
                         <div class="social-login">
                             <span class="social-label">یا ورود با</span>

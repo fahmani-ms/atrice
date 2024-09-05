@@ -51,7 +51,9 @@
     .divider-line {
         position: absolute;
         background-color: #B17742; /* Choose a color for the line */
-        width: 0.3px;
+        width: 2px;
+        padding-right: 1px;
+        padding-left: 1px;
     }
 
     /* Vertical line for desktop view */
@@ -110,9 +112,7 @@
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/images/logo.png" alt=""> -->
-        <h1 class="sitename" style="color: white;">عطریس</h1>
+        <img src="assets/images/logo.png" alt="">
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -164,11 +164,11 @@
               </li>
             </ul>
           </li>
-          <li><a href="#menu">رویدادها و کلاس‌ها</a></li>
+          <li><a href="#hero">رویدادها و کلاس‌ها</a></li>
           <li><a href="#articles">مقالات</a></li>
-          <li><a href="#chefs">مشاوره</a></li>
+          <li><a href="#guide">مشاوره</a></li>
           
-          <li><a href="#contact">تماس با ما</a></li>
+          <li><a href="#hero">تماس با ما</a></li>
           <li>
             <a href="javascript:void(0);" id="search-icon" class="search-icon">
                 <i class="bi bi-search"></i>
@@ -223,30 +223,9 @@
     <section id="hero" class="hero section light-background">
       
       <div class="container">
-        <img src="assets/images/bg-desktop-female_4a9676 copy.jpg" class="hero-image" style="width: 100%;">
+        <img src="assets/images/s7.jpg" class="hero-image" style="width: 100%;">
       </div>
-  </section>
-  
-    <!-- <section id="hero" class="hero section light-background">
-
-      <div class="container">
-        <div class="row gy-4 justify-content-center justify-content-lg-between" style="background-color: #f7f0ea;">
-            <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center">
-                <h2 data-aos="fade-up" style="text-align: center;">خرید هوشمند عطر<br>بر اساس تیپ شخصیتی شما</h2>
-                <p data-aos="fade-up" data-aos-delay="100" style="text-align: center;">ما شخصیت شما را با دقت ارزیابی و عطر مناسب شما را معرفی می‌کنیم.</p>
-                <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
-                    <a href="#book-a-table" class="btn-get-started">ورود</a>
-                </div>
-            </div>
-            <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
-                <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
-            </div>
-        </div>
-    </div>
-    
-
-    </section> -->
-    <!-- /Hero Section -->
+  </section><!-- /Hero Section -->
 
     <!-- Introduction Section -->
       <section class="section">
@@ -376,7 +355,7 @@
             </div>
           </div>
 
-          <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="d-flex justify-content-center mt-5" data-aos="fade-up" data-aos-delay="200">
             <a class="btn-getstarted mt-2" href="test.html">شروع شخصیت شناسی</a>
           </div>
 
@@ -411,6 +390,42 @@
 
         <div class="row gy-4">
 
+          <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/team/pexels-photo-774909 - Copy.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>نرگس فهمانی ارشد</h4>
+                <span>مدیرعامل و موسس</span>
+              </div>
+            </div>
+          </div><!-- End Chef Team Member -->
+
+          <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/team/team1.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>محمدرسول فهمانی ارشد</h4>
+                <span>مدیر مارکتینگ</span>
+              </div>
+            </div>
+          </div><!-- End Chef Team Member -->
+
           <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="team-member">
               <div class="member-img">
@@ -423,9 +438,8 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>الناز شاکردوست</h4>
-                <span>مدیر سایت</span>
-                <p>خیلی خفنه!</p>
+                <h4>الناز قدرت</h4>
+                <span>مدیر پشتیبانی و امور مشتریان</span>
               </div>
             </div>
           </div><!-- End Chef Team Member -->
@@ -444,48 +458,11 @@
               <div class="member-info">
                 <h4>محمدصادق فهمانی ارشد</h4>
                 <span>مدیر سایت</span>
-                <p>خیلی خفنه!</p>
               </div>
             </div>
           </div><!-- End Chef Team Member -->
 
-          <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/team/pexels-photo-774909 - Copy.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>نرگس فهمانی ارشد</h4>
-                <span>مدیرعامل و موسس</span>
-                <p>اوشکولی بیش نیست! یک احمق سه پستون!</p>
-              </div>
-            </div>
-          </div><!-- End Chef Team Member -->
-
-          <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/team/team1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>محمدرسول فهمانی ارشد</h4>
-                <span>عکاس</span>
-                <p>به جان غدیر خودش هم نمیدونه داره چیکار میکنه!</p>
-              </div>
-            </div>
-          </div><!-- End Chef Team Member -->
+          
 
         </div>
 
@@ -571,7 +548,7 @@
   <!-- /Find perfume Section -->
 
     <!-- Guide Section -->
-    <section id="about" class="stats section dark-background mt-5" style="direction: ltr;">
+    <section id="guide" class="stats section dark-background mt-5" style="direction: ltr;">
       <img src="assets/images/s8.jpg" alt="" data-aos="fade-in">
       <div class="container position-relative" data-aos="fade-up">
         <div class="container">
@@ -605,7 +582,7 @@
               </div>
               <div class="col-lg-6 text-center mt-5 mb-5" data-aos="fade-up" data-aos-delay="250">
                   <h3>ویدئوها</h3>
-                  <p>ویدیوهای آموزشی و الهام‌بخش درباره عطرها و روش‌های استفاده از آن‌ها و همچنین نمایش کار باا دستگاه عطریس را تماشا کنید و تجربه خود را ارتقا دهید.
+                  <p>ویدیوهای آموزشی و الهام‌بخش درباره عطرها و روش‌های استفاده از آن‌ها و همچنین نمایش کار با دستگاه عطریس را تماشا کنید و تجربه خود را ارتقا دهید.
                   </p>
                   <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
                       <a class="btn-getstarted mt-5" href="#">مشاهده</a>
@@ -618,11 +595,10 @@
     </section><!-- /Articles Section -->
 
     <!-- Pictures Section -->
-
     <section id="book-a-table" class="book-a-table section">      
       <div class="container">
           <div class="row g-0" data-aos="fade-up">
-              <div class="col-lg-6 reservation-img" style="background-image: url(assets/images/step-2_549f9e.jpg);"></div>
+              <div class="col-lg-6 reservation-img" style="background-image: url(assets/images/sharvina-aathymoolam-3K7Na4Lru9k-unsplash.jpg);"></div>
               <div class="col-lg-6 d-flex align-items-center reservation-form-bg" data-aos="fade-up">
                   <!-- Remove the nested container -->
                   <div class="text-center w-100">
@@ -685,7 +661,7 @@
                   </h4>
                   <p class="ingredients"><span>گروه بویایی: </span>چوبی آروماتیک</p>
                   <p class="ingredients"><span>رایحه: </span>تلخ, چهارفصل</p>
-                  <p class="ingredients mt-4 mb-4">آکادمیک, جلسات اداری, روزانه و کژوال, قرارهای دوستانه, قرارهای عاشقانه
+                  <p class="ingredients mt-4 mb-4">آکادمیک, جلسات اداری, روزانه, قرارهای دوستانه و عاشقانه
                   </p>
                   <div class="flower-icons mb-2">
                       <div class="flower-icon-item">
@@ -866,7 +842,7 @@
                       </div>
                       <div class="flower-icon-item">
                           <img src="assets/notes/f830d6f653a4df5987e723b12b45da704f0942d9469.jpg" class="flower-icon">
-                          <p>گل پیج امین الدوله</p>
+                          <p>گل امین الدوله</p>
                       </div>
                   </div>
                   <div class="mt-5 mb-3">
