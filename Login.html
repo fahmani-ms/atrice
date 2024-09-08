@@ -6,49 +6,105 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ورود به حساب کاربری</title>
 
+    <!-- Favicons -->
+    <link href="assets/images/logo.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
     <!-- Font Icon -->
     <link rel="stylesheet" href="assets/fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .center-container {
+        display: flex;
+        justify-content: center; /* Centers the element horizontally */
+        align-items: center;    /* Centers the element vertically */ 
+        margin-bottom: 20px;
+    }
+    .center-container img{
+        width: 100px;
+    }
+
+    .form-button {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center the buttons and text */
+        gap: 10px; /* Space between buttons and the "or" text */
+    }
+
+    .form-submit {
+        background-color: #C7A17F; /* Example color, adjust as needed */
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .secondary-button {
+        background-color: #ffffff; /* Example color, adjust as needed */
+        border: 1px solid #C7A17F; /* Matching border color with the primary button */
+        padding: 15px 1px;
+        color: #C7A17F; /* Matching text color */
+        font-size: 14px;
+        border-radius: 5px;
+        font-family: var(--default-font);
+        cursor: pointer;
+    }
+
+    .or-text {
+        margin: 0 10px; /* Space around the "or" text */
+        font-size: 16px;
+        color: #333333; /* Adjust the color as needed */
+    }
+
+
+    </style>
 </head>
 <body>
 
     <div class="main">
 
         <!-- Sing in  Form -->
+        <div class="center-container">
+            <a href="index.html" class="justify-content-center">
+                <img src="assets/images/logo - black.png">
+            </a>
+        </div>
+
         <section class="sign-in"  style="direction: rtl;">
             <div class="container">
                 <div class="signin-content">
                     <div class="signin-image">
-                        <figure><img src="assets/images/signin-image.jpg" alt="sing up image"></figure>
-                        <a href="Signup.html" class="signup-image-link">Create an account</a>
+                        <figure><img src="assets/images/karly-jones-4i9ef6xU738-unsplash.jpg" alt="sing up image"></figure>
+                        <a href="Signup.html" class="signup-image-link">ساخت حساب کاربری</a>
                     </div>
 
                     <div class="signin-form">
-                        <h2 class="form-title">Login</h2>
+                        <h2 class="form-title">ورود به حساب کاربری</h2>
                         <form method="POST" class="register-form" id="login-form">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="your_name" id="your_name" placeholder="Your Name"/>
+                                <input type="text" name="your_name" id="your_name" placeholder="شماره تلفن همراه"/>
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="your_pass" id="your_pass" placeholder="Password"/>
+                                <input type="password" name="your_pass" id="your_pass" placeholder="رمز عبور"/>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
-                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                                <label for="remember-me" class="label-agree-term"><span><span></span></span>من را به خاطر داشته باش</label>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
-                            </div>
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="ورود"/>
+                                <span class="or-text">یا</span>
+                                <button type="button" class="secondary-button">ورود با کد یکبار مصرف</button>
+                            </div>                            
                         </form>
                         <div class="social-login">
-                            <span class="social-label">Or login with</span>
+                            <span class="social-label">یا ورود با</span>
                             <ul class="socials">
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
                             </ul>
                         </div>

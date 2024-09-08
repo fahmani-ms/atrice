@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>نتایج آزمون تشخیص شخصیت</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/images/logo.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    /* style.css */
+    body {
+        text-align: center;
+    }
+
+    .progress-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .progress-step {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: lightgray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+        font-size: 18px;
+        transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .progress-step.active {
+        background-color: var(--accent-color);
+        color: var(--contrast-color);
+        transform: scale(1.2);
+    }
+
+    .results-content {
+        margin-top: 30px;
+    }
+
+    .result-step {
+        display: none; /* Initially hide all steps */
+    }
+
+    .result-step.active {
+        display: block; /* Show only the active step */
+    }
+
+    .navigation-buttons {
+        margin-top: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 0 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    #confirmBtn {
+        display: none; /* Hide confirm button initially */
+    }
+
+    /* CSS for Step 3 Layout */
+
+    .step-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .category-section {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .category-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .category-line {
+        width: 60px;
+        height: 3px;
+        background-color: #4CAF50;
+        margin: 0 auto 20px auto;
+    }
+
+    .perfume-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Three columns */
+        gap: 20px; /* Space between images */
+        padding: 20px;
+    }
+
+    .perfume-item {
+        overflow: hidden; /* Hide overflow to keep images contained */
+        border-radius: 10px;
+        transition: transform 0.3s; /* Smooth transition on hover */
+    }
+
+    .perfume-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s; /* Smooth transition on hover */
+    }
+
+    .perfume-item:hover {
+        transform: scale(1.05); /* Slight zoom effect on hover */
+    }
+
+     /* Ensure the hero section has no padding or margin */
+     #hero {
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Make the image cover the whole width of the hero section */
+    .hero-image {
+        width: 100%;  /* Full width of the page */
+        height: auto; /* Maintain the aspect ratio */
+        display: block; /* Removes any space below the image */
+        object-fit: cover; /* Ensures the image covers the area without distortion */
+    }
+
+    /* Optional: Adjust the container if needed */
+    #hero .container {
+        position: relative; /* To position elements on top of the image */
+        /* You can add padding or other styles here if needed */
+    }
+
+    /* Base styles for the divider line */
+    .divider-line {
+        position: absolute;
+        background-color: #ce1212; /* Choose a color for the line */
+    }
+
+    /* Vertical line for desktop view */
+    @media (min-width: 992px) { /* Adjust the min-width based on your layout */
+        .divider-line {
+            width: 0.5px; /* Thickness of the line */
+            height: 80%; /* Height relative to the parent container */
+            top: 10%; /* Adjust to center the line vertically */
+            left: 50%; /* Center the line horizontally */
+            transform: translateX(-50%);
+        }
+    }
+
+    /* Horizontal line for mobile view */
+    @media (max-width: 991px) { /* Adjust the max-width based on your layout */
+        .divider-line {
+            height: 2px; /* Thickness of the line */
+            width: 80%; /* Width relative to the parent container */
+            top: 50%; /* Center the line vertically */
+            left: 10%; /* Position the line with some margin on the left */
+            transform: translateY(-50%);
+        }
+    }
+
+    .hidden-item {
+    display: none;
+}
+  </style>
+</head>
+
+<body class="starter-page-page">
+
+    <header id="header" class="header d-flex align-items-center sticky-top mb-5">
+        <div class="container position-relative d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+                <img src="assets/images/logo.png" alt="">
+              </a>
+    
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="index.html" class="active">خانه<br></a></li>
+                    <li class="dropdown"><a href="#"><span>عطرها</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                      <ul>
+                        <li><a href="#">همه عطرها</a></li>
+                        <li><a href="#">جدیدها</a></li>
+                        <li><a href="#">پرفروش‌ها</a></li>
+                        <li><a href="#">برتر</a></li>
+                        <li class="dropdown"><a href="#"><span>مناسب برای</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">آقایان</a></li>
+                            <li><a href="#">خانم‌ها</a></li>
+                            <li><a href="#">خانم‌ها و آقایان</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>مناسب فصل</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">بهار</a></li>
+                            <li><a href="#">تابستان</a></li>
+                            <li><a href="#">پاییز</a></li>
+                            <li><a href="#">زمستان</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>طبع</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">خنک</a></li>
+                            <li><a href="#">معتدل</a></li>
+                            <li><a href="#">گرم</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>گروه بویایی</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">آروماتیک</a></li>
+                            <li><a href="#">گلی</a></li>
+                            <li><a href="#">مرکبایی</a></li>
+                            <li><a href="#">موارد بیشتر +</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>اقلیم</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">گرم و خشک</a></li>
+                            <li><a href="#">سرد کوهستانی</a></li>
+                            <li><a href="#">معتدل و مرطوب</a></li>
+                            <li><a href="#">گرم و مرطوب</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="index.html">رویدادها و کلاس‌ها</a></li>
+                    <li><a href="index.html">مقالات</a></li>
+                    <li><a href="index.html">مشاوره</a></li>
+                    <li><a href="index.html">تماس با ما</a></li>
+                    <li>
+                        <a href="javascript:void(0);" id="search-icon" class="search-icon">
+                            <i class="bi bi-search"></i>
+                        </a>
+                    </li>
+                    <li><a href="store.html">فروشگاه‌ها</a></li>
+                    <li>
+                        <a href="#">
+                            <img src="assets/icon/new-large-ibou-5-icons-ibou-pocket-white-bag.png" width="30">
+                        </a>
+                    </li>
+                    <!-- Profile icon with dropdown -->
+                    <li class="profile-dropdown">
+                        <a href="javascript:void(0);" id="profile-icon">
+                            <img src="assets/icon/user.png" class="profile-icon">
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a style="color: yellow;">نرگس فهمانی</a></li>
+                            <hr style="color: white">
+                            <li><a href="#">مدیریت عطرها</a></li>
+                            <li><a href="#">سفارشات</a></li>
+                            <li><a href="#">شخصیت‌شناسی</a></li>
+                            <li><a href="#">تاریخچه مشاوره</a></li>
+                            <hr style="color: white">
+                            <li><a href="#">خروج از حساب کاربری</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    
+        <!-- Search Semi-Page -->
+        <div id="search-semi-page" class="search-semi-page">
+            <div class="search-container-wrapper">
+                <button class="close-search">X</button>
+                <!-- Centered Search Input -->
+                <input type="text" class="search-input" placeholder="جستجوی عطر و برند...">
+                <!-- Two-column content -->
+                <div class="search-content">
+                  <div class="search-suggestions mt-4 mx-4">
+                      <div class="content-arrow">
+                          <h6>همین حالا شخصی‌سازی کن</h6>
+                          <p>شروع شخصیت‌شناسی</p>
+                      </div>
+                      <!-- Sample suggestions -->
+                      <div class="content-arrow mt-5">
+                          <h6>به ایده‌هایی نیاز داری؟</h6>
+                          <p>در مجموعه‌های دسته‌بندی شده ما جستجو کن</p>
+                      </div>
+                  </div>
+                  <div class="search-image mx-4">
+                      <img src="assets/images/edoardo-cuoghi-ufuchdZawng-unsplash.jpg" alt="Sample">
+                  </div>
+              </div>
+              
+            </div>
+        </div>
+    </header>
+
+  <main class="main">
+  <div class="progress-container">
+      <div class="progress-step" id="step1">1</div>
+      <div class="progress-step" id="step2">2</div>
+      <div class="progress-step" id="step3">3</div>
+  </div>
+
+
+  <div class="navigation-buttons mt-5">
+    <button id="prevBtn" class="btn btn-secondary" style="background-color: #B17742; color: #fff; border: none;" onclick="prevStep()">قبل</button>
+    <button id="nextBtn" class="btn btn-primary" style="background-color: black; color: #fff; border: none;" onclick="nextStep()">بعد</button>
+    <button id="confirmBtn" class="btn btn-success finish-button" style="background-color: green; color: #fff; border: none;" onclick="confirmResults()">تایید</button>
+</div>
+
+  <div class="results-content">
+      <div class="container result-step" id="result1">
+        <div class="container">
+          <section id="stats" class="stats section dark-background">
+            <img src="assets/images/fulvio-ciccolo-E6Ed669pvQQ-unsplash.jpg" alt="">
+            <div class="container position-relative">
+                <div class="row gy-4">
+                    <div class="col-lg-5">
+                        <div class="why-box mx-5" style="text-align: justify;">
+                            <h3 style="color: #F5DEB3;">تحلیل ما از شما</h3>
+                            <p>شما یک شخصیت‌ مهربان و دل‌سوز هستید. همچنین  شخصیت رمانتیک و احساسی در شما دیده می‌شود.
+                                شما یک انسان خونگرم ودارای روابط اجتماعی خوبی هستید و با معاشرت با افراد حس خوبی می‌گیرید.</p>
+                            <!-- Moved the button inside why-box to ensure proper placement -->
+                            <div class="d-flex justify-content-center">
+                                <a class="btn-getstarted mt-5" href="#">خواندن</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+        
+      </div>
+      <div class="container result-step" id="result2" style="background-color: black;">
+        <h4 class="mb-5 pt-5" style="color: #F5DEB3;">عطرهای مناسب شما</h4>
+        <p class="pb-5" style="color: whitesmoke;">عطرهای شرقی با ترکیبات گرم، شیرین و وانیلی با شخصیت شما سازگاری دارد.<br> 
+            رایحه‌های گلی مناسب شما است که اغلب با شخصیت‌های مهربان، رمانتیک و احساسی هماهنگی دارند.<br>
+            در فصل‌های سرد از این عطرها استفاده کنید.</p>
+      </div>
+      <div class=" container result-step mt-5" id="result3">
+        <h2 class="step-title">رایحه‌هایی که با شما مطابقت دارد:</h2>
+    
+        <div class="category-section">
+            <div class="container">
+                <h3 class="category-title mt-5">رایحه‌های برتر</h3>
+                <hr class="category-line">
+                <!-- Grid of Images -->
+                <section id="menu" class="menu section">          
+                    <div class="container">
+                      <div class="tab-content">
+              
+                        <div class="tab-pane fade active show" id="menu-starters">
+                          <div class="row gy-5">
+                              <!-- Menu Items -->
+                              <div class="col-lg-4 menu-item">
+                                <a href="assets/perfumes/dior-miss-dior-blooming-bouquet-edt-.jpg" class="glightbox"><img src="assets/perfumes/dior-miss-dior-blooming-bouquet-edt-.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                                <h4>عطر میس دیور بلومینگ بوکت
+                                </h4>
+                                <p class="ingredients"><span>گروه بویایی: </span>روایح گلی
+                                </p>
+                                <p class="ingredients"><span>رایحه: </span>خنک, شیرین</p>
+                                <p class="ingredients mt-4 mb-4 pt-4">آکادمیک, روزانه و کژوال, قرارهای عاشقانه
+                                </p>
+                                <div class="flower-icons mb-2">
+                                    <div class="flower-icon-item">
+                                        <img src="assets/notes/Apricot.jpg" class="flower-icon">
+                                        <p>زرد آلو</p>
+                                    </div>
+                                    <div class="flower-icon-item">
+                                        <img src="assets/notes/Peach.jpg" class="flower-icon">
+                                        <p>هلو</p>
+                                    </div>
+                                    <div class="flower-icon-item">
+                                        <img src="assets/notes/Peony.jpg" class="flower-icon">
+                                        <p>گل صدتومانی</p>
+                                    </div>
+                                    <div class="flower-icon-item">
+                                        <img src="assets/notes/Rose.jpg" class="flower-icon">
+                                        <p>گل رز</p>
+                                    </div>
+                                </div>
+                                <div class="mt-5 mb-3">
+                                  <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                                </div>
+                              </div>              
+                              <!-- Menu Item -->
+                              <div class="col-lg-4 menu-item">
+                                <a href="assets/perfumes/1521107567.jpg" class="glightbox"><img src="assets/perfumes/1521107567.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                                <h4>شنل کوکو مادمازل ادو پرفیوم
+                                </h4>
+                                <p class="ingredients"><span>گروه بویایی: </span>شرقی گلی</p>
+                                <p class="ingredients"><span>رایحه: </span>چهارفصل, شیرین</p>
+                                <p class="ingredients mt-4 mb-4">آکادمیک, جلسات اداری, روزانه و کژوال, قرارهای دوستانه, قرارهای عاشقانه, مهمانی رسمی
+                                </p>
+                                <div class="flower-icons mb-2">
+                                    <div class="flower-icon-item">
+                                        <img src="assets/notes/Jasmine.jpg" class="flower-icon">
+                                        <p>گل یاس</p>
+                                    </div>
+                                    <div class="flower-icon-item">
+                                        <img src="assets/notes/Rose.jpg" class="flower-icon">
+                                        <p>گل رز</p>
+                                    </div>
+                                </div>
+                                <div class="mt-5 mb-3">
+                                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                                </div>
+                              </div>  
+                              <!-- Menu Item -->
+                              <div class="col-lg-4 menu-item">
+                                <a href="assets/perfumes/om-eau-de-parfum-for-her-100ml-391f58375b274745b6f087386a8e4197-master-ea41da5d35f944f3bae082d8ca16c720-master-photoroom-png-photoroom.png" class="glightbox"><img src="assets/perfumes/om-eau-de-parfum-for-her-100ml-391f58375b274745b6f087386a8e4197-master-ea41da5d35f944f3bae082d8ca16c720-master-photoroom-png-photoroom.png" class="menu-img img-fluid mb-3" alt=""></a>
+                                <h4>عطر گوچی بلوم
+                                </h4>
+                                <p class="ingredients"><span>گروه بویایی: </span>روایح گلی</p>
+                                <p class="ingredients"><span>رایحه: </span>خنک, شیرین</p>
+                                <p class="ingredients mt-4 mb-4 pt-4">آکادمیک, روزانه و کژوال, قرارهای عاشقانه
+                                </p>
+                                <div class="flower-icons mb-2">
+                                    <div class="flower-icon-item">
+                                        <img src="assets/notes/Tuberose.jpg" class="flower-icon">
+                                        <p>گل مریم</p>
+                                    </div>
+                                    <div class="flower-icon-item">
+                                        <img src="assets/notes/Jasmine.jpg" class="flower-icon">
+                                        <p>گل یاس</p>
+                                    </div>
+                                    <div class="flower-icon-item">
+                                        <img src="assets/notes/f830d6f653a4df5987e723b12b45da704f0942d9469.jpg" class="flower-icon">
+                                        <p>گل امین الدوله</p>
+                                    </div>
+                                </div>
+                                <div class="mt-5 mb-3">
+                                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                                </div>
+                              </div>  
+                              
+                          </div>
+                      </div><!-- End Starter Menu Content -->
+                      </div>
+                    </div>
+                  </section>
+            </div>
+        </div>
+        <div class="category-section">
+          <h3 class="category-title">پرفروش‌ها</h3>
+          <hr class="category-line">
+          <!-- Grid of Images -->
+          <section id="menu" class="menu section">          
+            <div class="container">
+              <div class="tab-content">
+      
+                <div class="tab-pane fade active show" id="menu-starters">
+                  <div class="row gy-5">
+                      <!-- Menu Items -->
+                      <div class="col-lg-4 menu-item">
+                        <a href="assets/perfumes/2994_img-4352-dolce-gabbana-l-imperatrice_social.jpg" class="glightbox"><img src="assets/perfumes/2994_img-4352-dolce-gabbana-l-imperatrice_social.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                        <h4>عطر دولچه گابانا لیمپرتریس
+                        </h4>
+                        <p class="ingredients"><span>گروه بویایی: </span>گلی آبزی
+                        </p>
+                        <p class="ingredients"><span>رایحه: </span>خنک, شیرین</p>
+                        <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای دوستانه, قرارهای عاشقانه
+                        </p>
+                        <div class="flower-icons mb-2">
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Cyclamen.jpg" class="flower-icon">
+                                <p>گل پنجه مریم</p>
+                            </div>
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Jasmine.jpg" class="flower-icon">
+                                <p>گل یاس</p>
+                            </div>
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/watermelon.jpg" class="flower-icon">
+                                <p>هندوانه</p>
+                            </div>
+                        </div>
+                        <div class="mt-5 mb-3">
+                          <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                        </div>
+                      </div>              
+                      <!-- Menu Item -->
+                      <div class="col-lg-4 menu-item">
+                        <a href="assets/perfumes/57990c1cafc942e506a4ec284b0fb2217da07bb2_1616055606.jpg" class="glightbox"><img src="assets/perfumes/57990c1cafc942e506a4ec284b0fb2217da07bb2_1616055606.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                        <h4>عطر زنانه ژکساف نایت ویش
+                        </h4>
+                        <p class="ingredients"><span>گروه بویایی: </span>رایحه گلی
+                        </p>
+                        <p class="ingredients"><span>رایحه: </span>شیرین, گرم </p>
+                        <p class="ingredients mt-4 mb-4">روزانه و کژوال
+                        </p>
+                        <div class="flower-icons mb-2">
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Rose.jpg" class="flower-icon">
+                                <p>رز</p>
+                            </div>
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Peony.jpg" class="flower-icon">
+                                <p>گل صدتومانی</p>
+                            </div>
+                        </div>
+                        <div class="mt-5 mb-3">
+                            <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                        </div>
+                      </div>  
+                      <!-- Menu Item -->
+                      <div class="col-lg-4 menu-item">
+                        <a href="assets/perfumes/modiri-women.jpg" class="glightbox"><img src="assets/perfumes/modiri-women.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                        <h4>مهران مدیری ر مینور زنانه
+                        </h4>
+                        <p class="ingredients"><span>گروه بویایی: </span>گلی</p>
+                        <p class="ingredients"><span>رایحه: </span>خنک, شیرین</p>
+                        <p class="ingredients mt-4 mb-4">آکادمیک</p>
+                        <div class="flower-icons mb-2">
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Peach-Blossom.jpg" class="flower-icon">
+                                <p>شکوفه هلو</p>
+                            </div>
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Peony.jpg" class="flower-icon">
+                                <p>گل صدتومانی</p>
+                            </div>
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Tea (1).jpg" class="flower-icon">
+                                <p>برگ چای</p>
+                            </div>
+                        </div>
+                        <div class="mt-5 mb-3">
+                            <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                        </div>
+                      </div>  
+                      
+                  </div>
+              </div><!-- End Starter Menu Content -->
+              </div>
+            </div>
+          </section>
+      </div>
+
+      <div class="category-section">
+        <h3 class="category-title">جدیدترین‌ها</h3>
+        <hr class="category-line">
+        <!-- Grid of Images -->
+        <section id="menu" class="menu section">          
+            <div class="container">
+              <div class="tab-content">
+      
+                <div class="tab-pane fade active show" id="menu-starters">
+                  <div class="row gy-5">
+                      <!-- Menu Items -->
+                      <div class="col-lg-4 menu-item">
+                        <a href="assets/perfumes/Euphoria-For-Women.jpg" class="glightbox"><img src="assets/perfumes/Euphoria-For-Women.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                        <h4>عطر کلوین کلاین ایفوریا زنانه
+                        </h4>
+                        <p class="ingredients"><span>گروه بویایی: </span>شرقی گلی
+                        </p>
+                        <p class="ingredients"><span>رایحه: </span>شیرین, گرم</p>
+                        <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای عاشقانه
+                        </p>
+                        <div class="flower-icons mb-2">
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Lotus.jpg" class="flower-icon">
+                                <p>لاله مردابی</p>
+                            </div>
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Orchid.jpg" class="flower-icon">
+                                <p>گل ارکیده</p>
+                            </div>
+                        </div>
+                        <div class="mt-5 mb-3">
+                          <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                        </div>
+                      </div>              
+                      <!-- Menu Item -->
+                      <div class="col-lg-4 menu-item">
+                        <a href="assets/perfumes/a7695e15cf25d29d1604c1617013c8b397a25646_1597043031.jpg" class="glightbox"><img src="assets/perfumes/a7695e15cf25d29d1604c1617013c8b397a25646_1597043031.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                        <h4>نوید محمدزاده زنانه
+                        </h4>
+                        <p class="ingredients"><span>گروه بویایی: </span>آروماتیک ادویه ای
+                        </p>
+                        <p class="ingredients"><span>رایحه: </span>تلخ, چهارفصل</p>
+                        <p class="ingredients mt-4 mb-4">روزانه و کژوال
+                        </p>
+                        <div class="flower-icons mb-2">
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Peony.jpg" class="flower-icon">
+                                <p>گل صدتومانی</p>
+                            </div>
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Praline.jpg" class="flower-icon">
+                                <p>پرالین</p>
+                            </div>
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Rose.jpg" class="flower-icon">
+                                <p>گل رز</p>
+                            </div>
+                        </div>
+                        <div class="mt-5 mb-3">
+                          <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                        </div>
+                      </div>  
+                      <!-- Menu Item -->
+                      <div class="col-lg-4 menu-item">
+                        <a href="assets/perfumes/2f1bc4fdae4a3bfa3e39406c184026749384662f_1614585971.jpg" class="glightbox"><img src="assets/perfumes/2f1bc4fdae4a3bfa3e39406c184026749384662f_1614585971.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                        <h4>مهران مدیری پلان زنانه
+                        </h4>
+                        <p class="ingredients"><span>گروه بویایی: </span>رایحه های میوه ای
+                        </p>
+                        <p class="ingredients"><span>رایحه: </span>چهارفصل, شیرین</p>
+                        <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای عاشقانه
+                        </p>
+                        <div class="flower-icons mb-2">
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Coriander.jpg" class="flower-icon">
+                                <p>گشنیز</p>
+                            </div>
+                            <div class="flower-icon-item">
+                                <img src="assets/notes/Jasmine.jpg" class="flower-icon">
+                                <p>گل یاس</p>
+                            </div>
+                        </div>
+                        <div class="mt-5 mb-3">
+                          <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                        </div>
+                      </div>  
+                      
+                  </div>
+              </div><!-- End Starter Menu Content -->
+              </div>
+            </div>
+          </section>
+    </div>
+    
+        <!-- Confirm Button for Step 3 -->
+        <button id="confirmBtn" onclick="confirmResults()">تایید</button>
+    </div>
+    
+  </div>
+
+  </main>
+  <footer class="footer dark-background py-5 border-top mt-5">
+    <div class="container">
+        <div class="row">
+            <!-- عطریس Section -->
+            <div class="col-12 col-md-4 mb-3">
+                <h5>عطریس</h5>
+                <hr>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>درباره ما</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>تماس با ما</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>پرسش‌های مشتریان</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>سیاست و حفظ حریم شخصی</h6></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- خرید Section -->
+            <div class="col-12 col-md-4 mb-3">
+                <h5>خرید</h5>
+                <hr>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>راهنمای خرید حضوری</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>راهنمای خرید آنلاین</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>ارسال و تحویل کالا</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>پیگیری سفارش</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>ثبت شکایات</h6></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- اطلاعات تماس Section -->
+            <div class="col-12 col-md-4 mb-3">
+                <h5>اطلاعات تماس</h5>
+                <hr>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>تلفن</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>روزهای کاری</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>فروشگاه‌ها</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>ایمیل</h6></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Section -->
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+            <p class="mb-0">کلیه حقوق مادی و معنوی این سایت متعلق به شرکت عطریس می‌باشد.</p>
+            <ul class="list-unstyled d-flex mb-0">
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="assets/images/icons8-instagram-48.png" height="24"></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="assets/images/icons8-x-50.png" height="24"></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="assets/images/icons8-linkedin-48.png" height="24"></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    // script.js
+    let currentStep = 1;
+
+    function showStep(step) {
+        // Update currentStep
+        currentStep = step;
+
+        // Update progress steps
+        document.querySelectorAll('.progress-step').forEach((stepElement, index) => {
+            if (index + 1 === step) {
+                stepElement.classList.add('active');
+            } else {
+                stepElement.classList.remove('active');
+            }
+        });
+
+        // Update result steps
+        document.querySelectorAll('.result-step').forEach((resultElement, index) => {
+            if (index + 1 === step) {
+                resultElement.classList.add('active');
+            } else {
+                resultElement.classList.remove('active');
+            }
+        });
+
+        // Update button visibility
+        if (step === 1) {
+            document.getElementById('prevBtn').style.display = 'none';
+            document.getElementById('nextBtn').style.display = 'inline-block';
+            document.getElementById('confirmBtn').style.display = 'none';
+        } else if (step === 3) {
+            document.getElementById('prevBtn').style.display = 'inline-block';
+            document.getElementById('nextBtn').style.display = 'none';
+            document.getElementById('confirmBtn').style.display = 'inline-block';
+        } else {
+            document.getElementById('prevBtn').style.display = 'inline-block';
+            document.getElementById('nextBtn').style.display = 'inline-block';
+            document.getElementById('confirmBtn').style.display = 'none';
+        }
+    }
+
+    function nextStep() {
+        if (currentStep < 3) {
+            showStep(currentStep + 1);
+        }
+    }
+
+    function prevStep() {
+        if (currentStep > 1) {
+            showStep(currentStep - 1);
+        }
+    }
+
+    function confirmResults() {
+        window.location.href = 'index.html';
+    }
+
+    // Initialize to show the first step
+    showStep(currentStep);
+
+  </script>
+
+    <script>
+    document.getElementById('profile-icon').addEventListener('click', function() {
+    const dropdown = this.parentElement;
+    dropdown.classList.toggle('open');
+});
+
+// Close the dropdown if the user clicks outside of it
+window.addEventListener('click', function(event) {
+    const dropdown = document.querySelector('.profile-dropdown');
+    if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('open');
+    }
+});
+
+  </script>
+
+<script>
+    document.getElementById('search-icon').addEventListener('click', function() {
+      document.getElementById('search-semi-page').style.top = '0';
+  });
+  
+  document.querySelector('.close-search').addEventListener('click', function() {
+      document.getElementById('search-semi-page').style.top = '-100%';
+  });
+  
+  </script>
+
+</body>
+
+</html>

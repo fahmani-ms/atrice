@@ -4,18 +4,18 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>عطریسه - پلتفرم هوشمند خرید عطر</title>
+  <title>عطریس - پلتفرم هوشمند خرید عطر</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/images/logo.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <!-- <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet"> -->
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,6 +26,84 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    /* Ensure the hero section has no padding or margin */
+    #hero {
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Make the image cover the whole width of the hero section */
+    .hero-image {
+        width: 100%;  /* Full width of the page */
+        height: auto; /* Maintain the aspect ratio */
+        display: block; /* Removes any space below the image */
+        object-fit: cover; /* Ensures the image covers the area without distortion */
+    }
+
+    /* Optional: Adjust the container if needed */
+    #hero .container {
+        position: relative; /* To position elements on top of the image */
+        /* You can add padding or other styles here if needed */
+    }
+
+    /* Base styles for the divider line */
+    .divider-line {
+        position: absolute;
+        background-color: #B17742; /* Choose a color for the line */
+        width: 2px;
+        padding-right: 1px;
+        padding-left: 1px;
+    }
+
+    /* Vertical line for desktop view */
+    @media (min-width: 992px) { /* Adjust the min-width based on your layout */
+        .divider-line {
+            width: 2px; /* Thickness of the line */
+            height: 80%; /* Height relative to the parent container */
+            top: 10%; /* Adjust to center the line vertically */
+            left: 50%; /* Center the line horizontally */
+            transform: translateX(-50%);
+        }
+    }
+
+    /* Horizontal line for mobile view */
+    @media (max-width: 991px) { /* Adjust the max-width based on your layout */
+        .divider-line {
+            height: 2px; /* Thickness of the line */
+            width: 80%; /* Width relative to the parent container */
+            top: 50%; /* Center the line vertically */
+            left: 10%; /* Position the line with some margin on the left */
+            transform: translateY(-50%);
+        }
+    }
+
+    .hidden-item {
+    display: none;
+}
+
+  .section-title {
+      display: flex; /* Sets the display property to flex */
+      align-items: center; /* Vertically centers items if they are not already aligned */
+      justify-content: center; /* Horizontally centers the content */
+      flex-direction: column; /* Ensures that the text is treated as a column (optional) */
+  }
+
+  .font-size-bold {
+          font-weight: bold; /* Ensures the text is bold */
+          /* Optional: Add other font styling here if needed */
+      }
+
+
+    .justify-text {
+        text-align: justify; /* Justify text within the list items */
+    }
+
+
+.row>* {
+  margin-top: 3px;
+}
+  </style>
 </head>
 
 <body class="index-page">
@@ -34,9 +112,7 @@
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">عطریسه</h1>
+        <img src="assets/images/logo.png" alt="">
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -88,53 +164,91 @@
               </li>
             </ul>
           </li>
-          <li><a href="#menu">رویدادها و کلاس‌ها</a></li>
-          <li><a href="#events">مقالات</a></li>
-          <li><a href="#chefs">مشاوره</a></li>
+          <li><a href="#hero">رویدادها و کلاس‌ها</a></li>
+          <li><a href="#articles">مقالات</a></li>
+          <li><a href="#guide">مشاوره</a></li>
           
-          <li><a href="#contact">تماس با ما</a></li>
+          <li><a href="#hero">تماس با ما</a></li>
+          <li>
+            <a href="javascript:void(0);" id="search-icon" class="search-icon">
+                <i class="bi bi-search"></i>
+            </a>
+        </li>
+          <li>
+            <a href="store.html">فروشگاه‌ها</a>
+          </li>
+          <li><a href="#">
+            <img src="assets/icon/new-large-ibou-5-icons-ibou-pocket-white-bag.png" width="30">
+          </a>
+          </li>
+          <li>
+            <a class="btn-getstarted" href="login.html">ورود</a>
+          </li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
-      <a class="btn-getstarted" href="index.html#book-a-table">ورود</a>
-
     </div>
+    <!-- Search Semi-Page -->
+    <div id="search-semi-page" class="search-semi-page">
+      <div class="search-container-wrapper">
+          <button class="close-search">X</button>
+          <!-- Centered Search Input -->
+          <input type="text" class="search-input" placeholder="جستجوی عطر و برند...">
+          <!-- Two-column content -->
+          <div class="search-content">
+            <div class="search-suggestions mt-4 mx-4">
+                <div class="content-arrow">
+                    <h6>همین حالا شخصی‌سازی کن</h6>
+                    <p>شروع شخصیت‌شناسی</p>
+                </div>
+                <!-- Sample suggestions -->
+                <div class="content-arrow mt-5">
+                    <h6>به ایده‌هایی نیاز داری؟</h6>
+                    <p>در مجموعه‌های دسته‌بندی شده ما جستجو کن</p>
+                </div>
+            </div>
+            <div class="search-image mx-4">
+                <img src="assets/images/edoardo-cuoghi-ufuchdZawng-unsplash.jpg" alt="Sample">
+            </div>
+        </div>
+        
+      </div>
+  </div>
   </header>
 
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section light-background">
 
+    <section id="hero" class="hero section light-background">
+      
       <div class="container">
-        <div class="row gy-4 justify-content-center justify-content-lg-between" style="background-color: #f7f0ea;">
-          <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center">
-            <h1 data-aos="fade-up">خرید هوشمند عطر<br>بر اساس تیپ شخصیتی شما</h1>
-            <p data-aos="fade-up" data-aos-delay="100">ما شخصیت شما را با دقت ارزیابی و عطر مناسب شما را معرفی می‌کنیم.</p>
-            <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-              <a href="#book-a-table" class="btn-get-started">ورود</a>
-            </div>
-          </div>
-          <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
-            <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
-          </div>
-        </div>
+        <img src="assets/images/s7.jpg" class="hero-image" style="width: 100%;">
+      </div>
+  </section><!-- /Hero Section -->
+
+    <!-- Introduction Section -->
+      <section class="section">
+        <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <p><span>معرفی</span> <span class="description-title">کوتاه</span></p>
+      </div><!-- End Section Title -->
+      <div class="container">
+        <h6>در عطریس، هر عطر فقط یک انتخاب نیست، بلکه سفری به دنیای درونی شماست. با استفاده از فناوری هوش مصنوعی و طراحی منحصر به فرد، عطری به شما هدیه می‌دهیم که روح شما را بیان می‌کند. در اینجا، عطر تنها یک بو نیست، بلکه امضای منحصربه‌فرد شماست.</h6>
       </div>
 
-    </section><!-- /Hero Section -->
 
+      </section><!-- /Introduction Section -->
+    
     <!-- Gallery Section -->
     <section id="gallery" class="gallery section light-background">
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up" style="background-color: aliceblue;">
-        <h2></h2>
+      <div class="container section-title" data-aos="fade-up">
         <p><span>برندهای</span> <span class="description-title">عطر</span></p>
       </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
+      <div class="container" data-aos="fade-up">
         <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
             {
@@ -167,25 +281,28 @@
             }
           </script>
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-1.png"><img src="assets/img/gallery/gallery-1.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-2.png"><img src="assets/img/gallery/gallery-2.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-3.png"><img src="assets/img/gallery/gallery-3.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-4.png"><img src="assets/img/gallery/gallery-4.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/Calvin-Klein-Logo-1975-1992.png"><img src="assets/brands/Calvin-Klein-Logo-1975-1992.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/Cartier_logo.svg.png"><img src="assets/brands/Cartier_logo.svg.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/Chanel_logo_interlocking_cs.svg.png"><img src="assets/brands/Chanel_logo_interlocking_cs.svg.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/Dior_Logo.svg.png"><img src="assets/brands/Dior_Logo.svg.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/Gucci_Logo.svg.png"><img src="assets/brands/Gucci_Logo.svg.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/Jaguar-logo-ED7E01A4A1-seeklogo.com.png"><img src="assets/brands/Jaguar-logo-ED7E01A4A1-seeklogo.com.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/leila-hatami-logo.png"><img src="assets/brands/leila-hatami-logo.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/MEHRAN-MODIRI.png"><img src="assets/brands/MEHRAN-MODIRI.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/navid-mohammadzadeh.jpg"><img src="assets/brands/navid-mohammadzadeh.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/ten-forever-logo.jpg"><img src="assets/brands/ten-forever-logo.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide mx-3"><a class="glightbox" data-gallery="images-gallery" href="assets/brands/ژک-ساف.jpg"><img src="assets/brands/ژک-ساف.jpg" class="img-fluid" alt=""></a></div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
-
       </div>
-
     </section><!-- /Gallery Section -->
 
     <!-- Safar Rayehe Section -->
-    <section id="why-us" class="why-us section light-background">
+    <section id="why-us" class="why-us section">
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up" style="background-color: aliceblue;">
-        <h2></h2>
-        <p><span>سفر</span> <span class="description-title">رایحه‌ها</span></p>
+      <div class="container section-title mb-5" data-aos="fade-up"><p><span>سفر</span> <span class="description-title">رایحه‌ها</span></p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -196,41 +313,50 @@
 
               <div class="col-xl-3">
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                  <i class="bi bi-clipboard-data"></i>
-                  <h4>Corporis voluptates officia eiusmod</h4>
-                  <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                  <i class="bi">
+                    <img src="assets/icon/49-492608_circular-arrows-cycle-icon-png.png" width="25px">
+                  </i>
+                  <p>هر عطرت منحصر به فرده!
+                    هرموقع احسای تغییر کردی، میتونی تغییرش بدی
+                    </p>
                 </div>
               </div><!-- End Icon Box -->
 
               <div class="col-xl-3" data-aos="fade-up" data-aos-delay="300">
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                  <i class="bi bi-gem"></i>
-                  <h4>Ullamco laboris ladore lore pan</h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                  <i class="bi">
+                    <img src="assets/icon/3215206.png" width="25px">
+                  </i>
+                  <p>با ما همراه شو تا هرماه عطرهای جدید مناسبت را پیشنهاد دهیم که بیای بخری
+                  </p>
                 </div>
               </div><!-- End Icon Box -->
 
               <div class="col-xl-3" data-aos="fade-up" data-aos-delay="400">
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                  <i class="bi bi-inboxes"></i>
-                  <h4>Labore consequatur incidid dolore</h4>
-                  <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                  <i class="bi">
+                    <img src="assets/icon/buyconfrimed_121604.png" width="25px">
+                  </i>
+                  <p>عطرت رو از سایت یا دستگاه، اسپری یا خریداری کن
+                  </p>
                 </div>
               </div><!-- End Icon Box -->
 
               <div class="col-xl-3" data-aos="fade-up" data-aos-delay="400">
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                  <i class="bi bi-inboxes"></i>
-                  <h4>Labore consequatur incidid dolore</h4>
-                  <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                  <i class="bi">
+                    <img src="assets/icon/5868515.png" width="25px">
+                  </i>
+                  <p>برای انتخاب عطر خودت نگران نباش! با مشاوره هوشمند ما عطرت را درست انتخاب کن
+                  </p>
                 </div>
               </div><!-- End Icon Box -->
 
             </div>
           </div>
 
-          <div class="col-md-12 text-center">
-            <button type="submit">شروع شخصیت شناسی</button>
+          <div class="d-flex justify-content-center mt-5" data-aos="fade-up" data-aos-delay="200">
+            <a class="btn-getstarted mt-2" href="test.html">شروع شخصیت شناسی</a>
           </div>
 
         </div>
@@ -241,32 +367,22 @@
 
     <!-- Why Us Section -->
     <section id="why-us" class="why-us section light-background">
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <div class="why-box">
-              <h3>چرا باید مارا انتخاب کنید؟</h3>
-              <p>
-                چون ما خیلی خفنیم!:)
-              </p>
-            </div>
-          </div><!-- End Why Box -->
-          </div>
-
+      <!-- Section Title -->
+      <div class="why-box">
+        <div class="mx-5">
+          <h3>چرا ما؟</h3>
+          <p>در عطریس، انتخاب عطر یک تجربه منحصربه‌فرد و شخصی است. با دستگاه‌های هوشمند و فناوری هوش مصنوعی ما، عطری را کشف کنید که کاملاً با شخصیت شما هماهنگ باشد. آنچه ما را متمایز می‌کند، توجه به جزئیات و ایجاد تجربه‌ای است که فراتر از یک خرید معمولی است. عطریس چیزی بیشتر از یک فروشگاه عطر است؛ اینجا جایی است که هر بار با بوییدن عطر دلخواهتان، تجربه‌ای به یادماندنی خواهید داشت.
+          </p>
         </div>
-
+      </div>
       </div>
 
     </section><!-- /Why Us Section -->
 
     <!-- Team Section -->
     <section id="chefs" class="chefs section">
-
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title mb-5" data-aos="fade-up">
         <p><span>تیم</span> <span class="description-title">ما<br></span></p>
       </div><!-- End Section Title -->
 
@@ -274,29 +390,10 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/chefs/chefs-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>محمدصادق فهمانی ارشد</h4>
-                <span>مدیر سایت</span>
-                <p>خیلی خفنه!</p>
-              </div>
-            </div>
-          </div><!-- End Chef Team Member -->
-
-          <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/chefs/chefs-2.jpg" class="img-fluid" alt="">
+                <img src="assets/team/pexels-photo-774909 - Copy.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -307,15 +404,14 @@
               <div class="member-info">
                 <h4>نرگس فهمانی ارشد</h4>
                 <span>مدیرعامل و موسس</span>
-                <p>اوشکولی بیش نیست! یک احمق سه پستون!</p>
               </div>
             </div>
           </div><!-- End Chef Team Member -->
 
-          <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/chefs/chefs-3.jpg" class="img-fluid" alt="">
+                <img src="assets/team/team1.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -325,11 +421,48 @@
               </div>
               <div class="member-info">
                 <h4>محمدرسول فهمانی ارشد</h4>
-                <span>عکاس</span>
-                <p>به جان غدیر خودش هم نمیدونه داره چیکار میکنه!</p>
+                <span>مدیر مارکتینگ</span>
               </div>
             </div>
           </div><!-- End Chef Team Member -->
+
+          <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/team/depositphotos_333887094-stock-photo-smiling-black-girl-standing-with.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>الناز قدرت</h4>
+                <span>مدیر پشتیبانی و امور مشتریان</span>
+              </div>
+            </div>
+          </div><!-- End Chef Team Member -->
+
+          <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/team/stock-photo-middle-age-handsome-man-wearing-casual-shirt-standing-isolated-white.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>محمدصادق فهمانی ارشد</h4>
+                <span>مدیر سایت</span>
+              </div>
+            </div>
+          </div><!-- End Chef Team Member -->
+
+          
 
         </div>
 
@@ -338,28 +471,32 @@
     </section><!-- /Team Section -->
 
     <!-- Get Section -->
-    <section id="about" class="about section" style="direction: ltr;">
+    <section id="about" class="about section light-background" style="direction: ltr;">
 
           <!-- Section Title -->
-          <div class="container section-title" data-aos="fade-up">
-            <p><span>چیزی که شما</span> <span class="description-title">به دست می‌آورید:</span></p>
+          <div class="container section-title mb-5" data-aos="fade-up">
+            <p><span>چیزی که شما</span> <span class="description-title">به دست می‌آورید</span></p>
           </div><!-- End Section Title -->
     
           <div class="container">
     
             <div class="row gy-4">
               <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
-                <img src="assets/img/about.jpg" class="img-fluid mb-4" alt="">
+                <img src="assets/images/maxim-lozyanko-qFsxwpoDIB4-unsplash.jpg" class="img-fluid mb-4" alt="">
               </div>
               <div class="col-lg-5" data-aos="fade-up" data-aos-delay="250">
-                <div class="content ps-0 ps-lg-5">
-                  <ul>
-                    <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                    <li><i class="bi bi-check-circle-fill"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                    <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-                  </ul>
-                </div>
+                <div class="content ps-0 ps-lg-5" style="direction: rtl;">
+                  <ul class="justify-text">
+                    <li><span class="font-size-bold">✓ تجربه شخصی و منحصر به فرد:</span> با هوش مصنوعی ما، عطری را کشف کنید که به طور کامل با شخصیت و سلیقه شما هماهنگ باشد.</li>
+                    <li><span class="font-size-bold">✓ سفر بویایی خاص:</span> هر بار که از آتریس استفاده می‌کنید، به دنیای عطری وارد می‌شوید که حال و احساسات شما را تغییر می‌دهد.</li>
+                    <li><span class="font-size-bold">✓ دسترسی به محصولات ممتاز:</span> از مجموعه‌ای از عطرهای باکیفیت و منحصر به فرد که با دقت برای شما انتخاب شده‌اند، انتخاب کنید.</li>
+                    <li><span class="font-size-bold">✓ عضو جامعه عطرها:</span> به گروهی از دوستداران عطر بپیوندید که به دنبال تجربیات جدید و به یاد ماندنی هستند.</li>
+                    <li><span class="font-size-bold">✓ خدمات ویژه و مشاوره:</span> از مشاوره‌های تخصصی و خدمات انحصاری ما بهره‌مند شوید تا انتخابی دقیق‌تر و آگاهانه‌تر داشته باشید. استفاده از فناوری</li>
+                </ul>
               </div>
+              
+            </div>
+            
             </div>
     
           </div>
@@ -368,299 +505,471 @@
 
     <!-- Fit perfumes Section -->
     <section id="book-a-table" class="book-a-table section">      
-
-      <div class="container">
-
-        <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-6 reservation-img" style="background-image: url(assets/img/reservation.jpg);"></div>
-
-          <div class="col-lg-6 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
-            <div class="container section-title" data-aos="fade-up"> 
-              <p><span>مناسب‌ترین </span> <span class="description-title">عطرها<br></span></p>
-              <h2>.......................................عطرهای خوبیه</h2>
+        <div class="container">
+            <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-6 reservation-img" style="background-image: url(assets/images/bg-0-desktop_aef261.jpg);"></div>
+                <div class="col-lg-6 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Centering the content -->
+                    <div class="container text-center">
+                        <!-- Text content container -->
+                        <div class="section-title mx-5" data-aos="fade-up" style="text-align: justify;">
+                            <p><span>مناسب‌ترین </span><span class="description-title mb-5">عطرها<br></span></p>
+                            <h6 class="mt-4">عطر چیزی فراتر از یک رایحه است؛ بازتابی از شخصیت، احساسات و سبک زندگی شماست. در عطریس، ما به شما کمک می‌کنیم تا از میان مجموعه‌ای از عطرهای خاص و متنوع، آنچه بیشترین هماهنگی با شما دارد را بیابید. با ما همراه شوید تا عطر ایده‌آل خود را کشف کنید و تجربه‌ای منحصربه‌فرد داشته باشید.
+                            </h6>
+                            <div class="d-flex justify-content-center" data-aos="fade-up">
+                              <a class="btn-getstarted mt-5" href="test.html">شروع شخصیت شناسی</a>
+                          </div>
+                        </div>                        
+                    </div>
+                </div>
             </div>
-            <a class="btn-getstarted mt-5" href="index.html#book-a-table">شروع شخصیت شناسی</a>
-          </div>
-
         </div>
-
-      </div>
     </section><!-- /Fit perfumes Section -->
 
     <!-- Find perfume Section -->
     <section id="stats" class="stats section dark-background">
-
-      <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
-
-      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="container">
-
+      <img src="assets/images/trung-do-bao-AynL5XXQsGc-unsplash.jpg" alt="" data-aos="fade-in">
+      <div class="container position-relative" data-aos="fade-up">
           <div class="row gy-4">
-  
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-              <div class="why-box" style="background-color: red;">
-                <h3>عطر خود را با ما پیدا کنید</h3>
-                <p>
-                  باشه بگو چیکار کنم؟
-                </p>
-                <a class="btn-getstarted mt-5" href="index.html#book-a-table">شروع شخصیت شناسی</a>
+              <div class="col-lg-5" data-aos="fade-up">
+                  <div class="why-box" style="text-align: justify;">
+                      <h3>عطر خود را با ما پیدا کنید</h3>
+                      <p>ساخت پروفایل بویایی خود را با پرسشنامه ما آغاز کنید. به ما در شناخت درست خود کمک کنید و ما عطرهایی را که با سلیقه شما سازگارند، پیدا خواهیم کرد
+                      </p>
+                      <!-- Moved the button inside why-box to ensure proper placement -->
+                      <div class="d-flex justify-content-center" data-aos="fade-up">
+                          <a class="btn-getstarted mt-5" href="test.html">شروع شخصیت شناسی</a>
+                      </div>
+                  </div>
               </div>
-            </div><!-- End Why Box -->
-            </div>
-  
           </div>
-
-        </div>
-
       </div>
-
-    </section><!-- /Find perfume Section -->
-
+  </section>
+  <!-- /Find perfume Section -->
 
     <!-- Guide Section -->
-    <section id="about" class="about section" style="direction: ltr;">
-
-      <div class="container">
-
-        <div class="row gy-4">
-          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/about.jpg" class="img-fluid mb-4" alt="">
-              <div class="why-box" style="background-color: red;">
-                <h3>راهنمای خرید حضوری و آنلاین</h3>
-                <p>
-                  ما به تو میگیم که چیکار کنی....................
+    <section id="guide" class="stats section dark-background mt-5" style="direction: ltr;">
+      <img src="assets/images/s8.jpg" alt="" data-aos="fade-in">
+      <div class="container position-relative" data-aos="fade-up">
+        <div class="container">
+          <div class="row gy-4">  
+            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100"  style="direction: rtl;">
+              <div class="why-box" style="text-align: justify;">
+                <h3 class="mb-4">راهنمای خرید حضوری و آنلاین</h3>
+                <p>برای تجربه خرید بی‌نظیر عطرها به دو صورت حضوری و آنلاین، راهنمای کامل ما را ببینید و از امکانات و خدمات ویژه بهره‌مند شوید. برای اطلاعات بیشتر کلیک کنید.
                 </p>
-                <a class="btn-getstarted mt-5" href="index.html#book-a-table">راهنمای خرید</a>
+                <div class="d-flex justify-content-center" data-aos="fade-up">
+                <a class="btn-getstarted mt-5" href="#">راهنمای خرید</a>
+                </div>
               </div>
+            </div><!-- End Why Box -->
+            </div> 
           </div>
         </div>
-      </div>
-
     </section><!-- /Guide Section -->
 
     <!-- Articles Section -->
-     <section id="testimonials" class="testimonials section light-background">
-
-     <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <div class="row">
-        <div class="col-s-6">
-          <h3>مقالات</h3>
-          <p>
-            ما به تو میگیم که چیکار کنی....................
-          </p>
-          <a class="btn-getstarted mt-5" href="index.html#book-a-table">خواندن</a>
-        </div>
-        <div class="col-s-6"></div>
-        <h3>مقالات</h3>
-          <p>
-            ما به تو میگیم که چیکار کنی....................
-          </p>
-          <a class="btn-getstarted mt-5" href="index.html#book-a-table">مشاهده</a>
+    <section id="articles" class="about section light-background">
+      <div class="container">
+          <div class="row gy-4 position-relative">
+              <div class="col-lg-6 text-center mt-5 mb-5" data-aos="fade-up" data-aos-delay="100">
+                  <h3>مقالات</h3>
+                  <p>مطالب جذاب و آموزشی درباره دنیای عطرها را بخوانید و دانش خود را در زمینه نت‌ها، ترکیبات و انتخاب عطر گسترش دهید
+                  </p>
+                  <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                      <a class="btn-getstarted mt-5" href="#">خواندن</a>
+                  </div>
+              </div>
+              <div class="col-lg-6 text-center mt-5 mb-5" data-aos="fade-up" data-aos-delay="250">
+                  <h3>ویدئوها</h3>
+                  <p>ویدیوهای آموزشی و الهام‌بخش درباره عطرها و روش‌های استفاده از آن‌ها و همچنین نمایش کار با دستگاه عطریس را تماشا کنید و تجربه خود را ارتقا دهید.
+                  </p>
+                  <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                      <a class="btn-getstarted mt-5" href="#">مشاهده</a>
+                  </div>
+              </div>
+              <!-- Divider Line -->
+              <div class="divider-line"></div>
+          </div>
       </div>
-      </div>
-     </section><!-- /Articles Section -->
+    </section><!-- /Articles Section -->
 
     <!-- Pictures Section -->
-     <section class="pictures">
+    <section id="book-a-table" class="book-a-table section">      
       <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <img src="assets/img/pic-section.jpg" class="img-fluid mb-4" alt="">
+          <div class="row g-0" data-aos="fade-up">
+              <div class="col-lg-6 reservation-img" style="background-image: url(assets/images/sharvina-aathymoolam-3K7Na4Lru9k-unsplash.jpg);"></div>
+              <div class="col-lg-6 d-flex align-items-center reservation-form-bg" data-aos="fade-up">
+                  <!-- Remove the nested container -->
+                  <div class="text-center w-100">
+                      <!-- Text content container -->
+                      <div class="section-title mx-5" data-aos="fade-up" style="text-align: justify;">
+                          <p><span>گالری </span><span class="description-title mb-5">تصاویر<br></span></p>
+                          <div class="d-flex justify-content-center" data-aos="fade-up">
+                              <a class="btn-getstarted mt-5" href="#">مشاهده</a>
+                          </div>
+                      </div>                        
+                  </div>
+              </div>
           </div>
-          <div class="col-md-6">
-            <p>گالری تصاویر</p>
-            <a class="btn-getstarted mt-5" href="index.html#book-a-table">مشاهده</a>
-          </div>
-        </div>
       </div>
-     </section>
-
+  </section>
+  
     <!-- Perfumes Section -->
-    <section id="menu" class="menu section">
+    <section id="menu" class="menu section light-background">
 
       <!-- Section Title -->
+      <div class="container section-title mb-5" data-aos="fade-up">
+        <p><span>آنچه می‌خواهید</span> <span class="description-title">انتخاب کنید:</span></p>
+      </div><!-- End Section Title -->
+
       <div class="container">
-
-        <ul class="nav nav-tabs d-flex justify-content-center mb-4" data-aos="fade-up" data-aos-delay="100">
-
-          <li class="nav-item">
-            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#menu-starters">
-              <h4>عطرها</h4>
-            </a>
-          </li><!-- End tab nav item -->
-
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-breakfast">
-              <h4>ادکلن‌ها</h4>
-            </a><!-- End tab nav item -->
-
-        </ul>
-
-        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+        <div class="tab-content" data-aos="fade-up">
 
           <div class="tab-pane fade active show" id="menu-starters">
-
             <div class="row gy-5">
+                <!-- Menu Items -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/perfumes/1689485010.jpg" class="glightbox"><img src="assets/perfumes/1689485010.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>علی دایی تن فوراور فنومنال</h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>چرمی, چوبی
+                  </p>
+                  <p class="ingredients"><span>رایحه: </span>تلخ, گرم</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک</p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Gardenia.jpg" class="flower-icon">
+                          <p>گاردنیا</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Heliotrope.jpg" class="flower-icon">
+                          <p>آفتاب پرست</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Pepper.jpg" class="flower-icon">
+                          <p>فلفل</p>
+                      </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
+                </div>              
+                <!-- Menu Item -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/perfumes/chanel-Bleu-de-Chanel-EDP-e1616777375992.jpg" class="glightbox"><img src="assets/perfumes/chanel-Bleu-de-Chanel-EDP-e1616777375992.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>عطر شنل بلو د شنل ادو پرفیوم مردانه
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>چوبی آروماتیک</p>
+                  <p class="ingredients"><span>رایحه: </span>تلخ, چهارفصل</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک, جلسات اداری, روزانه, قرارهای دوستانه و عاشقانه
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Cedar.jpg" class="flower-icon">
+                          <p>چوب سدر</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Nutmeg.jpg" class="flower-icon">
+                          <p>جوز</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Ginger.jpg" class="flower-icon">
+                          <p>زنجبیل</p>
+                      </div>
+                      <div class="flower-icon-item">
+                        <img src="assets/notes/Mint.jpg" class="flower-icon">
+                        <p>نعناع</p>
+                    </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
+                </div>
+                <!-- Menu Item -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/perfumes/cartier-declaration-d-un-soir.jpg" class="glightbox"><img src="assets/perfumes/cartier-declaration-d-un-soir.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>عطر کارتیر دکلریشن دون سویر
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>چوبی گلی مٌشکی</p>
+                  <p class="ingredients"><span>رایحه: </span>تلخ, چهارفصل, شیرین</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک, مهمانی رسمی
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Nutmeg.jpg" class="flower-icon">
+                          <p>جوز</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Rose.jpg" class="flower-icon">
+                          <p>گل رز</p>
+                      </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
+                </div>
+                <!-- Menu Item -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/perfumes/dior-miss-dior-blooming-bouquet-edt-.jpg" class="glightbox"><img src="assets/perfumes/dior-miss-dior-blooming-bouquet-edt-.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>عطر میس دیور بلومینگ بوکت
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>روایح گلی</p>
+                  <p class="ingredients"><span>رایحه: </span>خنک, شیرین</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای عاشقانه
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Apricot.jpg" class="flower-icon">
+                          <p>زرد آلو</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Peach.jpg" class="flower-icon">
+                          <p>هلو</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Peony.jpg" class="flower-icon">
+                          <p>گل صدتومانی</p>
+                      </div>
+                      <div class="flower-icon-item">
+                        <img src="assets/notes/Rose.jpg" class="flower-icon">
+                        <p>گل رز</p>
+                    </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
+                </div>
+                <!-- Menu Item -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/perfumes/jaguar-for-men.jpg" class="glightbox"><img src="assets/perfumes/jaguar-for-men.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>عطر جگوار فور من
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>روایح آروماتیک</p>
+                  <p class="ingredients"><span>رایحه: </span>چهارفصل, شیرین</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای دوستانه
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Caraway.jpg" class="flower-icon">
+                          <p>زیره</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Carnation.jpg" class="flower-icon">
+                          <p>میخک صدپر</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/calvia.jpg" class="flower-icon">
+                          <p>سالویا اسکلاریا</p>
+                      </div>
+                      <div class="flower-icon-item">
+                        <img src="assets/notes/Cyclamen.jpg" class="flower-icon">
+                        <p>گل پنجه مریم</p>
+                    </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
+                </div>
+                <!-- Menu Item -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/perfumes/jM7jye4gHgw3P30m.jpg" class="glightbox"><img src="assets/perfumes/jM7jye4gHgw3P30m.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>لیلا حاتمی پور فم زنانه
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>شرقی گلی</p>
+                  <p class="ingredients"><span>رایحه: </span>چهارفصل, شیرین</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای دوستانه
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Chocolate.jpg" class="flower-icon">
+                          <p>شکلات</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Jasmine.jpg" class="flower-icon">
+                          <p>گل یاس</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Violet.jpg" class="flower-icon">
+                          <p>گل بنفشه</p>
+                      </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
+                </div>
+                <!-- Menu Item -->
+                
+                <!-- Hidden Menu Items (Initially Hidden) -->
+                <div class="col-lg-4 menu-item hidden-item">
+                  <a href="assets/perfumes/1521107567.jpg" class="glightbox"><img src="assets/perfumes/1521107567.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>شنل کوکو مادمازل ادو پرفیوم
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>شرقی گلی</p>
+                  <p class="ingredients"><span>رایحه: </span>چهارفصل, شیرین</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک, جلسات اداری, روزانه و کژوال, قرارهای دوستانه, قرارهای عاشقانه, مهمانی رسمی
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Jasmine.jpg" class="flower-icon">
+                          <p>گل یاس</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Rose.jpg" class="flower-icon">
+                          <p>گل رز</p>
+                      </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
+                </div>
+                
+                <div class="col-lg-4 menu-item hidden-item">
+                  <a href="assets/perfumes/om-eau-de-parfum-for-her-100ml-391f58375b274745b6f087386a8e4197-master-ea41da5d35f944f3bae082d8ca16c720-master-photoroom-png-photoroom.png" class="glightbox"><img src="assets/perfumes/om-eau-de-parfum-for-her-100ml-391f58375b274745b6f087386a8e4197-master-ea41da5d35f944f3bae082d8ca16c720-master-photoroom-png-photoroom.png" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>عطر گوچی بلوم
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>روایح گلی</p>
+                  <p class="ingredients"><span>رایحه: </span>خنک, شیرین</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای عاشقانه
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Tuberose.jpg" class="flower-icon">
+                          <p>گل مریم</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Jasmine.jpg" class="flower-icon">
+                          <p>گل یاس</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/f830d6f653a4df5987e723b12b45da704f0942d9469.jpg" class="flower-icon">
+                          <p>گل امین الدوله</p>
+                      </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
+                </div>
 
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img src="assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Magnam Tiste</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  $5.95
-                </p>
-              </div><!-- Menu Item -->
+                <div class="col-lg-4 menu-item hidden-item">
+                  <a href="assets/perfumes/2994_img-4352-dolce-gabbana-l-imperatrice_social.jpg" class="glightbox"><img src="assets/perfumes/2994_img-4352-dolce-gabbana-l-imperatrice_social.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>عطر دولچه گابانا لیمپرتریس
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>گلی آبزی</p>
+                  <p class="ingredients"><span>رایحه: </span>خنک, شیرین</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای دوستانه, قرارهای عاشقانه
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Cyclamen.jpg" class="flower-icon">
+                          <p>گل پنجه مریم</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Jasmine.jpg" class="flower-icon">
+                          <p>گل یاس</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/watermelon.jpg" class="flower-icon">
+                          <p>هندوانه</p>
+                      </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
+                </div>
 
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img src="assets/img/menu/menu-item-2.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Aut Luia</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  $14.95
-                </p>
-              </div><!-- Menu Item -->
+                <div class="col-lg-4 menu-item hidden-item">
+                  <a href="assets/perfumes/57990c1cafc942e506a4ec284b0fb2217da07bb2_1616055606.jpg" class="glightbox"><img src="assets/perfumes/57990c1cafc942e506a4ec284b0fb2217da07bb2_1616055606.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>عطر زنانه ژکساف نایت ویش
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>رایحه گلی
+                  </p>
+                  <p class="ingredients"><span>رایحه: </span>شیرین, گرم </p>
+                  <p class="ingredients mt-4 mb-4">روزانه و کژوال
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Rose.jpg" class="flower-icon">
+                          <p>رز</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Peony.jpg" class="flower-icon">
+                          <p>گل صدتومانی</p>
+                      </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
+                </div>
 
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img src="assets/img/menu/menu-item-3.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Est Eligendi</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  $8.95
-                </p>
-              </div><!-- Menu Item -->
+                <div class="col-lg-4 menu-item hidden-item">
+                  <a href="assets/perfumes/modiri-women.jpg" class="glightbox"><img src="assets/perfumes/modiri-women.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>مهران مدیری ر مینور زنانه
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>گلی</p>
+                  <p class="ingredients"><span>رایحه: </span>خنک, شیرین</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک</p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Peach-Blossom.jpg" class="flower-icon">
+                          <p>شکوفه هلو</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Peony.jpg" class="flower-icon">
+                          <p>گل صدتومانی</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Tea (1).jpg" class="flower-icon">
+                          <p>برگ چای</p>
+                      </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
+                </div>
 
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img src="assets/img/menu/menu-item-4.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Eos Luibusdam</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  $12.95
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img src="assets/img/menu/menu-item-5.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Eos Luibusdam</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  $12.95
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Laboriosam Direva</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  $9.95
-                </p>
-              </div><!-- Menu Item -->
-
+                <div class="col-lg-4 menu-item hidden-item">
+                  <a href="assets/perfumes/Euphoria-For-Women.jpg" class="glightbox"><img src="assets/perfumes/Euphoria-For-Women.jpg" class="menu-img img-fluid mb-3" alt=""></a>
+                  <h4>عطر کلوین کلاین ایفوریا زنانه
+                  </h4>
+                  <p class="ingredients"><span>گروه بویایی: </span>شرقی گلی</p>
+                  <p class="ingredients"><span>رایحه: </span>شیرین, گرم</p>
+                  <p class="ingredients mt-4 mb-4">آکادمیک, روزانه و کژوال, قرارهای عاشقانه
+                  </p>
+                  <div class="flower-icons mb-2">
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Lotus.jpg" class="flower-icon">
+                          <p>لاله مردابی</p>
+                      </div>
+                      <div class="flower-icon-item">
+                          <img src="assets/notes/Orchid.jpg" class="flower-icon">
+                          <p>گل ارکیده</p>
+                      </div>
+                  </div>
+                  <div class="mt-5 mb-3">
+                    <a class="btn-getstarted mt-5" href="" style="background-color: black;">اضافه به سبد خرید</a>
+                  </div>
+                </div>
+                
             </div>
-          </div><!-- End Starter Menu Content -->
-
-          <div class="tab-pane fade" id="menu-breakfast">
-
-            <div class="row gy-5">
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img src="assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Magnam Tiste</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  $5.95
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img src="assets/img/menu/menu-item-2.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Aut Luia</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  $14.95
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img src="assets/img/menu/menu-item-3.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Est Eligendi</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  $8.95
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img src="assets/img/menu/menu-item-4.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Eos Luibusdam</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  $12.95
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img src="assets/img/menu/menu-item-5.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Eos Luibusdam</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  $12.95
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Laboriosam Direva</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  $9.95
-                </p>
-              </div><!-- Menu Item -->
-
+            
+            <!-- Show More Button -->
+            <div class="text-center mt-4">
+              <button id="showMoreButtonStarters" class="btn-getstarted">موارد بیشتر</button>
             </div>
-          </div><!-- End Breakfast Menu Content -->
-
+        </div><!-- End Starter Menu Content -->
         </div>
-
       </div>
-
-    </section><!-- /Menu Section -->
+    </section><!-- /Perfumes Section -->
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section light-background">
+    <section id="testimonials" class="testimonials section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <p>نظرات مشتریان <span class="description-title">عطریسه</span></p>
+        <p>نظرات بیش از 50 نفر از عاشقان <span class="description-title">عطریس</span></p>
       </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container" data-aos="fade-up">
 
         <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
@@ -687,11 +996,10 @@
                     <div class="testimonial-content">
                       <p>
                         <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
+                        <span>من حضوری از دستگاه استفاده کردم و به نظر من اسپری کردن عطر در اون لحظه خیلی ایده خوبی بود و لذت بردم. حتما عطریس رو به دوستانم معرفی میکنم.</span>
                         <i class="bi bi-quote quote-icon-right"></i>
                       </p>
-                      <h3>Saul Goodman</h3>
-                      <h4>Ceo &amp; Founder</h4>
+                      <h3>کامران مرادی</h3>
                       <div class="stars">
                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                       </div>
@@ -711,11 +1019,10 @@
                     <div class="testimonial-content">
                       <p>
                         <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
+                        <span>همیشه تغییر و انتخاب عطر دست برام سخت بود. ممنون از عطریس که بابت این قضیه به من کمک کرد</span>
                         <i class="bi bi-quote quote-icon-right"></i>
                       </p>
-                      <h3>Sara Wilsson</h3>
-                      <h4>Designer</h4>
+                      <h3>نگار شبدری</h3>
                       <div class="stars">
                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                       </div>
@@ -735,35 +1042,10 @@
                     <div class="testimonial-content">
                       <p>
                         <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
+                        <span>از کیفیت عطرها و انواع زیاد اون بسیار راضی بودم.</span>
                         <i class="bi bi-quote quote-icon-right"></i>
                       </p>
-                      <h3>Jena Karlis</h3>
-                      <h4>Store Owner</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 text-center">
-                    <img src="assets/img/testimonials/testimonials-3.jpg" class="img-fluid testimonial-img" alt="">
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>John Larson</h3>
-                      <h4>Entrepreneur</h4>
+                      <h3>محمد دهقان</h3>
                       <div class="stars">
                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                       </div>
@@ -785,63 +1067,102 @@
     </section><!-- /Testimonials Section -->
 
     <!-- Create account Section -->
-    <section>
-      <div class="container">
-        <div class="row">
-          <img src="assets/img/pic-section.jpg" class="img-fluid mb-4" alt="">
-          <div class="col-md-6">
-            <p>شما با ساخت حساب کاربری می‌توانید از امکانات عطریسه استفاده کنید</p>
-            <a class="btn-getstarted mt-5" href="index.html#book-a-table">ساخت حساب کاربری</a>
-          </div>
+    <section id="stats" class="stats section dark-background">
+      <img src="assets/images/s9.jpg" alt="">
+      <div class="container position-relative">
+          <div class="row gy-4">  
+            <div class="col-lg-8">
+              <div class="why-box">
+                <h5>بیش از 100 عطر در انتظار شماست! همین الان با ما همراه شو</h5>
+              </div>
+              <div class="d-flex justify-content-center">
+                <a class="btn-getstarted mt-5" href="signup.html">ساخت حساب کاربری</a>
+              </div>
+            </div><!-- End Why Box -->
+            </div> 
         </div>
       </div>
     </section><!-- /Create account Section -->
   
-  
   </main>
 
-      <footer class="footer dark-background py-5 border-top">
-        <div class="row px-5">
-          <div class="col-6 col-md-2 mb-3">
-            <h5>عطریسه</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>درباره ما</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>تماس با ما</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>پرسش‌های مشتریان</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>سیاست و حفظ حریم شخصی</h6></a></li>
-            </ul>
-          </div>
-    
-          <div class="col-6 col-md-2 mb-3">
-            <h5>خرید</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>راهنمای خرید حضوری</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>راهنمای خرید آنلاین</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>ارسال و تحویل کالا</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>پیگیری سفارش</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>ثبت شکایات</h6></a></li>
-            </ul>
-          </div>
-    
-          <div class="col-6 col-md-2 mb-3">
-            <h5>اطلاعات تماس</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>تلفن</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>روزهای کاری</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>فروشگاه‌ها</h6></a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><h6>ایمیل</h6></a></li>
-            </ul>
+  <footer class="footer dark-background py-5 border-top">
+    <div class="container">
+        <div class="row">
+            <!-- عطریس Section -->
+            <div class="col-12 col-md-4 mb-3">
+                <h5>عطریس</h5>
+                <hr>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>درباره ما</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>تماس با ما</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>پرسش‌های مشتریان</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>سیاست و حفظ حریم شخصی</h6></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- خرید Section -->
+            <div class="col-12 col-md-4 mb-3">
+                <h5>خرید</h5>
+                <hr>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>راهنمای خرید حضوری</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>راهنمای خرید آنلاین</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>ارسال و تحویل کالا</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>پیگیری سفارش</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>ثبت شکایات</h6></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- اطلاعات تماس Section -->
+            <div class="col-12 col-md-4 mb-3">
+                <h5>اطلاعات تماس</h5>
+                <hr>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>تلفن</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>روزهای کاری</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>فروشگاه‌ها</h6></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary"><h6>ایمیل</h6></a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    
+
+        <!-- Footer Bottom Section -->
         <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-          <p>کلیه حقوق مادی و معنوی این سایت متعلق به شرکت عطریسه می‌باشد.</p>
-          <ul class="list-unstyled d-flex">
-            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-          </ul>
+            <p class="mb-0">کلیه حقوق مادی و معنوی این سایت متعلق به شرکت عطریس می‌باشد.</p>
+            <ul class="list-unstyled d-flex mb-0">
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="assets/images/icons8-instagram-48.png" height="24"></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="assets/images/icons8-x-50.png" height="24"></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="assets/images/icons8-linkedin-48.png" height="24"></a></li>
+            </ul>
         </div>
-      </footer>
+    </div>
+</footer>
+
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -859,6 +1180,46 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    // Show More button for Starters section
+    var showMoreButtonStarters = document.getElementById('showMoreButtonStarters');
+    if (showMoreButtonStarters) {
+        showMoreButtonStarters.addEventListener('click', function () {
+            var hiddenItems = document.querySelectorAll('#menu-starters .hidden-item');
+            hiddenItems.forEach(function (item) {
+                item.classList.remove('hidden-item');
+            });
+            this.style.display = 'none'; // Hide the button after showing more items
+        });
+    }
+
+    // Show More button for Breakfast section
+    var showMoreButtonBreakfast = document.getElementById('showMoreButtonBreakfast');
+    if (showMoreButtonBreakfast) {
+        showMoreButtonBreakfast.addEventListener('click', function () {
+            var hiddenItems = document.querySelectorAll('#menu-breakfast .hidden-item');
+            hiddenItems.forEach(function (item) {
+                item.classList.remove('hidden-item');
+            });
+            this.style.display = 'none'; // Hide the button after showing more items
+        });
+    }
+});
+
+</script>
+
+<script>
+  document.getElementById('search-icon').addEventListener('click', function() {
+    document.getElementById('search-semi-page').style.top = '0';
+});
+
+document.querySelector('.close-search').addEventListener('click', function() {
+    document.getElementById('search-semi-page').style.top = '-100%';
+});
+
+</script>
 
 </body>
 

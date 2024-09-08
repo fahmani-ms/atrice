@@ -6,51 +6,73 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ساخت حساب کاربری</title>
 
+    <!-- Favicons -->
+    <link href="assets/images/logo.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
     <!-- Font Icon -->
     <link rel="stylesheet" href="assets/fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .center-container {
+        display: flex;
+        justify-content: center; /* Centers the element horizontally */
+        align-items: center;    /* Centers the element vertically */ 
+        margin-bottom: 20px;
+    }
+    .center-container img{
+        width: 100px;
+    }
+
+    </style>
 </head>
 <body>
 
     <div class="main" style="direction: rtl;">
 
         <!-- Sign up form -->
+
+        <div class="center-container">
+            <a href="index.html" class="justify-content-center">
+                <img src="assets/images/logo - black.png">
+            </a>
+        </div>
         <section class="signup">
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title">Sign up</h2>
+                        <h2 class="form-title">ساخت حساب کاربری</h2>
                         <form method="POST" class="register-form" id="register-form">
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Your Name"/>
+                                <input type="text" name="name" id="name" placeholder="نام و نام خانوادگی"/>
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email"/>
+                                <input type="email" name="email" id="email" placeholder="شماره تلفن همراه"/>
                             </div>
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Password"/>
+                                <input type="password" name="pass" id="pass" placeholder="رمز عبور"/>
                             </div>
                             <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
+                                <input type="password" name="re_pass" id="re_pass" placeholder="تکرار رمز عبور"/>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>من با تمام   <a href="#" class="term-service">شرایط استفاده</a> موافق هستم.</label>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="ثبت‌نام"/>
                             </div>
                         </form>
                     </div>
                     <div class="signup-image">
-                        <figure><img src="assets/images/signup-image.jpg" alt="sing up image"></figure>
-                        <a href="Login.html" class="signup-image-link">I am already member</a>
+                        <figure><img src="assets/images/detailed_5fa31b.jpg" alt="sing up image"></figure>
+                        <a href="Login.html" class="signup-image-link">از قبل حساب کاربری دارم</a>
                     </div>
                 </div>
             </div>

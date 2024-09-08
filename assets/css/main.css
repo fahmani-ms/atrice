@@ -10,31 +10,50 @@
 # Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('IRANSansWeb.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CustomFontBold';
+  src: url('IRANSansWeb_Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Amatic SC",  sans-serif;
-  --nav-font: "Inter",  sans-serif;
+  --default-font: "CustomFont", sans-serif;
+  --heading-font: "CustomFontBold", sans-serif;
+  --nav-font: "CustomFont", sans-serif;
 }
+
+
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #37373f; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #ce1212; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #B17742; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #7f7f90;  /* The default color of the main navmenu links */
-  --nav-hover-color: #ce1212; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-color: white;  /* The default color of the main navmenu links */
+  --nav-hover-color: #C7A17F; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #7f7f90; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ce1212; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-background-color: black; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #ffffff; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #C7A17F; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -224,19 +243,23 @@ h6 {
 --------------------------------------------------------------*/
 .header {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: black;
   padding: 20px 0;
   transition: all 0.5s;
   z-index: 997;
 }
 
 .header .logo {
+  margin: 0;
+  padding: 0;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Aligns logo to the start */
 }
 
 .header .logo img {
-  max-height: 36px;
-  margin-right: 8px;
+  max-height: 60px;
 }
 
 .header .logo h1 {
@@ -252,8 +275,59 @@ h6 {
   font-size: 36px;
 }
 
+.header .logo.me-auto {
+  margin-right: 0 !important; /* Override any margin on the right */
+}
+
+.header .navmenu {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Adjust this to space or center content as needed */
+  order: 3; /* Maintains order in flex */
+}
+
+
+
+/* Optional: Reduce space between nav items for a compact look */
+.navmenu ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 15px; /* Space between items, adjust as needed */
+}
+
+.navmenu>ul>li {
+  padding: 10px; /* Adjust to reduce space */
+}
+
+/* Mobile and Desktop Navigation adjustments */
+@media (min-width: 600px) {
+  .navmenu>ul>li {
+      padding: 10px 10px; /* Reduce padding */
+  }
+  .navmenu>ul>li:last-child {
+      padding-right: 10px; /* Optional for last item adjustment */
+  }
+}
+
 .header .btn-getstarted,
 .header .btn-getstarted:focus {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-size: 14px;
+  padding: 8px 26px;
+  margin: 0;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.btn-getstarted,
+.btn-getstarted:focus {
+  font-family: var(--default-font);
   color: var(--contrast-color);
   background: var(--accent-color);
   font-size: 14px;
@@ -550,6 +624,175 @@ h6 {
   }
 }
 
+
+
+/*--------------------------------------------------------------
+# Search box
+--------------------------------------------------------------*/
+
+/* Styles for the search icon */
+.search-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Styles for the search semi-page */
+.search-semi-page {
+  position: fixed;
+  top: -100%; /* Start off-screen */
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+  padding: 40px; /* Adjust padding for space from edges */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: top 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for centering content */
+.search-container-wrapper {
+  max-width: 800px; /* Adjust the width of the container */
+  width: 100%;
+  background: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Flex container for the two columns */
+.search-content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* Styling for the search input */
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Suggestions styling */
+.search-suggestions {
+  width: 50%; /* Half of the container width */
+}
+
+.search-suggestions p {
+  margin: 5px 0;
+  cursor: pointer;
+  color: white;
+}
+
+.search-suggestions h6 {
+  cursor: pointer;
+  color: whitesmoke;
+}
+
+/* Styling for the search image */
+.search-image {
+  width: 50%; /* Half of the container width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Close button styling */
+.close-search {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+/* Adding arrow to content-arrow class */
+.content-arrow {
+  position: relative; /* Make it relative for positioning the arrow */
+  padding-left: 25px; /* Space for the arrow */
+}
+
+.content-arrow::before {
+  content: "\2190"; /* Unicode for right arrow */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem; /* Adjust arrow size */
+  color: white; /* Arrow color */
+}
+
+
+/* Profile icon styles */
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: border 0.3s ease;
+}
+
+.profile-icon:hover {
+  border: 2px solid #007bff; /* Change border color on hover */
+}
+
+/* Dropdown menu styles */
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px 0;
+  z-index: 1000;
+  list-style: none;
+  margin-top: 10px;
+  width: 150px; /* Adjust the width of the dropdown menu */
+}
+
+.profile-dropdown .dropdown-menu li {
+  padding: 8px 15px;
+  text-align: right; /* Adjusted for RTL layout */
+}
+
+.profile-dropdown .dropdown-menu li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.profile-dropdown .dropdown-menu li a:hover {
+  background-color: #000000;
+}
+
+/* Show dropdown on icon click */
+.profile-dropdown.open .dropdown-menu {
+  display: block;
+}
+
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
@@ -766,7 +1009,7 @@ section,
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
-  padding-bottom: 60px;
+  padding-bottom: 30px;
   position: relative;
 }
 
@@ -785,7 +1028,7 @@ section,
 .section-title p {
   color: var(--heading-color);
   margin: 10px 0 0 0;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 500;
   font-family: var(--heading-font);
 }
@@ -994,7 +1237,7 @@ section,
 }
 
 .why-us .icon-box {
-  background-color: var(--surface-color);
+  background-color: #F7F0EA;
   text-align: center;
   padding: 40px 30px;
   width: 100%;
@@ -1006,7 +1249,7 @@ section,
   color: var(--accent-color);
   font-size: 32px;
   margin-bottom: 30px;
-  background: color-mix(in srgb, var(--accent-color), transparent 95%);
+  background: color-mix(in srgb, white, transparent 2%);
   border-radius: 50px;
   display: flex;
   align-items: center;
@@ -1087,6 +1330,12 @@ section,
 /*--------------------------------------------------------------
 # Menu Section
 --------------------------------------------------------------*/
+#menu-starters .img-fluid {
+  max-width: 100%;
+  width: auto;
+  height: 300px;
+}
+
 .menu .nav-tabs {
   border: 0;
 }
@@ -1163,7 +1412,7 @@ section,
 
 .menu .tab-content .menu-item .menu-img {
   padding: 0 60px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .menu .tab-content .menu-item h4 {
@@ -1340,7 +1589,7 @@ section,
 # Chefs Section
 --------------------------------------------------------------*/
 .chefs .team-member {
-  background-color: var(--surface-color);
+  background-color: #F7F0EA;
   box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: center;
@@ -1360,7 +1609,7 @@ section,
   right: -1px;
   bottom: -1px;
   height: 100%;
-  background-color: var(--surface-color);
+  background-color: #F7F0EA;
   -webkit-mask: url("../img/team-shape.svg") no-repeat center bottom;
   mask: url("../img/team-shape.svg") no-repeat center bottom;
   -webkit-mask-size: contain;
@@ -1660,6 +1909,48 @@ section,
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
+
+
+.flower-icons {
+  display: flex;
+  justify-content: space-around; /* Space icons evenly across the container */
+  align-items: center; /* Center items vertically if needed */
+  flex-wrap: wrap; /* Wrap items to the next line if needed */
+  margin-top: 20px;
+}
+
+.flower-icon-item {
+    display: flex;
+    flex-direction: column; /* Stack icon above text */
+    align-items: center; /* Center the icon and text */
+    text-align: center; /* Center text within each item */
+    max-width: 80px; /* Adjust based on your card width */
+    flex: 1; /* Allow items to grow equally */
+}
+
+.flower-icon {
+  width: 35px;  /* Ensure width and height are equal */
+  height: 35px;
+  border-radius: 50%;  /* Make the icons circular */
+  margin-bottom: 5px;  /* Space between the icon and the text */
+  object-fit: cover;  /* Ensure the image scales properly within the circle */
+}
+
+.flower-icon-item p {
+    margin: 0;
+    font-size: 12px; /* Adjust font size as needed */
+}
+
+.menu-item {
+  border: 2px solid #F7F0EA; /* Change color and thickness as needed */
+  border-radius: 10px; /* Adjust the radius for the desired curve */
+  padding: 10px; /* Space between the content and the border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+  background-color: #fff; /* Optional: ensures the card has a white background */
+  margin-bottom: 3px; /* Space between cards if multiple are present */
+  overflow: hidden; /* Ensures content stays inside the rounded border */
+}
+
 
 /*--------------------------------------------------------------
 # Starter Section Section
