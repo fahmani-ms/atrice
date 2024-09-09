@@ -66,7 +66,11 @@
                                 <label for="agree-term" class="label-agree-term"><span><span></span></span>من با تمام   <a href="#" class="term-service">شرایط استفاده</a> موافق هستم.</label>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="ثبت‌نام"/>
+                                <!-- <input type="submit" name="signup" id="signup" class="form-submit" value="ثبت‌نام" onclick="redirectToTest()"/> -->
+                                <a id="signup" class="form-submit" href="test.html">ثبت‌نام</a>
+                            </div>
+                            <div class="social-login">
+                                <a href="#"><i class="display-flex-center"><img src="assets/icon/SSO.png" style="width: 60%;"></i></a>
                             </div>
                         </form>
                     </div>
@@ -79,9 +83,14 @@
         </section>
 
     </div>
-
+    <script>
+        function redirectToTest() {
+          window.location.href = "test.html";
+        }
+      </script>
     <!-- JS -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="js/main2.js"></script>
+    
 </body>
 </html>

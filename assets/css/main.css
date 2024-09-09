@@ -50,7 +50,7 @@
 :root {
   --nav-color: white;  /* The default color of the main navmenu links */
   --nav-hover-color: #C7A17F; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+  --nav-mobile-background-color: black; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: black; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #ffffff; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #C7A17F; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
@@ -1595,7 +1595,9 @@ section,
   text-align: center;
   border-radius: 5px;
   transition: 0.3s;
+  margin-bottom: 5px;
 }
+
 
 .chefs .team-member .member-img {
   position: relative;
