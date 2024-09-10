@@ -164,11 +164,11 @@
               </li>
             </ul>
           </li>
-          <li><a href="#hero">رویدادها و کلاس‌ها</a></li>
+          <li><a href="#">رویدادها و کلاس‌ها</a></li>
           <li><a href="#articles">مقالات</a></li>
           <li><a href="#guide">مشاوره</a></li>
           
-          <li><a href="#hero">تماس با ما</a></li>
+          <li><a href="#">تماس با ما</a></li>
           <li>
             <a href="javascript:void(0);" id="search-icon" class="search-icon">
                 <i class="bi bi-search"></i>
@@ -302,14 +302,14 @@
     <section id="why-us" class="why-us section">
 
       <!-- Section Title -->
-      <div class="container section-title mb-5" data-aos="fade-up"><p><span>سفر</span> <span class="description-title">رایحه‌ها</span></p>
+      <div class="container section-title mb-5"><p><span>سفر</span> <span class="description-title">رایحه‌ها</span></p>
       </div><!-- End Section Title -->
 
       <div class="container">
 
         <div class="row gy-4">
           <div class="col-lg-12 d-flex align-items-stretch">
-            <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
 
               <div class="col-xl-3">
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
@@ -322,7 +322,7 @@
                 </div>
               </div><!-- End Icon Box -->
 
-              <div class="col-xl-3" data-aos="fade-up" data-aos-delay="300">
+              <div class="col-xl-3" data-aos="fade-up" data-aos-delay="200">
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                   <i class="bi">
                     <img src="assets/icon/3215206.png" width="25px">
@@ -332,7 +332,7 @@
                 </div>
               </div><!-- End Icon Box -->
 
-              <div class="col-xl-3" data-aos="fade-up" data-aos-delay="400">
+              <div class="col-xl-3" data-aos="fade-up" data-aos-delay="300">
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                   <i class="bi">
                     <img src="assets/icon/buyconfrimed_121604.png" width="25px">
@@ -1217,6 +1217,15 @@
 
 document.querySelector('.close-search').addEventListener('click', function() {
     document.getElementById('search-semi-page').style.top = '-100%';
+});
+
+</script>
+
+<script>
+  AOS.init({
+  offset: 120,  // Trigger animations earlier
+  duration: 600,  // Animation duration
+  once: true  // Only trigger animations once
 });
 
 </script>
