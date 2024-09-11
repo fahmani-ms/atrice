@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>عطریس - تست شخصیت‌شناسی</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/images/logo.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+
+    .center-container {
+            display: flex;
+            justify-content: center; /* Centers the element horizontally */
+            align-items: center;    /* Centers the element vertically */ 
+            margin-bottom: 20px;
+        }
+        .center-container img{
+            width: 100px;
+        }
+      body {
+          background-color: #f8f9fa;
+      }
+
+      .survey-container {
+        max-width: 80%;
+        margin: 0 auto;
+        background: #F7F0EA;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the entire content horizontally */
+        text-align: center; /* Centers text within the container */
+    }
+
+      .question {
+          display: none; /* Hide all questions initially */
+      }
+
+      .question.active {
+          display: block; /* Show only the active question */
+      }
+
+      .options {
+        display: flex;
+        justify-content: center; /* Centers the options horizontally */
+        flex-wrap: wrap; /* Allows options to wrap into multiple lines if needed */
+        gap: 20px; /* Space between the options */
+        margin-top: 20px;
+    }
+
+    .option-container {
+        display: flex;
+        flex-direction: column; /* Arrange image and indicator vertically */
+        align-items: center;
+        width: 250px;  /* Set a consistent width for each option container */
+        margin: 10px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .option-container img {
+        width: 100%;       /* Image width fills the container */
+        height: 150px;     /* Set a consistent height for images */
+        object-fit: cover; /* Maintain aspect ratio, cover the entire area */
+        border-radius: 5px;
+        margin-bottom: 10px; /* Space between image and text */
+    }
+
+      /* Media query for mobile devices */
+      @media (max-width: 768px) {
+          .options {
+              flex-direction: column;  /* Stack options vertically on small screens */
+              align-items: center;
+          }
+
+          .option-container {
+              width: 90%;  /* Full width for mobile view */
+              margin: 10px auto;  /* Centered with auto margins */
+          }
+
+          .option-container img {
+              width: 100%;  /* Full width for mobile view */
+              height: 150px; /* Maintain aspect ratio */
+              max-width: 300px; /* Optional: Limit max size */
+          }
+      }
+
+      .option-container.selected {
+          border-color: #C7A17F; /* Highlight selected image */
+      }
+
+      .radio-indicator {
+        width: 20px;
+        height: 20px;
+        margin-top: 5px; /* Space between image and indicator */
+        background-color: white;
+        border: 2px solid #C7A17F;
+        border-radius: 50%;
+    }
+      .option-container.selected .radio-indicator {
+          background-color: #C7A17F;
+      }
+
+      .nav-buttons {
+          margin-top: 20px;
+          text-align: center;
+      }
+
+      .nav-buttons button {
+          margin: 5px;
+      }
+
+      .finish-button {
+          display: none; /* Hide finish button initially */
+      }
+
+      /* Styles for progress bar and gallery */
+      .progress-container, .gallery-container {
+          width: 45%;
+          display: inline-block;
+          vertical-align: top;
+      }
+
+      .progress-bar {
+          width: 100%;
+          background-color: #e0e0e0;
+          height: 30px;
+          border-radius: 5px;
+          margin-top: 20px;
+          margin-bottom: 20px; /* Add margin-bottom to create space */
+      }
+
+      .progress-fill {
+          width: 0%;
+          height: 100%;
+          background-color: #C7A17F;
+          border-radius: 5px;
+      }
+
+      .progress-container h6:last-of-type {
+        margin-top: 20px; /* Space before the second heading */
+    }
+
+    .gallery-container {
+    display: flex;
+    justify-content: center; /* Center the image within the container */
+    align-items: center;     /* Center vertically if there's any space */
+    }
+
+    .gallery-image {
+        width: 100%;          /* Adjusts to fill the container width */
+        max-width: 400px;     /* Optional: set a maximum width */
+        height: auto;         /* Let the height adjust to maintain aspect ratio */
+        aspect-ratio: 1/1;    /* Maintain a 1:1 aspect ratio for a perfect circle */
+        border-radius: 50%;   /* Make the image circular */
+        object-fit: cover;    /* Ensures the image covers the circle properly */
+        display: block;       /* Treat image as block-level for better control */
+    }
+
+
+      .results-container {
+          display: none; /* Hide the results section initially */
+          text-align: center;
+          margin-top: 20px;
+      }
+
+    /* Vertical line for desktop view */
+    @media (min-width: 992px) { /* Adjust the min-width based on your layout */
+        .divider-line {
+            width: 0.5px; /* Thickness of the line */
+            height: 80%; /* Height relative to the parent container */
+            top: 10%; /* Adjust to center the line vertically */
+            left: 50%; /* Center the line horizontally */
+            transform: translateX(-50%);
+        }
+    }
+
+    /* Horizontal line for mobile view */
+    @media (max-width: 991px) { /* Adjust the max-width based on your layout */
+        .divider-line {
+            height: 2px; /* Thickness of the line */
+            width: 80%; /* Width relative to the parent container */
+            top: 50%; /* Center the line vertically */
+            left: 10%; /* Position the line with some margin on the left */
+            transform: translateY(-50%);
+        }
+    }
+
+    .hidden-item {
+    display: none;
+}
+  </style>
+</head>
+
+<body class="starter-page-page">
+
+    <header id="header" class="header d-flex align-items-center sticky-top mb-5">
+        <div class="container position-relative d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+                <img src="assets/images/logo.png" alt="">
+              </a>
+    
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="index.html" class="active">خانه<br></a></li>
+                    <li class="dropdown"><a href="#"><span>عطرها</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                      <ul>
+                        <li><a href="#">همه عطرها</a></li>
+                        <li><a href="#">جدیدها</a></li>
+                        <li><a href="#">پرفروش‌ها</a></li>
+                        <li><a href="#">برتر</a></li>
+                        <li class="dropdown"><a href="#"><span>مناسب برای</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">آقایان</a></li>
+                            <li><a href="#">خانم‌ها</a></li>
+                            <li><a href="#">خانم‌ها و آقایان</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>مناسب فصل</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">بهار</a></li>
+                            <li><a href="#">تابستان</a></li>
+                            <li><a href="#">پاییز</a></li>
+                            <li><a href="#">زمستان</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>طبع</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">خنک</a></li>
+                            <li><a href="#">معتدل</a></li>
+                            <li><a href="#">گرم</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>گروه بویایی</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">آروماتیک</a></li>
+                            <li><a href="#">گلی</a></li>
+                            <li><a href="#">مرکبایی</a></li>
+                            <li><a href="#">موارد بیشتر +</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>اقلیم</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="#">گرم و خشک</a></li>
+                            <li><a href="#">سرد کوهستانی</a></li>
+                            <li><a href="#">معتدل و مرطوب</a></li>
+                            <li><a href="#">گرم و مرطوب</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="index.html">رویدادها و کلاس‌ها</a></li>
+                    <li><a href="index.html">مقالات</a></li>
+                    <li><a href="index.html">مشاوره</a></li>
+                    <li><a href="index.html">تماس با ما</a></li>
+                    <li>
+                        <a href="javascript:void(0);" id="search-icon" class="search-icon">
+                            <i class="bi bi-search"></i>
+                        </a>
+                    </li>
+                    <li><a href="store.html">فروشگاه‌ها</a></li>
+                    <li>
+                        <a href="#">
+                            <img src="assets/icon/new-large-ibou-5-icons-ibou-pocket-white-bag.png" width="30">
+                        </a>
+                    </li>
+                    <!-- Profile icon with dropdown -->
+                    <li class="profile-dropdown">
+                        <a href="javascript:void(0);" id="profile-icon">
+                            <img src="assets/icon/user.png" class="profile-icon">
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a style="color: yellow;">نرگس فهمانی</a></li>
+                            <hr style="color: white">
+                            <li><a href="#">مدیریت عطرها</a></li>
+                            <li><a href="#">سفارشات</a></li>
+                            <li><a href="#">شخصیت‌شناسی</a></li>
+                            <li><a href="#">تاریخچه مشاوره</a></li>
+                            <hr style="color: white">
+                            <li><a href="#">خروج از حساب کاربری</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    
+        <!-- Search Semi-Page -->
+        <div id="search-semi-page" class="search-semi-page">
+            <div class="search-container-wrapper">
+                <button class="close-search">X</button>
+                <!-- Centered Search Input -->
+                <input type="text" class="search-input" placeholder="جستجوی عطر و برند...">
+                <!-- Two-column content -->
+                <div class="search-content">
+                  <div class="search-suggestions mt-4 mx-4">
+                      <div class="content-arrow">
+                          <h6>همین حالا شخصی‌سازی کن</h6>
+                          <p>شروع شخصیت‌شناسی</p>
+                      </div>
+                      <!-- Sample suggestions -->
+                      <div class="content-arrow mt-5">
+                          <h6>به ایده‌هایی نیاز داری؟</h6>
+                          <p>در مجموعه‌های دسته‌بندی شده ما جستجو کن</p>
+                      </div>
+                  </div>
+                  <div class="search-image mx-4">
+                      <img src="assets/images/edoardo-cuoghi-ufuchdZawng-unsplash.jpg" alt="Sample">
+                  </div>
+              </div>
+              
+            </div>
+        </div>
+    </header>
+    
+  <main class="main pt-5">
+    <div class="center-container">
+        <img  src="assets/images/logo - black.png" width="100px">
+    </div>
+    
+
+    <div class="survey-container">
+        
+      <!-- Survey questions and options -->
+      <div class="question active" data-question="1">
+          <h4>دنبال چه عطری می‌گردی؟</h4>
+          <div class="options">
+              <div class="option-container" onclick="selectOption(this)">
+                  <img src="assets/test/pexels-duane-viljoen-3411736-10604607.jpg" width="40%" height="200px" alt="Option 1">
+                  <h5 class="mt-3">مردانه</h5>
+                  <div class="radio-indicator"></div>
+              </div>
+              <div class="option-container" onclick="selectOption(this)">
+                  <img src="assets/test/laura-chouette-2H_8WbVPRxM-unsplash.jpg" width="40%" height="200px" alt="Option 2">
+                  <h5 class="mt-3">زنانه</h5>
+                  <div class="radio-indicator"></div>
+              </div>
+          </div>
+      </div>
+  
+      <div class="question" data-question="2">
+          <h4>وقتی به یک محیط گرم یا سرد فکر میکنی، کدام یک را بیشتر دوست دارید؟</h4>
+          <div class="options">
+            <div class="option-container" onclick="selectOption(this)">
+                <img src="assets/test/deactivated-account-s41ms_lrqeI-unsplash.jpg" width="40%" height="200px" alt="Option 1">
+                <h5 class="mt-3">ساحل گرم و آفتابی</h5>
+                <div class="radio-indicator"></div>
+            </div>
+            <div class="option-container" onclick="selectOption(this)">
+                <img src="assets/test/freestocks-pGPAeh1dWaM-unsplash.jpg" width="40%" height="200px" alt="Option 2">
+                <h5 class="mt-3">یک روز بهاری در باغ</h5>
+                <div class="radio-indicator"></div>
+            </div>
+            <div class="option-container" onclick="selectOption(this)">
+                <img src="assets/test/cristian-grecu-YB7otPEI42E-unsplash.jpg" width="40%" height="200px" alt="Option 3">
+                <h5 class="mt-3">کوهستان برفی</h5>
+                <div class="radio-indicator"></div>
+            </div>
+        </div>
+      </div>
+
+    <div class="question" data-question="3">
+        <h4>فصل مورد علاقه شما کدام است؟</h4>
+        <div class="options">
+          <div class="option-container" onclick="selectOption(this)">
+              <img src="assets/test/masaaki-komori-Z8TQv3yKQd4-unsplash.jpg" width="40%" height="200px" alt="Option 1">
+              <h5 class="mt-3">بهار (شکوفه‌ها و طراوت)</h5>
+              <div class="radio-indicator"></div>
+          </div>
+          <div class="option-container" onclick="selectOption(this)">
+              <img src="assets/test/pexels-marctutorials-298692-1152359.jpg" width="40%" height="200px" alt="Option 2">
+              <h5 class="mt-3">تابستان (گرما و آفتاب)</h5>
+              <div class="radio-indicator"></div>
+          </div>
+          <div class="option-container" onclick="selectOption(this)">
+            <img src="assets/test/mitchell-mccleary-Sffn3x3u6mo-unsplash.jpg" width="40%" height="200px" alt="Option 3">
+            <h5 class="mt-3">پاییز (برگ‌های رنگارنگ و هوای خنک)</h5>
+            <div class="radio-indicator"></div>
+        </div>
+        <div class="option-container" onclick="selectOption(this)">
+            <img src="assets/test/pexels-8moments-698275.jpg" width="40%" height="200px" alt="Option 4">
+            <h5 class="mt-3">زمستان (برف و آرامش)</h5>
+            <div class="radio-indicator"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="question" data-question="4">
+        <h4>چه نوع بوهایی بیشتر به شما حس خوب می‌دهند؟</h4>
+        <div class="options" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+            <div class="option-container" onclick="selectOption(this)" style="width: 25%; margin-bottom: 20px;">
+                <img src="assets/test/roya-ann-miller-Rdsc2L517iQ-unsplash.jpg" width="100%" height="200px" alt="Option 1">
+                <h5 class="mt-3">بوی چوب سوخته</h5>
+                <div class="radio-indicator"></div>
+            </div>
+            <div class="option-container" onclick="selectOption(this)" style="width: 25%; margin-bottom: 20px;">
+                <img src="assets/test/pexels-madalina-enache-1540051428-27359231.jpg" width="100%" height="200px" alt="Option 2">
+                <h5 class="mt-3">بوی مرکبات (مثل لیمو و پرتقال)</h5>
+                <div class="radio-indicator"></div>
+            </div>
+            <div class="option-container" onclick="selectOption(this)" style="width: 25%; margin-bottom: 20px;">
+                <img src="assets/test/pexels-polina-kovaleva-6965642.jpg" width="100%" height="200px" alt="Option 3">
+                <h5 class="mt-3">بوی گل‌های تازه</h5>
+                <div class="radio-indicator"></div>
+            </div>
+            <div class="option-container" onclick="selectOption(this)" style="width: 25%; margin-bottom: 20px;">
+                <img src="assets/test/pexels-suju-1108716.jpg" width="100%" height="200px" alt="Option 4">
+                <h5 class="mt-3">بوی میوه‌های شیرین و آبدار</h5>
+                <div class="radio-indicator"></div>
+            </div>
+            <div class="option-container" onclick="selectOption(this)" style="width: 25%; margin-bottom: 20px;">
+                <img src="assets/test/andra-ion-qsPHXC4T2cY-unsplash.jpg" width="100%" height="200px" alt="Option 5">
+                <h5 class="mt-3">بوی ادویه‌های گرم و شیرین</h5>
+                <div class="radio-indicator"></div>
+            </div>
+        </div>
+        <style>
+            @media (max-width: 768px) {
+              .options .option-container:nth-of-type(1),
+              .options .option-container:nth-of-type(2),
+              .options .option-container:nth-of-type(3),
+              .options .option-container:nth-of-type(4),
+              .options .option-container:nth-of-type(5) {
+                width: 90% !important;
+              }
+            }
+          </style>
+    </div>
+    
+
+    <div class="question" data-question="5">
+        <h4>در چه موقعیت‌هایی بیشتر دوست دارید از عطر استفاده کنید؟</h4>
+        <div class="options">
+          <div class="option-container" onclick="selectOption(this)">
+              <img src="assets/test/dylan-gillis-KdeqA3aTnBY-unsplash.jpg" width="40%" height="200px" alt="Option 1">
+              <h5 class="mt-3">جلسه کاری</h5>
+              <div class="radio-indicator"></div>
+          </div>
+          <div class="option-container" onclick="selectOption(this)">
+              <img src="assets/test/ian-schneider-PAykYb-8Er8-unsplash.jpg" width="40%" height="200px" alt="Option 2">
+              <h5 class="mt-3">مهمانی و دورهمی</h5>
+              <div class="radio-indicator"></div>
+          </div>
+          <div class="option-container" onclick="selectOption(this)">
+            <img src="assets/test/priscilla-du-preez-K8XYGbw4Ahg-unsplash.jpg" width="40%" height="200px" alt="Option 3">
+            <h5 class="mt-3">قرار</h5>
+            <div class="radio-indicator"></div>
+        </div>
+        <div class="option-container" onclick="selectOption(this)">
+            <img src="assets/test/kelly-sikkema-bE6k8SQT2FQ-unsplash.jpg" width="40%" height="200px" alt="Option 4">
+            <h5 class="mt-3">هنگام ورزش</h5>
+            <div class="radio-indicator"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="question" data-question="6">
+        <h4>اگر بخواهید یک حس را همیشه همراه خود داشته باشید، آن حس چیست؟</h4>
+        <div class="options">
+          <div class="option-container" onclick="selectOption(this)">
+              <img src="assets/test/austin-neill-ZahNAl_Ic3o-unsplash.jpg" width="40%" height="200px" alt="Option 1">
+              <h5 class="mt-3">آرامش</h5>
+              <div class="radio-indicator"></div>
+          </div>
+          <div class="option-container" onclick="selectOption(this)">
+              <img src="assets/test/austin-prock-tmKn9xNHY6I-unsplash.jpg" width="40%" height="200px" alt="Option 2">
+              <h5 class="mt-3">انرژی</h5>
+              <div class="radio-indicator"></div>
+          </div>
+          <div class="option-container" onclick="selectOption(this)">
+            <img src="assets/test/engin-akyurt-x1KElsXNet0-unsplash.jpg" width="40%" height="200px" alt="Option 3">
+            <h5 class="mt-3">اشتیاق</h5>
+            <div class="radio-indicator"></div>
+        </div>
+        <div class="option-container" onclick="selectOption(this)">
+            <img src="assets/test/martino-pietropoli-pirWeToS2mA-unsplash.jpg" width="40%" height="200px" alt="Option 4">
+            <h5 class="mt-3">اطمینان</h5>
+            <div class="radio-indicator"></div>
+        </div>
+      </div>
+    </div>
+  
+      <!-- Navigation buttons -->
+      <div class="nav-buttons">
+          <button class="btn btn-secondary" style="background-color: #B17742; color: #fff; border: none;" onclick="prevQuestion()">قبلی</button>
+          <button class="btn btn-primary" style="background-color: black; color: #fff; border: none;" onclick="nextQuestion()">بعدی</button>
+          <button class="btn btn-success finish-button" style="background-color: green; color: #fff; border: none;" onclick="finishSurvey()">پایان</button>
+      </div>
+  </div>
+  
+  <!-- Progress bar and gallery -->
+  <div class="container results-container">
+    <div class="row">
+      <div class="col-lg-6 progress-container justify-text">
+          <h6>لطفا چند لحظه صبر کنید...</h6>
+          <div class="progress-bar">
+              <div class="progress-fill"></div>
+          </div>
+          <h6> ما در حال بررسی پاسخ‌های شما و استخراج پیشنهادات شخصی شما از کاتالوگ عطرهای خود هستیم.</h6>
+      </div>
+      <div class="col-lg-6 gallery-container">
+        <img class="gallery-image" src="assets/process/1521107567.jpg" alt="Gallery Image">
+    </div>
+    
+    </div>
+  </div>
+
+  <script>
+    let currentQuestion = 1;
+    const totalQuestions = document.querySelectorAll('.question').length;
+    const galleryImages = ['assets/process/1689485010.jpg', 'assets/process/a7695e15cf25d29d1604c1617013c8b397a25646_1597043031.jpg', 'assets/process/chanel-Bleu-de-Chanel-EDP-e1616777375992.jpg'];
+    let currentGalleryIndex = 0;
+
+    function showQuestion(questionNumber) {
+        document.querySelectorAll('.question').forEach((question) => {
+            question.classList.remove('active');
+        });
+        document.querySelector(`.question[data-question="${questionNumber}"]`).classList.add('active');
+        
+        // Show/Hide navigation buttons
+        if (questionNumber === totalQuestions) {
+            document.querySelector('.finish-button').style.display = 'inline-block';
+            document.querySelector('.btn-primary').style.display = 'none';
+        } else {
+            document.querySelector('.finish-button').style.display = 'none';
+            document.querySelector('.btn-primary').style.display = 'inline-block';
+        }
+
+        if (questionNumber === 1) {
+            document.querySelector('.btn-secondary').style.display = 'none';
+        } else {
+            document.querySelector('.btn-secondary').style.display = 'inline-block';
+        }
+    }
+
+    function nextQuestion() {
+        if (currentQuestion < totalQuestions) {
+            currentQuestion++;
+            showQuestion(currentQuestion);
+        }
+    }
+
+    function prevQuestion() {
+        if (currentQuestion > 1) {
+            currentQuestion--;
+            showQuestion(currentQuestion);
+        }
+    }
+
+    function finishSurvey() {
+        // Show progress bar and gallery
+        document.querySelector('.survey-container').style.display = 'none';
+        document.querySelector('.results-container').style.display = 'block';
+
+        // Start the progress bar animation and gallery slideshow
+        let progress = 0;
+        const progressInterval = setInterval(() => {
+            progress += 1;
+            document.querySelector('.progress-fill').style.width = `${progress}%`;
+            if (progress >= 100) {
+                clearInterval(progressInterval);
+                window.location.href = 'result.html'; // Redirect after completion
+            }
+        }, 50); // 5 seconds total duration
+
+        const galleryInterval = setInterval(() => {
+            currentGalleryIndex = (currentGalleryIndex + 1) % galleryImages.length;
+            document.querySelector('.gallery-image').src = galleryImages[currentGalleryIndex];
+        }, 1000); // Change image every second
+    }
+
+    function selectOption(container) {
+        const options = container.parentElement.querySelectorAll('.option-container');
+        options.forEach(option => option.classList.remove('selected'));
+        container.classList.add('selected');
+    }
+
+    // Initialize the survey
+    showQuestion(currentQuestion);
+</script>
+
+  </main>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById('profile-icon').addEventListener('click', function() {
+    const dropdown = this.parentElement;
+    dropdown.classList.toggle('open');
+});
+
+// Close the dropdown if the user clicks outside of it
+window.addEventListener('click', function(event) {
+    const dropdown = document.querySelector('.profile-dropdown');
+    if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('open');
+    }
+});
+
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    // Show More button for Starters section
+    var showMoreButtonStarters = document.getElementById('showMoreButtonStarters');
+    if (showMoreButtonStarters) {
+        showMoreButtonStarters.addEventListener('click', function () {
+            var hiddenItems = document.querySelectorAll('#menu-starters .hidden-item');
+            hiddenItems.forEach(function (item) {
+                item.classList.remove('hidden-item');
+            });
+            this.style.display = 'none'; // Hide the button after showing more items
+        });
+    }
+
+    // Show More button for Breakfast section
+    var showMoreButtonBreakfast = document.getElementById('showMoreButtonBreakfast');
+    if (showMoreButtonBreakfast) {
+        showMoreButtonBreakfast.addEventListener('click', function () {
+            var hiddenItems = document.querySelectorAll('#menu-breakfast .hidden-item');
+            hiddenItems.forEach(function (item) {
+                item.classList.remove('hidden-item');
+            });
+            this.style.display = 'none'; // Hide the button after showing more items
+        });
+    }
+});
+
+</script>
+
+<script>
+    document.getElementById('search-icon').addEventListener('click', function() {
+      document.getElementById('search-semi-page').style.top = '0';
+  });
+  
+  document.querySelector('.close-search').addEventListener('click', function() {
+      document.getElementById('search-semi-page').style.top = '-100%';
+  });
+  
+  </script>
+
+</body>
+
+</html>
