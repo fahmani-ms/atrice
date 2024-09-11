@@ -96,7 +96,16 @@
     .swiper-container {
         width: 100%;
         padding-top: 20px;
-        padding-bottom: 40px;
+        padding-bottom: 60px; /* Increase bottom padding to make room for pagination */
+        position: relative; /* Ensure relative positioning for pagination */
+    }
+
+    .swiper-pagination {
+        position: absolute; /* Position the pagination */
+        bottom: 10px; /* Align it to the bottom of the container */
+        left: 0;
+        width: 100%;
+        text-align: center; /* Center the pagination */
     }
 
     .swiper-slide {
@@ -154,23 +163,26 @@
 
 
 
-.section-title {
-    display: flex; /* Sets the display property to flex */
-    align-items: center; /* Vertically centers items if they are not already aligned */
-    justify-content: center; /* Horizontally centers the content */
-    flex-direction: column; /* Ensures that the text is treated as a column (optional) */
-}
-
-.font-size-bold {
-        font-weight: bold; /* Ensures the text is bold */
-        /* Optional: Add other font styling here if needed */
+    .section-title {
+        display: flex; /* Sets the display property to flex */
+        align-items: center; /* Vertically centers items if they are not already aligned */
+        justify-content: center; /* Horizontally centers the content */
+        flex-direction: column; /* Ensures that the text is treated as a column (optional) */
     }
+
+    .font-size-bold {
+            font-weight: bold; /* Ensures the text is bold */
+            /* Optional: Add other font styling here if needed */
+        }
 
 
     .justify-text {
         text-align: justify; /* Justify text within the list items */
     }
 
+    .swiper-pagination-bullet-active {
+        background-color: var(--accent-color);
+        }
   </style>
 
 </head>
@@ -271,29 +283,29 @@
         <!-- Search Semi-Page -->
         <div id="search-semi-page" class="search-semi-page">
             <div class="search-container-wrapper">
-                <button class="close-search">X</button>
-                <!-- Centered Search Input -->
-                <input type="text" class="search-input" placeholder="جستجوی عطر و برند...">
-                <!-- Two-column content -->
-                <div class="search-content">
-                  <div class="search-suggestions mt-4 mx-4">
-                      <div class="content-arrow">
-                          <h6>همین حالا شخصی‌سازی کن</h6>
-                          <p>شروع شخصیت‌شناسی</p>
-                      </div>
-                      <!-- Sample suggestions -->
-                      <div class="content-arrow mt-5">
-                          <h6>به ایده‌هایی نیاز داری؟</h6>
-                          <p>در مجموعه‌های دسته‌بندی شده ما جستجو کن</p>
-                      </div>
+              <button class="close-search">X</button>
+              <!-- Centered Search Input -->
+              <input type="text" class="search-input" placeholder="جستجوی عطر و برند...">
+              <!-- Two-column content -->
+              <div class="search-content">
+                <div class="search-image mx-4">
+                  <img src="assets/images/edoardo-cuoghi-ufuchdZawng-unsplash.jpg" alt="Sample">
+                </div>
+                <div class="search-suggestions mt-4 mx-4">
+                  <div class="content-arrow">
+                    <h6>همین حالا شخصی‌سازی کن</h6>
+                    <p>شروع شخصیت‌شناسی</p>
                   </div>
-                  <div class="search-image mx-4">
-                      <img src="assets/images/edoardo-cuoghi-ufuchdZawng-unsplash.jpg" alt="Sample">
+                  <!-- Sample suggestions -->
+                  <div class="content-arrow mt-5">
+                    <h6>به ایده‌هایی نیاز داری؟</h6>
+                    <p>در مجموعه‌های دسته‌بندی شده ما جستجو کن</p>
                   </div>
+                </div>
               </div>
-              
             </div>
-        </div>
+          </div>
+          
     </header>
 
   <main class="main mx-5">
@@ -398,7 +410,7 @@
           </div>
   
           <!-- Move Swiper Pagination (Indicator) here, outside of swiper-wrapper -->
-          <div class="swiper-pagination"></div>
+          <div class="swiper-pagination mb-3"></div>
       </div>
   </div>
   
