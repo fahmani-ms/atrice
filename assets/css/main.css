@@ -714,6 +714,7 @@ h6 {
   position: absolute;
   top: 10px;
   right: 20px;
+  color: black;
 }
 
 /* Adding arrow to content-arrow class */
@@ -734,6 +735,9 @@ h6 {
 
 /* --- Responsive adjustments for mobile --- */
 @media (max-width: 768px) {
+  .content-arrow::before {
+    display: none;
+  }
   .search-content {
     flex-direction: column; /* Stack the image and suggestions */
   }
@@ -1968,12 +1972,4 @@ section,
   background-color: #fff; /* Optional: ensures the card has a white background */
   margin-bottom: 3px; /* Space between cards if multiple are present */
   overflow: hidden; /* Ensures content stays inside the rounded border */
-}
-
-
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
 }
