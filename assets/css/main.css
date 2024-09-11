@@ -630,12 +630,6 @@ h6 {
 # Search box
 --------------------------------------------------------------*/
 
-/* Styles for the search icon */
-.search-icon {
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
 /* Styles for the search semi-page */
 .search-semi-page {
   position: fixed;
@@ -645,7 +639,7 @@ h6 {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
   z-index: 1000;
-  padding: 40px; /* Adjust padding for space from edges */
+  padding: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -655,7 +649,7 @@ h6 {
 
 /* Container for centering content */
 .search-container-wrapper {
-  max-width: 800px; /* Adjust the width of the container */
+  max-width: 800px;
   width: 100%;
   background: black;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -683,7 +677,7 @@ h6 {
 
 /* Suggestions styling */
 .search-suggestions {
-  width: 50%; /* Half of the container width */
+  width: 50%;
 }
 
 .search-suggestions p {
@@ -699,7 +693,7 @@ h6 {
 
 /* Styling for the search image */
 .search-image {
-  width: 50%; /* Half of the container width */
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -724,19 +718,42 @@ h6 {
 
 /* Adding arrow to content-arrow class */
 .content-arrow {
-  position: relative; /* Make it relative for positioning the arrow */
-  padding-left: 25px; /* Space for the arrow */
+  position: relative;
+  padding-left: 25px;
 }
 
 .content-arrow::before {
-  content: "\2190"; /* Unicode for right arrow */
+  content: "\2190";
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 1.2rem; /* Adjust arrow size */
-  color: white; /* Arrow color */
+  font-size: 1.2rem;
+  color: white;
 }
+
+/* --- Responsive adjustments for mobile --- */
+@media (max-width: 768px) {
+  .search-content {
+    flex-direction: column; /* Stack the image and suggestions */
+  }
+
+  .search-image, .search-suggestions {
+    width: 100%; /* Full width on mobile */
+    text-align: center; /* Center content */
+  }
+
+  .search-suggestions h6, .search-suggestions p {
+    text-align: center;
+  }
+
+  .search-image img {
+    max-width: 80%; /* Reduce image size slightly for mobile */
+  }
+
+  
+}
+
 
 
 /* Profile icon styles */
